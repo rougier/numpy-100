@@ -172,7 +172,7 @@ is:</p>
 <div class="section" id="apprentice">
 <h1><a class="toc-backref" href="#id3">Apprentice</a></h1>
 <ol class="arabic">
-<li><p class="first">Make an array immutable</p>
+<li><p class="first">Make an array immutable (read-only)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">Z</span><span class="operator">.</span><span class="name">flags</span><span class="operator">.</span><span class="name">writeable</span> <span class="operator">=</span> <span class="name builtin pseudo">False</span>
@@ -321,6 +321,18 @@ colors</p>
 <span class="name builtin">sum</span> <span class="operator">=</span> <span class="name">A</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="name">A</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[:</span><span class="operator">-</span><span class="literal number integer">2</span><span class="punctuation">]</span> <span class="operator">+</span> <span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,))</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=-</span><span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </li>
+<li><p class="first">Considering a one-dimensional vector D, how to compute means of subsets of D
+using a vector S of same size describing subset indices ?</p>
+<pre class="code python literal-block">
+<span class="comment"># Jaime Fernández del Río</span>
+
+<span class="name">D</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">uniform</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">100</span><span class="punctuation">)</span>
+<span class="name">S</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">100</span><span class="punctuation">)</span>
+<span class="name">D_sums</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">bincount</span><span class="punctuation">(</span><span class="name">S</span><span class="punctuation">,</span> <span class="name">weights</span><span class="operator">=</span><span class="name">D</span><span class="punctuation">)</span>
+<span class="name">D_counts</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">bincount</span><span class="punctuation">(</span><span class="name">S</span><span class="punctuation">)</span>
+<span class="name">D_means</span> <span class="operator">=</span> <span class="name">D_sums</span> <span class="operator">/</span> <span class="name">D_counts</span>
+</pre>
+</li>
 </ol>
 </div>
 <div class="section" id="craftsman">
@@ -352,6 +364,15 @@ vertices), find the set of unique line segments composing all the triangles.</p>
 <span class="name">F</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">sort</span><span class="punctuation">(</span><span class="name">F</span><span class="punctuation">,</span><span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
 <span class="name">G</span> <span class="operator">=</span> <span class="name">F</span><span class="operator">.</span><span class="name">view</span><span class="punctuation">(</span> <span class="name">dtype</span><span class="operator">=</span><span class="punctuation">[(</span><span class="literal string">'p0'</span><span class="punctuation">,</span><span class="name">F</span><span class="operator">.</span><span class="name">dtype</span><span class="punctuation">),(</span><span class="literal string">'p1'</span><span class="punctuation">,</span><span class="name">F</span><span class="operator">.</span><span class="name">dtype</span><span class="punctuation">)]</span> <span class="punctuation">)</span>
 <span class="name">G</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">G</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Given an array C that is a bincount, how to produce an array A such that
+np.bincount(A) == C ?</p>
+<pre class="code python literal-block">
+<span class="comment"># Jaime Fernández del Río</span>
+
+<span class="name">C</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">bincount</span><span class="punctuation">([</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">6</span><span class="punctuation">])</span>
+<span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">repeat</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="name builtin">len</span><span class="punctuation">(</span><span class="name">C</span><span class="punctuation">)),</span> <span class="name">C</span><span class="punctuation">)</span>
 </pre>
 </li>
 </ol>
@@ -443,6 +464,24 @@ in B ?</p>
 <span class="name">i</span> <span class="operator">=</span> <span class="literal number integer">1</span> <span class="operator">+</span> <span class="punctuation">(</span><span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">-</span><span class="literal number integer">3</span><span class="punctuation">)</span>
 <span class="name">j</span> <span class="operator">=</span> <span class="literal number integer">1</span> <span class="operator">+</span> <span class="punctuation">(</span><span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">]</span><span class="operator">-</span><span class="literal number integer">3</span><span class="punctuation">)</span>
 <span class="name">C</span> <span class="operator">=</span> <span class="name">stride_tricks</span><span class="operator">.</span><span class="name">as_strided</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,</span> <span class="name">shape</span><span class="operator">=</span><span class="punctuation">(</span><span class="name">i</span><span class="punctuation">,</span> <span class="name">j</span><span class="punctuation">,</span> <span class="name">n</span><span class="punctuation">,</span> <span class="name">n</span><span class="punctuation">),</span> <span class="name">strides</span><span class="operator">=</span><span class="name">Z</span><span class="operator">.</span><span class="name">strides</span> <span class="operator">+</span> <span class="name">Z</span><span class="operator">.</span><span class="name">strides</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Create a 2D array subclass such that Z[i,j] == Z[j,i]</p>
+<pre class="code python literal-block">
+<span class="comment"># Eric O. Lebigot</span>
+<span class="comment"># Note: only works for 2d array and value setting using indices</span>
+
+<span class="keyword">class</span> <span class="name class">Symetric</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">ndarray</span><span class="punctuation">):</span>
+    <span class="keyword">def</span> <span class="name function">__setitem__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="punctuation">(</span><span class="name">i</span><span class="punctuation">,</span><span class="name">j</span><span class="punctuation">),</span> <span class="name">value</span><span class="punctuation">):</span>
+        <span class="name builtin">super</span><span class="punctuation">(</span><span class="name">Symetric</span><span class="punctuation">,</span> <span class="name builtin pseudo">self</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">__setitem__</span><span class="punctuation">((</span><span class="name">i</span><span class="punctuation">,</span><span class="name">j</span><span class="punctuation">),</span> <span class="name">value</span><span class="punctuation">)</span>
+        <span class="name builtin">super</span><span class="punctuation">(</span><span class="name">Symetric</span><span class="punctuation">,</span> <span class="name builtin pseudo">self</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">__setitem__</span><span class="punctuation">((</span><span class="name">j</span><span class="punctuation">,</span><span class="name">i</span><span class="punctuation">),</span> <span class="name">value</span><span class="punctuation">)</span>
+
+<span class="keyword">def</span> <span class="name function">symetric</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">):</span>
+    <span class="keyword">return</span> <span class="name">np</span><span class="operator">.</span><span class="name">asarray</span><span class="punctuation">(</span><span class="name">Z</span> <span class="operator">+</span> <span class="name">Z</span><span class="operator">.</span><span class="name">T</span> <span class="operator">-</span> <span class="name">np</span><span class="operator">.</span><span class="name">diag</span><span class="punctuation">(</span><span class="name">Z</span><span class="operator">.</span><span class="name">diagonal</span><span class="punctuation">()))</span><span class="operator">.</span><span class="name">view</span><span class="punctuation">(</span><span class="name">Symetric</span><span class="punctuation">)</span>
+
+<span class="name">S</span> <span class="operator">=</span> <span class="name">symetric</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">,(</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">))</span>
+<span class="name">S</span><span class="punctuation">[</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">42</span>
+<span class="keyword">print</span> <span class="name">S</span>
 </pre>
 </li>
 </ol>
