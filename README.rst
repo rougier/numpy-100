@@ -46,7 +46,7 @@ Neophyte
       import numpy as np
 
 
-#. Print the numpy version and the configuration.
+2. Print the numpy version and the configuration.
 
    .. code:: python
 
@@ -54,52 +54,52 @@ Neophyte
       np.__config__.show()
 
 
-#. Create a null vector of size 10
+3. Create a null vector of size 10
 
    .. code:: python
 
       Z = np.zeros(10)
 
-#. Create a null vector of size 10 but the fifth value which is 1
+4. Create a null vector of size 10 but the fifth value which is 1
 
    .. code:: python
 
       Z = np.zeros(10)
       Z[4] = 1
 
-#. Create a vector with values ranging from 10 to 99
+5. Create a vector with values ranging from 10 to 99
 
    .. code:: python
 
       Z = np.arange(10,100)
 
-#. Create a 3x3 matrix with values ranging from 0 to 8
+6. Create a 3x3 matrix with values ranging from 0 to 8
 
    .. code:: python
 
       Z = np.arange(9).reshape(3,3)
 
-#. Find indices of non-zero elements from [1,2,0,0,4,0]
+7. Find indices of non-zero elements from [1,2,0,0,4,0]
 
    .. code:: python
 
       nz = np.nonzero([1,2,0,0,4,0])
 
 
-#. Declare a 3x3 identity matrix
+8. Declare a 3x3 identity matrix
 
    .. code:: python
 
       Z = np.eye(3)
 
-#. Declare a 5x5 matrix with values 1,2,3,4 just below the diagonal
+9. Declare a 5x5 matrix with values 1,2,3,4 just below the diagonal
 
    .. code:: python
 
       Z = np.diag(1+np.arange(4),k=-1)
 
 
-#. Declare a 10x10x10 array with random values
+10. Declare a 10x10x10 array with random values
 
    .. code:: python
 
@@ -108,7 +108,7 @@ Neophyte
 Novice
 ======
 
-#. Declare a 8x8 matrix and fill it with a checkerboard pattern
+1. Declare a 8x8 matrix and fill it with a checkerboard pattern
 
    .. code:: python
 
@@ -116,20 +116,20 @@ Novice
       Z[1::2,::2] = 1
       Z[::2,1::2] = 1
 
-#. Declare a 10x10 array with random values and find the minimum and maximum values
+2. Declare a 10x10 array with random values and find the minimum and maximum values
 
    .. code:: python
 
       Z = np.random.random((10,10))
       Zmin, Zmax = Z.min(), Z.max()
 
-#. Create a checkerboard 8x8 matrix using the tile function
+3. Create a checkerboard 8x8 matrix using the tile function
 
    .. code:: python
 
       Z = np.tile( np.array([[0,1],[1,0]]), (4,4))
 
-#. Normalize a 5x5 random matrix (between 0 and 1)
+4. Normalize a 5x5 random matrix (between 0 and 1)
 
    .. code:: python
 
@@ -138,34 +138,34 @@ Novice
       Z = (Z - Zmin)/(Zmax - Zmin)
 
 
-#. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)
+5. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)
 
    .. code:: python
 
       Z = np.dot(np.ones((5,3)), np.ones((3,2)))
 
 
-#. Create a 10x10 matrix with row values ranging from 0 to 9
+6. Create a 10x10 matrix with row values ranging from 0 to 9
 
    .. code:: python
 
     Z = np.zeros((10,10))
     Z += np.arange(10)
 
-#. Create a vector of size 1000 with values ranging from 0 to 1, both excluded
+7. Create a vector of size 1000 with values ranging from 0 to 1, both excluded
 
    .. code:: python
 
     Z = np.random.linspace(0,1,1002,endpoint=True)[1:-1]
 
-#. Create a random vector of size 100 and sort it
+8. Create a random vector of size 100 and sort it
 
    .. code:: python
 
     Z = np.random.random(100)
     Z.sort()
 
-#. Consider two random matrices A anb B, check if they are equal.
+9. Consider two random matrices A anb B, check if they are equal.
 
    .. code:: python
 
@@ -173,7 +173,7 @@ Novice
       B = np.random.randint(0,2,(2,2))
       equal = np.allclose(A,B)
 
-#. Create a random vector of size 1000 and find the mean value
+10. Create a random vector of size 1000 and find the mean value
 
    .. code:: python
 
@@ -186,7 +186,7 @@ Apprentice
 ==========
 
 
-#. Make an array immutable
+1. Make an array immutable
 
    .. code:: python
 
@@ -194,7 +194,7 @@ Apprentice
       Z.flags.writeable = False
 
 
-#. Consider a random 100x2 matrix representing cartesian coordinates, convert
+2. Consider a random 100x2 matrix representing cartesian coordinates, convert
    them to polar coordinates
 
    .. code:: python
@@ -205,7 +205,7 @@ Apprentice
       T = np.arctan2(Y,X)
 
 
-#. Create random vector of size 100 and replace the maximum value by 0
+3. Create random vector of size 100 and replace the maximum value by 0
 
    .. code:: python
 
@@ -213,7 +213,7 @@ Apprentice
     Z[Z.argmax()] = 0
 
 
-#. Declare a structured array with ``x`` and ``y`` coordinates covering the
+4. Declare a structured array with ``x`` and ``y`` coordinates covering the
    [0,1]x[0,1] area.
 
    .. code:: python
@@ -222,7 +222,7 @@ Apprentice
       Z['x'], Z['y'] = np.meshgrid(np.linspace(0,1,10),
                                    np.linspace(0,1,10))
 
-#. Print the minimum and maximum representable value for each numpy scalar type
+5. Print the minimum and maximum representable value for each numpy scalar type
 
    .. code:: python
 
@@ -235,7 +235,7 @@ Apprentice
          print np.finfo(dtype).eps
 
 
-#. Create a structured array representing a position (x,y) and a color (r,g,b)
+6. Create a structured array representing a position (x,y) and a color (r,g,b)
 
    .. code:: python
 
@@ -246,7 +246,7 @@ Apprentice
                                         ('b', float, 1)])])
 
 
-#. Consider a random vector with shape (100,2) representing coordinates, find
+7. Consider a random vector with shape (100,2) representing coordinates, find
    point by point distances
 
    .. code:: python
@@ -261,7 +261,7 @@ Apprentice
 
 
 
-#. Generate a generic 2D Gaussian-like array
+8. Generate a generic 2D Gaussian-like array
 
    .. code:: python
 
@@ -270,7 +270,7 @@ Apprentice
       sigma, mu = 1.0, 0.0
       G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
 
-#. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
+9. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
    consecutive zeros interleaved between each value ?
 
    .. code:: python
@@ -283,7 +283,7 @@ Apprentice
       Z0[::nz+1] = Z
 
 
-#. Find the nearest value from a given value in an array
+10. Find the nearest value from a given value in an array
 
    .. code:: python
 
@@ -294,7 +294,7 @@ Apprentice
 Journeyman
 ==========
 
-#. Consider the following file::
+1. Consider the following file::
 
     1,2,3,4,5
     6,,,7,8
@@ -307,7 +307,7 @@ Journeyman
       Z = genfromtxt("missing.dat", delimiter=",")
 
 
-#. Consider a generator function that generates 10 integers and use it to build an
+2. Consider a generator function that generates 10 integers and use it to build an
    array
 
    .. code:: python
@@ -318,7 +318,7 @@ Journeyman
       Z = np.fromiter(generate(),dtype=float,count=-1)
 
 
-#. Consider a given vector, how to add 1 to each element indexed by a second
+3. Consider a given vector, how to add 1 to each element indexed by a second
    vector (be careful with repeated indices) ?
 
    .. code:: python
@@ -330,7 +330,7 @@ Journeyman
       Z += np.bincount(I, minlength=len(Z))
 
 
-#. How to accumulate elements of a vector (X) to an array (F) based on an index
+4. How to accumulate elements of a vector (X) to an array (F) based on an index
    list (I) ?
 
    .. code:: python
@@ -341,7 +341,7 @@ Journeyman
       I = [1,3,9,3,4,1]
       F = np.bincount(I,X)
 
-#. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique
+5. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique
    colors
 
    .. code:: python
@@ -355,7 +355,7 @@ Journeyman
 
       np.unique(I)
 
-#. Considering a four dimensions array, how to get sum over the last two axis at once ?
+6. Considering a four dimensions array, how to get sum over the last two axis at once ?
 
 
    .. code:: python
@@ -365,10 +365,11 @@ Journeyman
 
 
 
+
 Craftsman
 =========
 
-#. Consider a one-dimensional array Z, build a two-dimensional array whose
+1. Consider a one-dimensional array Z, build a two-dimensional array whose
    first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
    row should be (Z[-3],Z[-2],Z[-1])
 
@@ -383,7 +384,7 @@ Craftsman
 
       Z = rolling(np.arange(100), 3)
 
-#. Consider a set of 100 triplets describing 100 triangles (with shared
+2. Consider a set of 100 triplets describing 100 triangles (with shared
    vertices), find the set of unique line segments composing all the triangles.
 
    .. code:: python
@@ -399,11 +400,21 @@ Craftsman
       G = np.unique(G)
 
 
+3. Given an array C that is a bincount, how to procude an array A such that
+   np.bincount(A) == C ?
+
+   .. code:: python
+
+     # Jaime Fernández del Río
+     C = np.bincount([1,1,2,3,4,4,6])
+     A = np.repeat(np.arange(len(C)), C)
+
+
 
 Artisan
 =======
 
-#. Considering a 100x3 matrix, extract rows with unequal values (e.g. [2,2,3])
+1. Considering a 100x3 matrix, extract rows with unequal values (e.g. [2,2,3])
 
    .. code:: python
 
@@ -413,7 +424,7 @@ Artisan
       E = np.logical_and.reduce(Z[:,1:] == Z[:,:-1], axis=1)
       U = Z[~E]
 
-#. Convert a vector of ints into a matrix binary representation.
+2. Convert a vector of ints into a matrix binary representation.
 
    .. code:: python
 
@@ -433,7 +444,7 @@ Artisan
 Adept
 =====
 
-#. Consider an arbitrary array, write a function that extract a subpart with a
+1. Consider an arbitrary array, write a function that extract a subpart with a
    fixed shape and centered on a given element (pad with a ``fill`` value when
    necessary)
 
@@ -473,7 +484,7 @@ Adept
 Expert
 ======
 
-#. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
+1. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
    that contain elements of each row of B regardless of the order of the elements
    in B ?
 
@@ -488,7 +499,7 @@ Expert
       rows = (C.sum(axis=(1,2,3)) >= B.shape[1]).nonzero()[0]
 
 
-#. Extract all the contiguous 3x3 blocks from a random 10x10 matrix.
+2. Extract all the contiguous 3x3 blocks from a random 10x10 matrix.
 
    .. code:: python
 
