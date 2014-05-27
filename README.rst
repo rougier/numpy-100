@@ -175,10 +175,10 @@ Novice
 
 10. Create a random vector of size 1000 and find the mean value
 
-   .. code:: python
+    .. code:: python
 
-      Z = np.random.random(1000)
-      m = Z.mean()
+       Z = np.random.random(1000)
+       m = Z.mean()
 
 
 
@@ -285,9 +285,9 @@ Apprentice
 
 10. Find the nearest value from a given value in an array
 
-   .. code:: python
+    .. code:: python
 
-      Z.flat[np.abs(Z - z).argmin()]
+       Z.flat[np.abs(Z - z).argmin()]
 
 
 
