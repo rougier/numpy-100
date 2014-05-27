@@ -499,7 +499,7 @@ Adept
 
    .. code:: python
 
-      # Paul (from stackoverflow)
+      # Stéfan van der Walt
 
       Z = np.arange(1,15)
       R = as_strided(Z,(11,4),(4,4))
