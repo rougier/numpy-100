@@ -101,9 +101,9 @@ Neophyte
 
 10. Declare a 10x10x10 array with random values
 
-   .. code:: python
+    .. code:: python
 
-      Z = np.random.random((10,10,10))
+       Z = np.random.random((10,10,10))
 
 Novice
 ======
