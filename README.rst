@@ -86,20 +86,20 @@ Neophyte
       nz = np.nonzero([1,2,0,0,4,0])
 
 
-8. Declare a 3x3 identity matrix
+8. Create a 3x3 identity matrix
 
    .. code:: python
 
       Z = np.eye(3)
 
-9. Declare a 5x5 matrix with values 1,2,3,4 just below the diagonal
+9. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal
 
    .. code:: python
 
       Z = np.diag(1+np.arange(4),k=-1)
 
 
-10. Declare a 10x10x10 array with random values
+10. Create a 10x10x10 array with random values
 
     .. code:: python
 
@@ -108,7 +108,7 @@ Neophyte
 Novice
 ======
 
-1. Declare a 8x8 matrix and fill it with a checkerboard pattern
+1. Create a 8x8 matrix and fill it with a checkerboard pattern
 
    .. code:: python
 
@@ -116,7 +116,7 @@ Novice
       Z[1::2,::2] = 1
       Z[::2,1::2] = 1
 
-2. Declare a 10x10 array with random values and find the minimum and maximum values
+2. Create a 10x10 array with random values and find the minimum and maximum values
 
    .. code:: python
 
@@ -213,7 +213,7 @@ Apprentice
     Z[Z.argmax()] = 0
 
 
-4. Declare a structured array with ``x`` and ``y`` coordinates covering the
+4. Create a structured array with ``x`` and ``y`` coordinates covering the
    [0,1]x[0,1] area.
 
    .. code:: python
@@ -519,6 +519,8 @@ Expert
 2. Extract all the contiguous 3x3 blocks from a random 10x10 matrix.
 
    .. code:: python
+
+      # Chris Barker
 
       Z = np.random.randint(0,5,(10,10))
       n = 3

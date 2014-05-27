@@ -87,17 +87,17 @@ is:</p>
 <span class="name">nz</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">nonzero</span><span class="punctuation">([</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">])</span>
 </pre>
 </li>
-<li><p class="first">Declare a 3x3 identity matrix</p>
+<li><p class="first">Create a 3x3 identity matrix</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">eye</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Declare a 5x5 matrix with values 1,2,3,4 just below the diagonal</p>
+<li><p class="first">Create a 5x5 matrix with values 1,2,3,4 just below the diagonal</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">diag</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="operator">+</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">),</span><span class="name">k</span><span class="operator">=-</span><span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Declare a 10x10x10 array with random values</p>
+<li><p class="first">Create a 10x10x10 array with random values</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
 </pre>
@@ -107,14 +107,14 @@ is:</p>
 <div class="section" id="novice">
 <h1><a class="toc-backref" href="#id2">Novice</a></h1>
 <ol class="arabic">
-<li><p class="first">Declare a 8x8 matrix and fill it with a checkerboard pattern</p>
+<li><p class="first">Create a 8x8 matrix and fill it with a checkerboard pattern</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="literal number integer">8</span><span class="punctuation">,</span><span class="literal number integer">8</span><span class="punctuation">))</span>
 <span class="name">Z</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">::</span><span class="literal number integer">2</span><span class="punctuation">,::</span><span class="literal number integer">2</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>
 <span class="name">Z</span><span class="punctuation">[::</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">::</span><span class="literal number integer">2</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>
 </pre>
 </li>
-<li><p class="first">Declare a 10x10 array with random values and find the minimum and maximum values</p>
+<li><p class="first">Create a 10x10 array with random values and find the minimum and maximum values</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
 <span class="name">Zmin</span><span class="punctuation">,</span> <span class="name">Zmax</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">min</span><span class="punctuation">(),</span> <span class="name">Z</span><span class="operator">.</span><span class="name">max</span><span class="punctuation">()</span>
@@ -193,7 +193,7 @@ them to polar coordinates</p>
 <span class="name">Z</span><span class="punctuation">[</span><span class="name">Z</span><span class="operator">.</span><span class="name">argmax</span><span class="punctuation">()]</span> <span class="operator">=</span> <span class="literal number integer">0</span>
 </pre>
 </li>
-<li><p class="first">Declare a structured array with <tt class="docutils literal">x</tt> and <tt class="docutils literal">y</tt> coordinates covering the
+<li><p class="first">Create a structured array with <tt class="docutils literal">x</tt> and <tt class="docutils literal">y</tt> coordinates covering the
 [0,1]x[0,1] area.</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">),</span> <span class="punctuation">[(</span><span class="literal string">'x'</span><span class="punctuation">,</span><span class="name builtin">float</span><span class="punctuation">),(</span><span class="literal string">'y'</span><span class="punctuation">,</span><span class="name builtin">float</span><span class="punctuation">)])</span>
@@ -459,6 +459,8 @@ in B ?</p>
 </li>
 <li><p class="first">Extract all the contiguous 3x3 blocks from a random 10x10 matrix.</p>
 <pre class="code python literal-block">
+<span class="comment"># Chris Barker</span>
+
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,(</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
 <span class="name">n</span> <span class="operator">=</span> <span class="literal number integer">3</span>
 <span class="name">i</span> <span class="operator">=</span> <span class="literal number integer">1</span> <span class="operator">+</span> <span class="punctuation">(</span><span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">-</span><span class="literal number integer">3</span><span class="punctuation">)</span>
