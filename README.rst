@@ -563,6 +563,19 @@ Master
 ======
 
 
+1. Given a two dimensional array, how to extract unique rows ?
+
+   .. code:: python
+
+      # Jaime Fernández del Río
+
+      Z = np.random.randint(0,2,(6,6))
+      T = np.ascontiguousarray(Z).view(np.dtype((np.void, Z.dtype.itemsize * Z.shape[1])))
+      _, idx = np.unique(T, return_index=True)
+      uZ = Z[idx]
+
+   .. note:: See `stackoverflow <http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/>`_ for explanations.
+
 
 Archmaster
 ==========
