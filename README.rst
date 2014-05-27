@@ -562,8 +562,9 @@ Expert
 Master
 ======
 
-
 1. Given a two dimensional array, how to extract unique rows ?
+
+   .. note:: See `stackoverflow <http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/>`_ for explanations.
 
    .. code:: python
 
@@ -574,7 +575,6 @@ Master
       _, idx = np.unique(T, return_index=True)
       uZ = Z[idx]
 
-   .. note:: See `stackoverflow <http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/>`_ for explanations.
 
 
 Archmaster

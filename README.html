@@ -439,6 +439,15 @@ necessary)</p>
 <span class="name">R</span><span class="punctuation">[</span><span class="name">r</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[</span><span class="name">z</span><span class="punctuation">]</span>
 </pre>
 </li>
+<li><p class="first">Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an
+array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]] ?</p>
+<pre class="code python literal-block">
+<span class="comment"># Stéfan van der Walt</span>
+
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">15</span><span class="punctuation">)</span>
+<span class="name">R</span> <span class="operator">=</span> <span class="name">as_strided</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,(</span><span class="literal number integer">11</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">),(</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">))</span>
+</pre>
+</li>
 </ol>
 </div>
 <div class="section" id="expert">
@@ -490,6 +499,22 @@ in B ?</p>
 </div>
 <div class="section" id="master">
 <h1><a class="toc-backref" href="#id9">Master</a></h1>
+<ol class="arabic">
+<li><p class="first">Given a two dimensional array, how to extract unique rows ?</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">See <a class="reference external" href="http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/">stackoverflow</a> for explanations.</p>
+</div>
+<pre class="code python literal-block">
+<span class="comment"># Jaime Fernández del Río</span>
+
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,(</span><span class="literal number integer">6</span><span class="punctuation">,</span><span class="literal number integer">6</span><span class="punctuation">))</span>
+<span class="name">T</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ascontiguousarray</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">view</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">dtype</span><span class="punctuation">((</span><span class="name">np</span><span class="operator">.</span><span class="name">void</span><span class="punctuation">,</span> <span class="name">Z</span><span class="operator">.</span><span class="name">dtype</span><span class="operator">.</span><span class="name">itemsize</span> <span class="operator">*</span> <span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">])))</span>
+<span class="name">_</span><span class="punctuation">,</span> <span class="name">idx</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">T</span><span class="punctuation">,</span> <span class="name">return_index</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">)</span>
+<span class="name">uZ</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[</span><span class="name">idx</span><span class="punctuation">]</span>
+</pre>
+</li>
+</ol>
 </div>
 <div class="section" id="archmaster">
 <h1><a class="toc-backref" href="#id10">Archmaster</a></h1>
