@@ -416,7 +416,7 @@ Craftsman
       G = np.unique(G)
 
 
-3. Given an array C that is a bincount, how to procude an array A such that
+3. Given an array C that is a bincount, how to produce an array A such that
    np.bincount(A) == C ?
 
    .. code:: python
