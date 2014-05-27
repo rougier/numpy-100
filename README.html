@@ -12,6 +12,27 @@
 <h1 class="title">100 numpy exercises</h1>
 <h2 class="subtitle" id="a-joint-effort-of-the-numpy-community">A joint effort of the numpy community</h2>
 
+<p>The goal is both to offer a quick reference for new and old users and to
+provide also a set of exercices for those who teach. If you remember having
+asked or answered a (short) problem, you can send a pull request. The format
+is:</p>
+<pre class="literal-block">
+#. Find indices of non-zero elements from [1,2,0,0,4,0]
+
+   .. code:: python
+
+      # Author: Somebody
+
+      print np.nonzero([1,2,0,0,4,0])
+</pre>
+<p>Here is what the page looks like so far:
+<a class="reference external" href="http://www.loria.fr/~rougier/teaching/numpy.100/index.html">http://www.loria.fr/~rougier/teaching/numpy.100/index.html</a></p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">The level names came from an old-game (Dungeon Master)</p>
+</div>
+<p>Repository is at: <a class="reference external" href="https://github.com/rougier/numpy-100">https://github.com/rougier/numpy-100</a></p>
+<p><strong>Contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#neophyte" id="id1">Neophyte</a></li>
@@ -290,6 +311,8 @@ colors</p>
 <span class="name">I</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,(</span><span class="name">h</span><span class="punctuation">,</span><span class="name">w</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span><span class="operator">.</span><span class="name">astype</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">ubyte</span><span class="punctuation">)</span>
 <span class="name">F</span> <span class="operator">=</span> <span class="name">I</span><span class="punctuation">[</span><span class="operator">...</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">*</span><span class="literal number integer">256</span><span class="operator">*</span><span class="literal number integer">256</span> <span class="operator">+</span> <span class="name">I</span><span class="punctuation">[</span><span class="operator">...</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">]</span><span class="operator">*</span><span class="literal number integer">256</span> <span class="operator">+</span><span class="name">I</span><span class="punctuation">[</span><span class="operator">...</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">]</span>
 <span class="name">n</span> <span class="operator">=</span> <span class="name builtin">len</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">F</span><span class="punctuation">))</span>
+
+<span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">I</span><span class="punctuation">)</span>
 </pre>
 </li>
 <li><p class="first">Considering a four dimensions array, how to get sum over the last two axis at once ?</p>
