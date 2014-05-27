@@ -186,7 +186,7 @@ Apprentice
 ==========
 
 
-1. Make an array immutable
+1. Make an array immutable (read-only)
 
    .. code:: python
 
