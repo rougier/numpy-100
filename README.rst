@@ -28,9 +28,11 @@ http://www.loria.fr/~rougier/teaching/numpy.100/index.html
 
 Repository is at: https://github.com/rougier/numpy-100
 
-The IPython notebook is available from the github repo, thanks to the
-`rst2ipynb <https://github.com/esc/rst2ipynb>`_ conversion tool by `Valentin
-Haenel <http://haenel.co>`_
+The corresponding `IPython notebook
+<https://github.com/rougier/numpy-100/blob/master/README.ipynb>`_ is available
+from the github repo, thanks to the `rst2ipynb
+<https://github.com/esc/rst2ipynb>`_ conversion tool by `Valentin Haenel
+<http://haenel.co>`_
 
 .. **Contents**
 .. .. contents::
