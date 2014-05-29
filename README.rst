@@ -26,10 +26,11 @@ http://www.loria.fr/~rougier/teaching/numpy.100/index.html
 
 .. Note:: The level names came from an old-game (Dungeon Master)
 
-Repository is at: https://github.com/rougier/numpy-100 The IPython notebook is
-available from the github repo, thanks to the `rst2ipynb
-<https://github.com/esc/rst2ipynb>`_ conversion tool by `Valentin Haenel
-<http://haenel.co>`_
+Repository is at: https://github.com/rougier/numpy-100
+
+The IPython notebook is available from the github repo, thanks to the
+`rst2ipynb <https://github.com/esc/rst2ipynb>`_ conversion tool by `Valentin
+Haenel <http://haenel.co>`_
 
 .. **Contents**
 .. .. contents::
