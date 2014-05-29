@@ -480,6 +480,18 @@ Craftsman
      A = np.repeat(np.arange(len(C)), C)
      print A
 
+4. How to compute averages using a sliding window over an array ?
+
+   .. code-block:: python
+
+      # Author: Jaime Fernández del Río
+
+      def moving_average(a, n=3) :
+          ret = np.cumsum(a, dtype=float)
+          ret[n:] = ret[n:] - ret[:-n]
+          return ret[n - 1:] / n
+      Z = np.arange(20)
+      print moving_average(Z, n=3)
 
 
 Artisan
@@ -557,7 +569,7 @@ Adept
 
    .. code-block:: python
 
-      # Stéfan van der Walt
+      # Author: Stéfan van der Walt
 
       Z = np.arange(1,15,dtype=uint32)
       R = stride_tricks.as_strided(Z,(11,4),(4,4))
@@ -587,7 +599,7 @@ Expert
 
    .. code-block:: python
 
-      # Chris Barker
+      # Author: Chris Barker
 
       Z = np.random.randint(0,5,(10,10))
       n = 3
