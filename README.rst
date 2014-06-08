@@ -422,7 +422,7 @@ Journeyman
 
    .. code-block:: python
 
-      # Jaime Fernández del Río
+      # Author: Jaime Fernández del Río
 
       D = np.random.uniform(0,1,100)
       S = np.random.randint(0,10,100)
@@ -458,7 +458,7 @@ Craftsman
 
    .. code-block:: python
 
-      # Author: Nicolas Rougier
+      # Author: Nicolas P. Rougier
 
       faces = np.random.randint(0,100,(10,3))
       F = np.roll(faces.repeat(2,axis=1),-1,axis=1)
@@ -474,7 +474,7 @@ Craftsman
 
    .. code-block:: python
 
-     # Jaime Fernández del Río
+     # Author: Jaime Fernández del Río
 
      C = np.bincount([1,1,2,3,4,4,6])
      A = np.repeat(np.arange(len(C)), C)
@@ -613,7 +613,7 @@ Expert
 
    .. code-block:: python
 
-      # Eric O. Lebigot
+      # Author: Eric O. Lebigot
       # Note: only works for 2d array and value setting using indices
 
       class Symetric(np.ndarray):
@@ -633,7 +633,7 @@ Expert
 
    .. code-block:: python
 
-      # Stéfan van der Walt
+      # Author: Stéfan van der Walt
 
       p, n = 10, 20
       M = np.ones((p,n,n))
@@ -657,7 +657,7 @@ Master
 
    .. code-block:: python
 
-      # Jaime Fernández del Río
+      # Author: Jaime Fernández del Río
 
       Z = np.random.randint(0,2,(6,3))
       T = np.ascontiguousarray(Z).view(np.dtype((np.void, Z.dtype.itemsize * Z.shape[1])))
