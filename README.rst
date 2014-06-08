@@ -628,6 +628,25 @@ Expert
       S[2,3] = 42
       print S
 
+4. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1).
+   How to compute the sum of of the p matrix products at once ? (result has shape (n,1))
+
+   .. code-block:: python
+
+      # Stéfan van der Walt
+
+      p, n = 10, 20
+      M = np.ones((p,n,n))
+      V = np.ones((p,n,1))
+      S = np.tensordot(M, V, axes=[[0, 2], [0, 1]])
+      print S
+
+      # It works, because:
+      # M is (P, N, N)
+      # V is (P, N, 1)
+      # Thus, summing over the paired axes 0 and 0 (of M and V independently),
+      # and 2 and 1, to remain with a Mx1 vector.
+
 
 Master
 ======
