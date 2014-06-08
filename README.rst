@@ -642,10 +642,10 @@ Expert
       print S
 
       # It works, because:
-      # M is (P, N, N)
-      # V is (P, N, 1)
+      # M is (p,n,n)
+      # V is (p,n,1)
       # Thus, summing over the paired axes 0 and 0 (of M and V independently),
-      # and 2 and 1, to remain with a Mx1 vector.
+      # and 2 and 1, to remain with a (n,1) vector.
 
 
 Master
