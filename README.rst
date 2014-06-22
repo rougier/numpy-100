@@ -34,6 +34,9 @@ from the github repo, thanks to the `rst2ipynb
 <https://github.com/esc/rst2ipynb>`_ conversion tool by `Valentin Haenel
 <http://haenel.co>`_
 
+Thanks to Michiaki Ariga, there is now a `Julia version <https://github.com/chezou/julia-100-exercises>`_.
+
+
 .. **Contents**
 .. .. contents::
 ..     :local:
