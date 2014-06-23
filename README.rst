@@ -34,7 +34,8 @@ from the github repo, thanks to the `rst2ipynb
 <https://github.com/esc/rst2ipynb>`_ conversion tool by `Valentin Haenel
 <http://haenel.co>`_
 
-Thanks to Michiaki Ariga, there is now a `Julia version <https://github.com/chezou/julia-100-exercises>`_.
+Thanks to Michiaki Ariga, there is now a
+`Julia version <https://github.com/chezou/julia-100-exercises>`_.
 
 
 .. **Contents**
@@ -319,19 +320,14 @@ Apprentice
       print G
 
 
-9. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
-   consecutive zeros interleaved between each value ?
+9. How to tell if a given 2D array has null columns ?
 
    .. code-block:: python
 
       # Author: Warren Weckesser
 
-      Z = np.array([1,2,3,4,5])
-      nz = 3
-      Z0 = np.zeros(len(Z) + (len(Z)-1)*(nz))
-      Z0[::nz+1] = Z
-      print Z0
-
+      Z = np.random.randint(0,3,(3,10))
+      print (~Z.any(axis=0)).any()
 
 10. Find the nearest value from a given value in an array
 
@@ -410,6 +406,7 @@ Journeyman
       n = len(np.unique(F))
       print np.unique(I)
 
+
 6. Considering a four dimensions array, how to get sum over the last two axis at once ?
 
    .. code-block:: python
@@ -434,6 +431,41 @@ Journeyman
       D_means = D_sums / D_counts
       print D_means
 
+
+8. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
+   consecutive zeros interleaved between each value ?
+
+   .. code-block:: python
+
+      # Author: Warren Weckesser
+
+      Z = np.array([1,2,3,4,5])
+      nz = 3
+      Z0 = np.zeros(len(Z) + (len(Z)-1)*(nz))
+      Z0[::nz+1] = Z
+      print Z0
+
+
+9. Consider an array of dimension (5,5,3), how to mulitply it by an array with
+   dimensions (5,5) ?
+
+   .. code-block:: python
+
+      A = np.ones((5,5,3))
+      B = 2*np.ones((5,5))
+      print A * B[:,:,None]
+
+
+10. How to swap two rows of an array ?
+
+
+    .. code-block:: python
+
+       # Author: Eelco Hoogendoorn
+
+       A = np.arange(25).reshape(5,5)
+       A[[0,1]] = A[[1,0]]
+       print A
 
 
 Craftsman

@@ -34,7 +34,8 @@ is:</p>
 <p>Repository is at: <a class="reference external" href="https://github.com/rougier/numpy-100">https://github.com/rougier/numpy-100</a></p>
 <p>The corresponding <a class="reference external" href="https://github.com/rougier/numpy-100/blob/master/README.ipynb">IPython notebook</a> is available
 from the github repo, thanks to the <a class="reference external" href="https://github.com/esc/rst2ipynb">rst2ipynb</a> conversion tool by <a class="reference external" href="http://haenel.co">Valentin Haenel</a></p>
-<p>Thanks to Michiaki Ariga, there is now a <a class="reference external" href="https://github.com/chezou/julia-100-exercises">Julia version</a>.</p>
+<p>Thanks to Michiaki Ariga, there is now a
+<a class="reference external" href="https://github.com/chezou/julia-100-exercises">Julia version</a>.</p>
 <div class="section" id="neophyte">
 <h1>Neophyte</h1>
 <ol class="arabic">
@@ -257,16 +258,12 @@ point by point distances</p>
 <span class="keyword">print</span> <span class="name">G</span>
 </pre>
 </li>
-<li><p class="first">Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
-consecutive zeros interleaved between each value ?</p>
+<li><p class="first">How to tell if a given 2D array has null columns ?</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Warren Weckesser</span>
 
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">])</span>
-<span class="name">nz</span> <span class="operator">=</span> <span class="literal number integer">3</span>
-<span class="name">Z0</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="name builtin">len</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="punctuation">(</span><span class="name builtin">len</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="operator">*</span><span class="punctuation">(</span><span class="name">nz</span><span class="punctuation">))</span>
-<span class="name">Z0</span><span class="punctuation">[::</span><span class="name">nz</span><span class="operator">+</span><span class="literal number integer">1</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">Z</span>
-<span class="keyword">print</span> <span class="name">Z0</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,(</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="operator">~</span><span class="name">Z</span><span class="operator">.</span><span class="name">any</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">))</span><span class="operator">.</span><span class="name">any</span><span class="punctuation">()</span>
 </pre>
 </li>
 <li><p class="first">Find the nearest value from a given value in an array</p>
@@ -355,6 +352,35 @@ using a vector S of same size describing subset indices ?</p>
 <span class="name">D_counts</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">bincount</span><span class="punctuation">(</span><span class="name">S</span><span class="punctuation">)</span>
 <span class="name">D_means</span> <span class="operator">=</span> <span class="name">D_sums</span> <span class="operator">/</span> <span class="name">D_counts</span>
 <span class="keyword">print</span> <span class="name">D_means</span>
+</pre>
+</li>
+<li><p class="first">Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
+consecutive zeros interleaved between each value ?</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Warren Weckesser</span>
+
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">])</span>
+<span class="name">nz</span> <span class="operator">=</span> <span class="literal number integer">3</span>
+<span class="name">Z0</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="name builtin">len</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="punctuation">(</span><span class="name builtin">len</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="operator">*</span><span class="punctuation">(</span><span class="name">nz</span><span class="punctuation">))</span>
+<span class="name">Z0</span><span class="punctuation">[::</span><span class="name">nz</span><span class="operator">+</span><span class="literal number integer">1</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">Z</span>
+<span class="keyword">print</span> <span class="name">Z0</span>
+</pre>
+</li>
+<li><p class="first">Consider an array of dimension (5,5,3), how to mulitply it by an array with
+dimensions (5,5) ?</p>
+<pre class="code python literal-block">
+<span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
+<span class="name">B</span> <span class="operator">=</span> <span class="literal number integer">2</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">))</span>
+<span class="keyword">print</span> <span class="name">A</span> <span class="operator">*</span> <span class="name">B</span><span class="punctuation">[:,:,</span><span class="name builtin pseudo">None</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><p class="first">How to swap two rows of an array ?</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Eelco Hoogendoorn</span>
+
+<span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">25</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">)</span>
+<span class="name">A</span><span class="punctuation">[[</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">]]</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">[[</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">]]</span>
+<span class="keyword">print</span> <span class="name">A</span>
 </pre>
 </li>
 </ol>
