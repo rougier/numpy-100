@@ -560,6 +560,33 @@ Artisan
       print np.unpackbits(I[:, np.newaxis], axis=1)
 
 
+3. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to
+   compute distance from p to each line i (P0[i],P1[i]) ?
+
+   .. code-block:: python
+
+      def distance(P0, P1, p):
+        T = P1 - P0
+        L = (T**2).sum(axis=1)
+        U = -((P0[:,0]-p[0])*T[:,0] + (P0[:,1]-p[1])*T[:,1]) / L
+        U = U.reshape(len(U),1)
+        D = P0 + U*T - p
+        return np.sqrt((D**2).sum(axis=1))
+
+      P0 = np.random.uniform(-10,10,(100,2))
+      P1 = np.random.uniform(-10,10,(100,2))
+      p  = np.random.uniform(-10,10,(  1,2))
+      print distance(P0, P1, p)
+
+
+4. Consider 2 sets of points P0,P1 describing lines (2d) and a set of point P,
+   how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?
+
+   .. code-block:: python
+
+      Answer needed actually
+
+
 
 Adept
 =====
