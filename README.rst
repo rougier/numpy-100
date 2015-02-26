@@ -528,6 +528,25 @@ Craftsman
       Z = np.arange(20)
       print moving_average(Z, n=3)
 
+5. How to get the documentation of the numpy add function from the command line ?
+
+   .. code-block:: bash
+
+      python -c "import numpy; numpy.info(numpy.add)"
+
+6. How to negate a boolean, or to change the sign of a float inplace ?
+
+  .. code-block:: python
+
+     # Author: Nathaniel J. Smith
+
+     Z = np.random.randint(0,2,100)
+     np.logical_not(arr, out=arr)
+
+     Z = np.random.uniform(-1.0,1.0,100)
+     np.negative(arr, out=arr)
+
+7.
 
 Artisan
 =======
@@ -566,12 +585,12 @@ Artisan
    .. code-block:: python
 
       def distance(P0, P1, p):
-        T = P1 - P0
-        L = (T**2).sum(axis=1)
-        U = -((P0[:,0]-p[...,0])*T[:,0] + (P0[:,1]-p[...,1])*T[:,1]) / L
-        U = U.reshape(len(U),1)
-        D = P0 + U*T - p
-        return np.sqrt((D**2).sum(axis=1))
+          T = P1 - P0
+          L = (T**2).sum(axis=1)
+          U = -((P0[:,0]-p[...,0])*T[:,0] + (P0[:,1]-p[...,1])*T[:,1]) / L
+          U = U.reshape(len(U),1)
+          D = P0 + U*T - p
+          return np.sqrt((D**2).sum(axis=1))
 
       P0 = np.random.uniform(-10,10,(10,2))
       P1 = np.random.uniform(-10,10,(10,2))
@@ -579,7 +598,7 @@ Artisan
       print distance(P0, P1, p)
 
 
-4. Consider 2 sets of points P0,P1 describing lines (2d) and a set of point P,
+4. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P,
    how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?
 
    .. code-block:: python
@@ -726,6 +745,28 @@ Master
       _, idx = np.unique(T, return_index=True)
       uZ = Z[idx]
       print uZ
+
+2. How to implement the Game of Life using numpy arrays ?
+
+   .. code-block:: python
+
+      # Author: Nicolas Rougier
+
+      def iterate(Z):
+          # Count neighbours
+          N = (Z[0:-2,0:-2] + Z[0:-2,1:-1] + Z[0:-2,2:] +
+               Z[1:-1,0:-2]                + Z[1:-1,2:] +
+               Z[2:  ,0:-2] + Z[2:  ,1:-1] + Z[2:  ,2:])
+
+          # Apply rules
+          birth = (N==3) & (Z[1:-1,1:-1]==0)
+          survive = ((N==2) | (N==3)) & (Z[1:-1,1:-1]==1)
+          Z[...] = 0
+          Z[1:-1,1:-1][birth | survive] = 1
+          return Z
+
+      Z = np.random.randint(0,2,(50,50))
+      for i in range(100): Z = iterate(Z)
 
 
 
