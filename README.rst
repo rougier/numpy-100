@@ -22,7 +22,7 @@ is:
 
 
 Here is what the page looks like so far:
-http://www.loria.fr/~rougier/teaching/numpy.100/index.html
+http://http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html
 
 .. Note:: The level names came from an old-game (Dungeon Master)
 
