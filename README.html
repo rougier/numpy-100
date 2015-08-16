@@ -86,12 +86,10 @@ is:</p>
 </pre>
 </li>
 <li><p class="first">Create a 3x3x3 array with random values</p>
-<blockquote>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
 <span class="keyword">print</span> <span class="name">Z</span>
 </pre>
-</blockquote>
 </li>
 <li><p class="first">Create a 8x8 matrix and fill it with a checkerboard pattern</p>
 <pre class="code python literal-block">
@@ -157,13 +155,11 @@ is:</p>
 </pre>
 </li>
 <li><p class="first">Create a random vector of size 30 and find the mean value</p>
-<blockquote>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">(</span><span class="literal number integer">30</span><span class="punctuation">)</span>
 <span class="name">m</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">()</span>
 <span class="keyword">print</span> <span class="name">m</span>
 </pre>
-</blockquote>
 </li>
 <li><p class="first">Make an array immutable (read-only)</p>
 <pre class="code python literal-block">
@@ -266,14 +262,12 @@ point by point distances</p>
 </pre>
 </li>
 <li><p class="first">Find the nearest value from a given value in an array</p>
-<blockquote>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">uniform</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">z</span> <span class="operator">=</span> <span class="literal number float">0.5</span>
 <span class="name">m</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">flat</span><span class="punctuation">[</span><span class="name">np</span><span class="operator">.</span><span class="name">abs</span><span class="punctuation">(</span><span class="name">Z</span> <span class="operator">-</span> <span class="name">z</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">argmin</span><span class="punctuation">()]</span>
 <span class="keyword">print</span> <span class="name">m</span>
 </pre>
-</blockquote>
 </li>
 <li><p class="first">Consider the following file:</p>
 <pre class="literal-block">
@@ -387,7 +381,6 @@ dimensions (5,5) ?</p>
 </pre>
 </li>
 <li><p class="first">How to swap two rows of an array ?</p>
-<blockquote>
 <pre class="code python literal-block">
 <span class="comment"># Author: Eelco Hoogendoorn</span>
 
@@ -395,7 +388,6 @@ dimensions (5,5) ?</p>
 <span class="name">A</span><span class="punctuation">[[</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">]]</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">[[</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">]]</span>
 <span class="keyword">print</span> <span class="name">A</span>
 </pre>
-</blockquote>
 </li>
 <li><p class="first">Consider a one-dimensional array Z, build a two-dimensional array whose
 first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
