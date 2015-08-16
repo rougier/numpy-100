@@ -293,6 +293,21 @@ Thanks to Michiaki Ariga, there is now a
       G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
       print G
 
+#. Subtract the mean of each row of a matrix
+
+   .. code-block:: python
+
+      # Author: Warren Weckesser
+
+      X = np.random.rand(5, 10)
+
+      # Recent versions of numpy
+      Y = X - X.mean(axis=1, keepdims=True)
+
+      # Older versions of numpy
+      Y = X - X.mean(axis=1).reshape(-1, 1)
+
+   
 
 #. How to tell if a given 2D array has null columns ?
 

@@ -28,8 +28,6 @@ is:</p>
 <p>Here is what the page looks like so far:
 <a class="reference external" href="http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html">http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html</a></p>
 <p>Repository is at: <a class="reference external" href="https://github.com/rougier/numpy-100">https://github.com/rougier/numpy-100</a></p>
-<p>The corresponding <a class="reference external" href="https://github.com/rougier/numpy-100/blob/master/README.ipynb">IPython notebook</a> is available
-from the github repo, thanks to the <a class="reference external" href="https://github.com/esc/rst2ipynb">rst2ipynb</a> conversion tool by <a class="reference external" href="http://haenel.co">Valentin Haenel</a></p>
 <p>Thanks to Michiaki Ariga, there is now a
 <a class="reference external" href="https://github.com/chezou/julia-100-exercises">Julia version</a>.</p>
 <ol class="arabic">
@@ -244,6 +242,19 @@ point by point distances</p>
 <span class="name">sigma</span><span class="punctuation">,</span> <span class="name">mu</span> <span class="operator">=</span> <span class="literal number float">1.0</span><span class="punctuation">,</span> <span class="literal number float">0.0</span>
 <span class="name">G</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">exp</span><span class="punctuation">(</span><span class="operator">-</span><span class="punctuation">(</span> <span class="punctuation">(</span><span class="name">D</span><span class="operator">-</span><span class="name">mu</span><span class="punctuation">)</span><span class="operator">**</span><span class="literal number integer">2</span> <span class="operator">/</span> <span class="punctuation">(</span> <span class="literal number float">2.0</span> <span class="operator">*</span> <span class="name">sigma</span><span class="operator">**</span><span class="literal number integer">2</span> <span class="punctuation">)</span> <span class="punctuation">)</span> <span class="punctuation">)</span>
 <span class="keyword">print</span> <span class="name">G</span>
+</pre>
+</li>
+<li><p class="first">Subtract the mean of each row of a matrix</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Warren Weckesser</span>
+
+<span class="name">X</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">rand</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
+
+<span class="comment"># Recent versions of numpy</span>
+<span class="name">Y</span> <span class="operator">=</span> <span class="name">X</span> <span class="operator">-</span> <span class="name">X</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="name">keepdims</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">)</span>
+
+<span class="comment"># Older versions of numpy</span>
+<span class="name">Y</span> <span class="operator">=</span> <span class="name">X</span> <span class="operator">-</span> <span class="name">X</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </li>
 <li><p class="first">How to tell if a given 2D array has null columns ?</p>
