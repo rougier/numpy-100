@@ -104,10 +104,10 @@ Thanks to Michiaki Ariga, there is now a
 
 #. Create a 3x3x3 array with random values
 
-    .. code-block:: python
+   .. code-block:: python
 
-       Z = np.random.random((3,3,3))
-       print Z
+      Z = np.random.random((3,3,3))
+      print Z
 
 #. Create a 8x8 matrix and fill it with a checkerboard pattern
 
@@ -192,11 +192,11 @@ Thanks to Michiaki Ariga, there is now a
 
 #. Create a random vector of size 30 and find the mean value
 
-    .. code-block:: python
+   .. code-block:: python
 
-       Z = np.random.random(30)
-       m = Z.mean()
-       print m
+      Z = np.random.random(30)
+      m = Z.mean()
+      print m
 
 
 #. Make an array immutable (read-only)
@@ -320,12 +320,12 @@ Thanks to Michiaki Ariga, there is now a
 
 #. Find the nearest value from a given value in an array
 
-    .. code-block:: python
+   .. code-block:: python
 
-       Z = np.random.uniform(0,1,10)
-       z = 0.5
-       m = Z.flat[np.abs(Z - z).argmin()]
-       print m
+      Z = np.random.uniform(0,1,10)
+      z = 0.5
+      m = Z.flat[np.abs(Z - z).argmin()]
+      print m
 
 
 #. Consider the following file::
@@ -405,7 +405,6 @@ Thanks to Michiaki Ariga, there is now a
 #. Considering a one-dimensional vector D, how to compute means of subsets of D
    using a vector S of same size describing subset indices ?
 
-
    .. code-block:: python
 
       # Author: Jaime Fernández del Río
@@ -462,13 +461,13 @@ Thanks to Michiaki Ariga, there is now a
 #. How to swap two rows of an array ?
 
 
-    .. code-block:: python
+   .. code-block:: python
 
-       # Author: Eelco Hoogendoorn
+      # Author: Eelco Hoogendoorn
 
-       A = np.arange(25).reshape(5,5)
-       A[[0,1]] = A[[1,0]]
-       print A
+      A = np.arange(25).reshape(5,5)
+      A[[0,1]] = A[[1,0]]
+      print A
 
 
 #. Consider a one-dimensional array Z, build a two-dimensional array whose
