@@ -348,6 +348,22 @@ using a vector S of same size describing subset indices ?</p>
 <span class="name">D_counts</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">bincount</span><span class="punctuation">(</span><span class="name">S</span><span class="punctuation">)</span>
 <span class="name">D_means</span> <span class="operator">=</span> <span class="name">D_sums</span> <span class="operator">/</span> <span class="name">D_counts</span>
 <span class="keyword">print</span> <span class="name">D_means</span>
+
+<span class="name">I</span> <span class="name">often</span> <span class="name">need</span> <span class="name">to</span> <span class="name">compute</span> <span class="name">the</span> <span class="name">equivalent</span> <span class="name">of</span>
+</pre>
+</li>
+<li><p class="first">How to get the diagonal of a dot product ?</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Mathieu Blondel</span>
+
+<span class="comment"># Slow version</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">diag</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">dot</span><span class="punctuation">(</span><span class="name">A</span><span class="punctuation">,</span> <span class="name">B</span><span class="punctuation">))</span>
+
+<span class="comment"># Fast version</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">A</span> <span class="operator">*</span> <span class="name">B</span><span class="operator">.</span><span class="name">T</span><span class="punctuation">,</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+
+<span class="comment"># Faster version</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">einsum</span><span class="punctuation">(</span><span class="literal string">&quot;ij,ji-&gt;i&quot;</span><span class="punctuation">,</span> <span class="name">A</span><span class="punctuation">,</span> <span class="name">B</span><span class="punctuation">)</span><span class="operator">.</span>
 </pre>
 </li>
 <li><p class="first">Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3

@@ -417,6 +417,23 @@ Thanks to Michiaki Ariga, there is now a
       D_means = D_sums / D_counts
       print D_means
 
+      I often need to compute the equivalent of
+
+#. How to get the diagonal of a dot product ?
+
+   .. code-block:: python
+
+      # Author: Mathieu Blondel
+                   
+      # Slow version  
+      np.diag(np.dot(A, B))
+
+      # Fast version
+      np.sum(A * B.T, axis=1)
+
+      # Faster version
+      np.einsum("ij,ji->i", A, B).
+
 
 #. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
    consecutive zeros interleaved between each value ?
