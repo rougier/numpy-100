@@ -24,37 +24,20 @@ is:
 Here is what the page looks like so far:
 http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html
 
-.. Note:: The level names came from an old-game (Dungeon Master)
-
 Repository is at: https://github.com/rougier/numpy-100
-
-The corresponding `IPython notebook
-<https://github.com/rougier/numpy-100/blob/master/README.ipynb>`_ is available
-from the github repo, thanks to the `rst2ipynb
-<https://github.com/esc/rst2ipynb>`_ conversion tool by `Valentin Haenel
-<http://haenel.co>`_
 
 Thanks to Michiaki Ariga, there is now a
 `Julia version <https://github.com/chezou/julia-100-exercises>`_.
 
 
-.. **Contents**
-.. .. contents::
-..     :local:
-..     :depth: 1
-
-
-Neophyte
-========
-
-1. Import the numpy package under the name ``np``
+#. Import the numpy package under the name ``np``
 
    .. code-block:: python
 
       import numpy as np
 
 
-2. Print the numpy version and the configuration.
+#. Print the numpy version and the configuration.
 
    .. code-block:: python
 
@@ -62,7 +45,7 @@ Neophyte
       np.__config__.show()
 
 
-3. Create a null vector of size 10
+#. Create a null vector of size 10
 
    .. code-block:: python
 
@@ -70,7 +53,7 @@ Neophyte
       print Z
 
 
-4. Create a null vector of size 10 but the fifth value which is 1
+#. Create a null vector of size 10 but the fifth value which is 1
 
    .. code-block:: python
 
@@ -79,7 +62,7 @@ Neophyte
       print Z
 
 
-5. Create a vector with values ranging from 10 to 49
+#. Create a vector with values ranging from 10 to 49
 
    .. code-block:: python
 
@@ -87,7 +70,7 @@ Neophyte
       print Z
 
 
-6. Create a 3x3 matrix with values ranging from 0 to 8
+#. Create a 3x3 matrix with values ranging from 0 to 8
 
    .. code-block:: python
 
@@ -95,7 +78,7 @@ Neophyte
       print Z
 
 
-7. Find indices of non-zero elements from [1,2,0,0,4,0]
+#. Find indices of non-zero elements from [1,2,0,0,4,0]
 
    .. code-block:: python
 
@@ -103,7 +86,7 @@ Neophyte
       print nz
 
 
-8. Create a 3x3 identity matrix
+#. Create a 3x3 identity matrix
 
    .. code-block:: python
 
@@ -111,7 +94,7 @@ Neophyte
       print Z
 
 
-9. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal
+#. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal
 
    .. code-block:: python
 
@@ -119,18 +102,14 @@ Neophyte
       print Z
 
 
-10. Create a 3x3x3 array with random values
+#. Create a 3x3x3 array with random values
 
     .. code-block:: python
 
        Z = np.random.random((3,3,3))
        print Z
 
-
-Novice
-======
-
-1. Create a 8x8 matrix and fill it with a checkerboard pattern
+#. Create a 8x8 matrix and fill it with a checkerboard pattern
 
    .. code-block:: python
 
@@ -140,7 +119,7 @@ Novice
       print Z
 
 
-2. Create a 10x10 array with random values and find the minimum and maximum values
+#. Create a 10x10 array with random values and find the minimum and maximum values
 
    .. code-block:: python
 
@@ -149,7 +128,7 @@ Novice
       print Zmin, Zmax
 
 
-3. Create a checkerboard 8x8 matrix using the tile function
+#. Create a checkerboard 8x8 matrix using the tile function
 
    .. code-block:: python
 
@@ -157,7 +136,7 @@ Novice
       print Z
 
 
-4. Normalize a 5x5 random matrix (between 0 and 1)
+#. Normalize a 5x5 random matrix (between 0 and 1)
 
    .. code-block:: python
 
@@ -167,7 +146,7 @@ Novice
       print Z
 
 
-5. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)
+#. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)
 
    .. code-block:: python
 
@@ -175,7 +154,7 @@ Novice
       print Z
 
 
-6. Create a 5x5 matrix with row values ranging from 0 to 4
+#. Create a 5x5 matrix with row values ranging from 0 to 4
 
    .. code-block:: python
 
@@ -184,7 +163,7 @@ Novice
     print Z
 
 
-7. Create a vector of size 10 with values ranging from 0 to 1, both excluded
+#. Create a vector of size 10 with values ranging from 0 to 1, both excluded
 
    .. code-block:: python
 
@@ -192,7 +171,7 @@ Novice
     print Z
 
 
-8. Create a random vector of size 10 and sort it
+#. Create a random vector of size 10 and sort it
 
    .. code-block:: python
 
@@ -201,7 +180,7 @@ Novice
     print Z
 
 
-9. Consider two random array A anb B, check if they are equal.
+#. Consider two random array A anb B, check if they are equal.
 
    .. code-block:: python
 
@@ -211,7 +190,7 @@ Novice
       print equal
 
 
-10. Create a random vector of size 30 and find the mean value
+#. Create a random vector of size 30 and find the mean value
 
     .. code-block:: python
 
@@ -220,12 +199,7 @@ Novice
        print m
 
 
-
-Apprentice
-==========
-
-
-1. Make an array immutable (read-only)
+#. Make an array immutable (read-only)
 
    .. code-block:: python
 
@@ -234,7 +208,7 @@ Apprentice
       Z[0] = 1
 
 
-2. Consider a random 10x2 matrix representing cartesian coordinates, convert
+#. Consider a random 10x2 matrix representing cartesian coordinates, convert
    them to polar coordinates
 
    .. code-block:: python
@@ -247,7 +221,7 @@ Apprentice
       print T
 
 
-3. Create random vector of size 10 and replace the maximum value by 0
+#. Create random vector of size 10 and replace the maximum value by 0
 
    .. code-block:: python
 
@@ -256,7 +230,7 @@ Apprentice
     print Z
 
 
-4. Create a structured array with ``x`` and ``y`` coordinates covering the
+#. Create a structured array with ``x`` and ``y`` coordinates covering the
    [0,1]x[0,1] area.
 
    .. code-block:: python
@@ -267,7 +241,7 @@ Apprentice
       print Z
 
 
-5. Print the minimum and maximum representable value for each numpy scalar type
+#. Print the minimum and maximum representable value for each numpy scalar type
 
    .. code-block:: python
 
@@ -280,7 +254,7 @@ Apprentice
          print np.finfo(dtype).eps
 
 
-6. Create a structured array representing a position (x,y) and a color (r,g,b)
+#. Create a structured array representing a position (x,y) and a color (r,g,b)
 
    .. code-block:: python
 
@@ -292,7 +266,7 @@ Apprentice
      print Z
 
 
-7. Consider a random vector with shape (100,2) representing coordinates, find
+#. Consider a random vector with shape (100,2) representing coordinates, find
    point by point distances
 
    .. code-block:: python
@@ -309,7 +283,7 @@ Apprentice
       print D
 
 
-8. Generate a generic 2D Gaussian-like array
+#. Generate a generic 2D Gaussian-like array
 
    .. code-block:: python
 
@@ -320,7 +294,7 @@ Apprentice
       print G
 
 
-9. How to tell if a given 2D array has null columns ?
+#. How to tell if a given 2D array has null columns ?
 
    .. code-block:: python
 
@@ -329,7 +303,7 @@ Apprentice
       Z = np.random.randint(0,3,(3,10))
       print (~Z.any(axis=0)).any()
 
-10. Find the nearest value from a given value in an array
+#. Find the nearest value from a given value in an array
 
     .. code-block:: python
 
@@ -339,10 +313,7 @@ Apprentice
        print m
 
 
-Journeyman
-==========
-
-1. Consider the following file::
+#. Consider the following file::
 
     1,2,3,4,5
     6,,,7,8
@@ -355,7 +326,7 @@ Journeyman
       Z = np.genfromtxt("missing.dat", delimiter=",")
 
 
-2. Consider a generator function that generates 10 integers and use it to build an
+#. Consider a generator function that generates 10 integers and use it to build an
    array
 
    .. code-block:: python
@@ -367,7 +338,7 @@ Journeyman
       print Z
 
 
-3. Consider a given vector, how to add 1 to each element indexed by a second
+#. Consider a given vector, how to add 1 to each element indexed by a second
    vector (be careful with repeated indices) ?
 
    .. code-block:: python
@@ -380,7 +351,7 @@ Journeyman
       print Z
 
 
-4. How to accumulate elements of a vector (X) to an array (F) based on an index
+#. How to accumulate elements of a vector (X) to an array (F) based on an index
    list (I) ?
 
    .. code-block:: python
@@ -393,7 +364,7 @@ Journeyman
       print F
 
 
-5. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique
+#. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique
    colors
 
    .. code-block:: python
@@ -407,7 +378,7 @@ Journeyman
       print np.unique(I)
 
 
-6. Considering a four dimensions array, how to get sum over the last two axis at once ?
+#. Considering a four dimensions array, how to get sum over the last two axis at once ?
 
    .. code-block:: python
 
@@ -416,7 +387,7 @@ Journeyman
       print
 
 
-7. Considering a one-dimensional vector D, how to compute means of subsets of D
+#. Considering a one-dimensional vector D, how to compute means of subsets of D
    using a vector S of same size describing subset indices ?
 
 
@@ -432,7 +403,7 @@ Journeyman
       print D_means
 
 
-8. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
+#. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
    consecutive zeros interleaved between each value ?
 
    .. code-block:: python
@@ -446,7 +417,7 @@ Journeyman
       print Z0
 
 
-9. Consider an array of dimension (5,5,3), how to mulitply it by an array with
+#. Consider an array of dimension (5,5,3), how to mulitply it by an array with
    dimensions (5,5) ?
 
    .. code-block:: python
@@ -456,7 +427,7 @@ Journeyman
       print A * B[:,:,None]
 
 
-10. How to swap two rows of an array ?
+#. How to swap two rows of an array ?
 
 
     .. code-block:: python
@@ -468,10 +439,7 @@ Journeyman
        print A
 
 
-Craftsman
-=========
-
-1. Consider a one-dimensional array Z, build a two-dimensional array whose
+#. Consider a one-dimensional array Z, build a two-dimensional array whose
    first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
    row should be (Z[-3],Z[-2],Z[-1])
 
@@ -488,7 +456,7 @@ Craftsman
       print Z
 
 
-2. Consider a set of 10 triplets describing 10 triangles (with shared
+#. Consider a set of 10 triplets describing 10 triangles (with shared
    vertices), find the set of unique line segments composing all the triangles.
 
    .. code-block:: python
@@ -504,7 +472,7 @@ Craftsman
       print G
 
 
-3. Given an array C that is a bincount, how to produce an array A such that
+#. Given an array C that is a bincount, how to produce an array A such that
    np.bincount(A) == C ?
 
    .. code-block:: python
@@ -515,7 +483,7 @@ Craftsman
      A = np.repeat(np.arange(len(C)), C)
      print A
 
-4. How to compute averages using a sliding window over an array ?
+#. How to compute averages using a sliding window over an array ?
 
    .. code-block:: python
 
@@ -528,30 +496,26 @@ Craftsman
       Z = np.arange(20)
       print moving_average(Z, n=3)
 
-5. How to get the documentation of the numpy add function from the command line ?
+#. How to get the documentation of the numpy add function from the command line ?
 
    .. code-block:: bash
 
       python -c "import numpy; numpy.info(numpy.add)"
 
-6. How to negate a boolean, or to change the sign of a float inplace ?
+#. How to negate a boolean, or to change the sign of a float inplace ?
 
-  .. code-block:: python
+   .. code-block:: python
 
-     # Author: Nathaniel J. Smith
+      # Author: Nathaniel J. Smith
 
-     Z = np.random.randint(0,2,100)
-     np.logical_not(arr, out=arr)
+      Z = np.random.randint(0,2,100)
+      np.logical_not(arr, out=arr)
 
-     Z = np.random.uniform(-1.0,1.0,100)
-     np.negative(arr, out=arr)
+      Z = np.random.uniform(-1.0,1.0,100)
+      np.negative(arr, out=arr)
 
-7.
 
-Artisan
-=======
-
-1. Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3])
+#. Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3])
 
    .. code-block:: python
 
@@ -563,7 +527,7 @@ Artisan
       print Z
       print U
 
-2. Convert a vector of ints into a matrix binary representation.
+#. Convert a vector of ints into a matrix binary representation.
 
    .. code-block:: python
 
@@ -579,7 +543,7 @@ Artisan
       print np.unpackbits(I[:, np.newaxis], axis=1)
 
 
-3. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to
+#. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to
    compute distance from p to each line i (P0[i],P1[i]) ?
 
    .. code-block:: python
@@ -598,7 +562,7 @@ Artisan
       print distance(P0, P1, p)
 
 
-4. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P,
+#. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P,
    how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?
 
    .. code-block:: python
@@ -606,11 +570,7 @@ Artisan
       Answer needed actually
 
 
-
-Adept
-=====
-
-1. Consider an arbitrary array, write a function that extract a subpart with a
+#. Consider an arbitrary array, write a function that extract a subpart with a
    fixed shape and centered on a given element (pad with a ``fill`` value when
    necessary)
 
@@ -645,7 +605,7 @@ Adept
       print R
 
 
-2. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an
+#. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an
    array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]] ?
 
    .. code-block:: python
@@ -657,10 +617,7 @@ Adept
       print R
 
 
-Expert
-======
-
-1. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
+#. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
    that contain elements of each row of B regardless of the order of the elements
    in B ?
 
@@ -676,7 +633,7 @@ Expert
       print rows
 
 
-2. Extract all the contiguous 3x3 blocks from a random 10x10 matrix.
+#. Extract all the contiguous 3x3 blocks from a random 10x10 matrix.
 
    .. code-block:: python
 
@@ -690,7 +647,7 @@ Expert
       print C
 
 
-3. Create a 2D array subclass such that Z[i,j] == Z[j,i]
+#. Create a 2D array subclass such that Z[i,j] == Z[j,i]
 
    .. code-block:: python
 
@@ -709,7 +666,7 @@ Expert
       S[2,3] = 42
       print S
 
-4. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1).
+#. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1).
    How to compute the sum of of the p matrix products at once ? (result has shape (n,1))
 
    .. code-block:: python
@@ -729,10 +686,7 @@ Expert
       # and 2 and 1, to remain with a (n,1) vector.
 
 
-Master
-======
-
-1. Given a two dimensional array, how to extract unique rows ?
+#. Given a two dimensional array, how to extract unique rows ?
 
    .. note:: See `stackoverflow <http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/>`_ for explanations.
 
@@ -746,7 +700,7 @@ Master
       uZ = Z[idx]
       print uZ
 
-2. How to implement the Game of Life using numpy arrays ?
+#. How to implement the Game of Life using numpy arrays ?
 
    .. code-block:: python
 
@@ -767,8 +721,3 @@ Master
 
       Z = np.random.randint(0,2,(50,50))
       for i in range(100): Z = iterate(Z)
-
-
-
-Archmaster
-==========

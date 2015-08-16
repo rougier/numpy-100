@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title>100 numpy exercises</title>
 <link rel="stylesheet" href="numpy.css" type="text/css" />
 </head>
@@ -27,17 +27,11 @@ is:</p>
 </pre>
 <p>Here is what the page looks like so far:
 <a class="reference external" href="http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html">http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html</a></p>
-<div class="note">
-<p class="first admonition-title">Note</p>
-<p class="last">The level names came from an old-game (Dungeon Master)</p>
-</div>
 <p>Repository is at: <a class="reference external" href="https://github.com/rougier/numpy-100">https://github.com/rougier/numpy-100</a></p>
 <p>The corresponding <a class="reference external" href="https://github.com/rougier/numpy-100/blob/master/README.ipynb">IPython notebook</a> is available
 from the github repo, thanks to the <a class="reference external" href="https://github.com/esc/rst2ipynb">rst2ipynb</a> conversion tool by <a class="reference external" href="http://haenel.co">Valentin Haenel</a></p>
 <p>Thanks to Michiaki Ariga, there is now a
 <a class="reference external" href="https://github.com/chezou/julia-100-exercises">Julia version</a>.</p>
-<div class="section" id="neophyte">
-<h1>Neophyte</h1>
 <ol class="arabic">
 <li><p class="first">Import the numpy package under the name <tt class="docutils literal">np</tt></p>
 <pre class="code python literal-block">
@@ -94,16 +88,13 @@ from the github repo, thanks to the <a class="reference external" href="https://
 </pre>
 </li>
 <li><p class="first">Create a 3x3x3 array with random values</p>
+<blockquote>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
 <span class="keyword">print</span> <span class="name">Z</span>
 </pre>
+</blockquote>
 </li>
-</ol>
-</div>
-<div class="section" id="novice">
-<h1>Novice</h1>
-<ol class="arabic">
 <li><p class="first">Create a 8x8 matrix and fill it with a checkerboard pattern</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="literal number integer">8</span><span class="punctuation">,</span><span class="literal number integer">8</span><span class="punctuation">),</span><span class="name">dtype</span><span class="operator">=</span><span class="name builtin">int</span><span class="punctuation">)</span>
@@ -168,17 +159,14 @@ from the github repo, thanks to the <a class="reference external" href="https://
 </pre>
 </li>
 <li><p class="first">Create a random vector of size 30 and find the mean value</p>
+<blockquote>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">(</span><span class="literal number integer">30</span><span class="punctuation">)</span>
 <span class="name">m</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">()</span>
 <span class="keyword">print</span> <span class="name">m</span>
 </pre>
+</blockquote>
 </li>
-</ol>
-</div>
-<div class="section" id="apprentice">
-<h1>Apprentice</h1>
-<ol class="arabic">
 <li><p class="first">Make an array immutable (read-only)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
@@ -267,18 +255,15 @@ point by point distances</p>
 </pre>
 </li>
 <li><p class="first">Find the nearest value from a given value in an array</p>
+<blockquote>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">uniform</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">z</span> <span class="operator">=</span> <span class="literal number float">0.5</span>
 <span class="name">m</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">flat</span><span class="punctuation">[</span><span class="name">np</span><span class="operator">.</span><span class="name">abs</span><span class="punctuation">(</span><span class="name">Z</span> <span class="operator">-</span> <span class="name">z</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">argmin</span><span class="punctuation">()]</span>
 <span class="keyword">print</span> <span class="name">m</span>
 </pre>
+</blockquote>
 </li>
-</ol>
-</div>
-<div class="section" id="journeyman">
-<h1>Journeyman</h1>
-<ol class="arabic">
 <li><p class="first">Consider the following file:</p>
 <pre class="literal-block">
 1,2,3,4,5
@@ -375,6 +360,7 @@ dimensions (5,5) ?</p>
 </pre>
 </li>
 <li><p class="first">How to swap two rows of an array ?</p>
+<blockquote>
 <pre class="code python literal-block">
 <span class="comment"># Author: Eelco Hoogendoorn</span>
 
@@ -382,12 +368,8 @@ dimensions (5,5) ?</p>
 <span class="name">A</span><span class="punctuation">[[</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">]]</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">[[</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">]]</span>
 <span class="keyword">print</span> <span class="name">A</span>
 </pre>
+</blockquote>
 </li>
-</ol>
-</div>
-<div class="section" id="craftsman">
-<h1>Craftsman</h1>
-<ol class="arabic">
 <li><p class="first">Consider a one-dimensional array Z, build a two-dimensional array whose
 first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
 row should be (Z[-3],Z[-2],Z[-1])</p>
@@ -445,9 +427,6 @@ python -c <span class="literal string double">&quot;import numpy; numpy.info(num
 </pre>
 </li>
 <li><p class="first">How to negate a boolean, or to change the sign of a float inplace ?</p>
-</li>
-</ol>
-<blockquote>
 <pre class="code python literal-block">
 <span class="comment"># Author: Nathaniel J. Smith</span>
 
@@ -457,14 +436,7 @@ python -c <span class="literal string double">&quot;import numpy; numpy.info(num
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">uniform</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number float">1.0</span><span class="punctuation">,</span><span class="literal number float">1.0</span><span class="punctuation">,</span><span class="literal number integer">100</span><span class="punctuation">)</span>
 <span class="name">np</span><span class="operator">.</span><span class="name">negative</span><span class="punctuation">(</span><span class="name">arr</span><span class="punctuation">,</span> <span class="name">out</span><span class="operator">=</span><span class="name">arr</span><span class="punctuation">)</span>
 </pre>
-</blockquote>
-<ol class="arabic simple" start="7">
-<li></li>
-</ol>
-</div>
-<div class="section" id="artisan">
-<h1>Artisan</h1>
-<ol class="arabic">
+</li>
 <li><p class="first">Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3])</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Robert Kern</span>
@@ -513,11 +485,6 @@ how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?<
 <span class="name">Answer</span> <span class="name">needed</span> <span class="name">actually</span>
 </pre>
 </li>
-</ol>
-</div>
-<div class="section" id="adept">
-<h1>Adept</h1>
-<ol class="arabic">
 <li><p class="first">Consider an arbitrary array, write a function that extract a subpart with a
 fixed shape and centered on a given element (pad with a <tt class="docutils literal">fill</tt> value when
 necessary)</p>
@@ -561,11 +528,6 @@ array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]] ?</p>
 <span class="keyword">print</span> <span class="name">R</span>
 </pre>
 </li>
-</ol>
-</div>
-<div class="section" id="expert">
-<h1>Expert</h1>
-<ol class="arabic">
 <li><p class="first">Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
 that contain elements of each row of B regardless of the order of the elements
 in B ?</p>
@@ -628,11 +590,6 @@ How to compute the sum of of the p matrix products at once ? (result has shape (
 <span class="comment"># and 2 and 1, to remain with a (n,1) vector.</span>
 </pre>
 </li>
-</ol>
-</div>
-<div class="section" id="master">
-<h1>Master</h1>
-<ol class="arabic">
 <li><p class="first">Given a two dimensional array, how to extract unique rows ?</p>
 <div class="note">
 <p class="first admonition-title">Note</p>
@@ -670,10 +627,6 @@ How to compute the sum of of the p matrix products at once ? (result has shape (
 </pre>
 </li>
 </ol>
-</div>
-<div class="section" id="archmaster">
-<h1>Archmaster</h1>
-</div>
 </div>
 </body>
 </html>
