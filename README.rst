@@ -18,7 +18,7 @@ is:
 
         # Author: Somebody
 
-        print np.nonzero([1,2,0,0,4,0])
+        print(np.nonzero([1,2,0,0,4,0]))
 
 
 Here is what the page looks like so far:
@@ -41,7 +41,7 @@ Thanks to Michiaki Ariga, there is now a
 
    .. code-block:: python
 
-      print np.__version__
+      print(np.__version__)
       np.__config__.show()
 
 
@@ -50,7 +50,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.zeros(10)
-      print Z
+      print(Z)
 
 
 #. Create a null vector of size 10 but the fifth value which is 1
@@ -59,7 +59,7 @@ Thanks to Michiaki Ariga, there is now a
 
       Z = np.zeros(10)
       Z[4] = 1
-      print Z
+      print(Z)
 
 
 #. Create a vector with values ranging from 10 to 49
@@ -67,7 +67,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.arange(10,50)
-      print Z
+      print(Z)
 
 
 #. Create a 3x3 matrix with values ranging from 0 to 8
@@ -75,7 +75,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.arange(9).reshape(3,3)
-      print Z
+      print(Z)
 
 
 #. Find indices of non-zero elements from [1,2,0,0,4,0]
@@ -83,7 +83,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       nz = np.nonzero([1,2,0,0,4,0])
-      print nz
+      print(nz)
 
 
 #. Create a 3x3 identity matrix
@@ -91,7 +91,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.eye(3)
-      print Z
+      print(Z)
 
 
 #. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal
@@ -99,7 +99,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.diag(1+np.arange(4),k=-1)
-      print Z
+      print(Z)
 
 
 #. Create a 3x3x3 array with random values
@@ -107,7 +107,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.random.random((3,3,3))
-      print Z
+      print(Z)
 
 #. Create a 8x8 matrix and fill it with a checkerboard pattern
 
@@ -116,7 +116,7 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.zeros((8,8),dtype=int)
       Z[1::2,::2] = 1
       Z[::2,1::2] = 1
-      print Z
+      print(Z)
 
 
 #. Create a 10x10 array with random values and find the minimum and maximum values
@@ -125,7 +125,7 @@ Thanks to Michiaki Ariga, there is now a
 
       Z = np.random.random((10,10))
       Zmin, Zmax = Z.min(), Z.max()
-      print Zmin, Zmax
+      print(Zmin, Zmax)
 
 
 #. Create a checkerboard 8x8 matrix using the tile function
@@ -133,7 +133,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.tile( np.array([[0,1],[1,0]]), (4,4))
-      print Z
+      print(Z)
 
 
 #. Normalize a 5x5 random matrix (between 0 and 1)
@@ -141,9 +141,9 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.random.random((5,5))
-      Zmax,Zmin = Z.max(), Z.min()
+      Zmax, Zmin = Z.max(), Z.min()
       Z = (Z - Zmin)/(Zmax - Zmin)
-      print Z
+      print(Z)
 
 
 #. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)
@@ -151,7 +151,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       Z = np.dot(np.ones((5,3)), np.ones((3,2)))
-      print Z
+      print(Z)
 
 
 #. Create a 5x5 matrix with row values ranging from 0 to 4
@@ -160,7 +160,7 @@ Thanks to Michiaki Ariga, there is now a
 
     Z = np.zeros((5,5))
     Z += np.arange(5)
-    print Z
+    print(Z)
 
 
 #. Create a vector of size 10 with values ranging from 0 to 1, both excluded
@@ -168,7 +168,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
     Z = np.linspace(0,1,12,endpoint=True)[1:-1]
-    print Z
+    print(Z)
 
 
 #. Create a random vector of size 10 and sort it
@@ -177,7 +177,7 @@ Thanks to Michiaki Ariga, there is now a
 
     Z = np.random.random(10)
     Z.sort()
-    print Z
+    print(Z)
 
 
 #. Consider two random array A anb B, check if they are equal.
@@ -187,7 +187,7 @@ Thanks to Michiaki Ariga, there is now a
       A = np.random.randint(0,2,5)
       B = np.random.randint(0,2,5)
       equal = np.allclose(A,B)
-      print equal
+      print(equal)
 
 
 #. Create a random vector of size 30 and find the mean value
@@ -196,7 +196,7 @@ Thanks to Michiaki Ariga, there is now a
 
       Z = np.random.random(30)
       m = Z.mean()
-      print m
+      print(m)
 
 
 #. Make an array immutable (read-only)
@@ -217,8 +217,8 @@ Thanks to Michiaki Ariga, there is now a
       X,Y = Z[:,0], Z[:,1]
       R = np.sqrt(X**2+Y**2)
       T = np.arctan2(Y,X)
-      print R
-      print T
+      print(R)
+      print(T)
 
 
 #. Create random vector of size 10 and replace the maximum value by 0
@@ -227,7 +227,7 @@ Thanks to Michiaki Ariga, there is now a
 
     Z = np.random.random(10)
     Z[Z.argmax()] = 0
-    print Z
+    print(Z)
 
 
 #. Create a structured array with ``x`` and ``y`` coordinates covering the
@@ -238,7 +238,7 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.zeros((10,10), [('x',float),('y',float)])
       Z['x'], Z['y'] = np.meshgrid(np.linspace(0,1,10),
                                    np.linspace(0,1,10))
-      print Z
+      print(Z)
 
 
 #. Print the minimum and maximum representable value for each numpy scalar type
@@ -246,12 +246,12 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       for dtype in [np.int8, np.int32, np.int64]:
-         print np.iinfo(dtype).min
-         print np.iinfo(dtype).max
+         print(np.iinfo(dtype).min)
+         print(np.iinfo(dtype).max)
       for dtype in [np.float32, np.float64]:
-         print np.finfo(dtype).min
-         print np.finfo(dtype).max
-         print np.finfo(dtype).eps
+         print(np.finfo(dtype).min)
+         print(np.finfo(dtype).max)
+         print(np.finfo(dtype).eps)
 
 
 #. Create a structured array representing a position (x,y) and a color (r,g,b)
@@ -263,7 +263,7 @@ Thanks to Michiaki Ariga, there is now a
                          ('color',    [ ('r', float, 1),
                                         ('g', float, 1),
                                         ('b', float, 1)])])
-     print Z
+     print(Z)
 
 
 #. Consider a random vector with shape (100,2) representing coordinates, find
@@ -274,13 +274,13 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.random.random((10,2))
       X,Y = np.atleast_2d(Z[:,0]), np.atleast_2d(Z[:,1])
       D = np.sqrt( (X-X.T)**2 + (Y-Y.T)**2)
-      print D
+      print(D)
 
       # Much faster with scipy
       import scipy
       Z = np.random.random((10,2))
       D = scipy.spatial.distance.cdist(Z,Z)
-      print D
+      print(D)
 
 
 #. Generate a generic 2D Gaussian-like array
@@ -291,7 +291,7 @@ Thanks to Michiaki Ariga, there is now a
       D = np.sqrt(X*X+Y*Y)
       sigma, mu = 1.0, 0.0
       G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
-      print G
+      print(G)
 
 #. Subtract the mean of each row of a matrix
 
@@ -316,7 +316,7 @@ Thanks to Michiaki Ariga, there is now a
       # Author: Warren Weckesser
 
       Z = np.random.randint(0,3,(3,10))
-      print (~Z.any(axis=0)).any()
+      print((~Z.any(axis=0)).any())
 
 #. Find the nearest value from a given value in an array
 
@@ -325,7 +325,7 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.random.uniform(0,1,10)
       z = 0.5
       m = Z.flat[np.abs(Z - z).argmin()]
-      print m
+      print(m)
 
 
 #. Consider the following file::
@@ -350,7 +350,7 @@ Thanks to Michiaki Ariga, there is now a
           for x in xrange(10):
               yield x
       Z = np.fromiter(generate(),dtype=float,count=-1)
-      print Z
+      print(Z)
 
 
 #. Consider a given vector, how to add 1 to each element indexed by a second
@@ -363,7 +363,7 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.ones(10)
       I = np.random.randint(0,len(Z),20)
       Z += np.bincount(I, minlength=len(Z))
-      print Z
+      print(Z)
 
 
 #. How to accumulate elements of a vector (X) to an array (F) based on an index
@@ -376,7 +376,7 @@ Thanks to Michiaki Ariga, there is now a
       X = [1,2,3,4,5,6]
       I = [1,3,9,3,4,1]
       F = np.bincount(I,X)
-      print F
+      print(F)
 
 
 #. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique
@@ -390,7 +390,7 @@ Thanks to Michiaki Ariga, there is now a
       I = np.random.randint(0,2,(h,w,3)).astype(np.ubyte)
       F = I[...,0]*256*256 + I[...,1]*256 +I[...,2]
       n = len(np.unique(F))
-      print np.unique(I)
+      print(np.unique(I))
 
 
 #. Considering a four dimensions array, how to get sum over the last two axis at once ?
@@ -399,7 +399,7 @@ Thanks to Michiaki Ariga, there is now a
 
       A = np.random.randint(0,10,(3,4,3,4))
       sum = A.reshape(A.shape[:-2] + (-1,)).sum(axis=-1)
-      print
+      print(sum)
 
 
 #. Considering a one-dimensional vector D, how to compute means of subsets of D
@@ -414,7 +414,7 @@ Thanks to Michiaki Ariga, there is now a
       D_sums = np.bincount(S, weights=D)
       D_counts = np.bincount(S)
       D_means = D_sums / D_counts
-      print D_means
+      print(D_means)
 
       I often need to compute the equivalent of
 
@@ -445,7 +445,7 @@ Thanks to Michiaki Ariga, there is now a
       nz = 3
       Z0 = np.zeros(len(Z) + (len(Z)-1)*(nz))
       Z0[::nz+1] = Z
-      print Z0
+      print(Z0)
 
 
 #. Consider an array of dimension (5,5,3), how to mulitply it by an array with
@@ -455,7 +455,7 @@ Thanks to Michiaki Ariga, there is now a
 
       A = np.ones((5,5,3))
       B = 2*np.ones((5,5))
-      print A * B[:,:,None]
+      print(A * B[:,:,None])
 
 
 #. How to swap two rows of an array ?
@@ -467,7 +467,7 @@ Thanks to Michiaki Ariga, there is now a
 
       A = np.arange(25).reshape(5,5)
       A[[0,1]] = A[[1,0]]
-      print A
+      print(A)
 
 
 #. Consider a one-dimensional array Z, build a two-dimensional array whose
@@ -484,7 +484,7 @@ Thanks to Michiaki Ariga, there is now a
           strides = (a.itemsize, a.itemsize)
           return stride_tricks.as_strided(a, shape=shape, strides=strides)
       Z = rolling(np.arange(10), 3)
-      print Z
+      print(Z)
 
 
 #. Consider a set of 10 triplets describing 10 triangles (with shared
@@ -500,7 +500,7 @@ Thanks to Michiaki Ariga, there is now a
       F = np.sort(F,axis=1)
       G = F.view( dtype=[('p0',F.dtype),('p1',F.dtype)] )
       G = np.unique(G)
-      print G
+      print(G)
 
 
 #. Given an array C that is a bincount, how to produce an array A such that
@@ -512,7 +512,7 @@ Thanks to Michiaki Ariga, there is now a
 
      C = np.bincount([1,1,2,3,4,4,6])
      A = np.repeat(np.arange(len(C)), C)
-     print A
+     print(A)
 
 #. How to compute averages using a sliding window over an array ?
 
@@ -525,7 +525,7 @@ Thanks to Michiaki Ariga, there is now a
           ret[n:] = ret[n:] - ret[:-n]
           return ret[n - 1:] / n
       Z = np.arange(20)
-      print moving_average(Z, n=3)
+      print(moving_average(Z, n=3))
 
 #. How to get the documentation of the numpy add function from the command line ?
 
@@ -555,8 +555,8 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.random.randint(0,5,(10,3))
       E = np.logical_and.reduce(Z[:,1:] == Z[:,:-1], axis=1)
       U = Z[~E]
-      print Z
-      print U
+      print(Z)
+      print(U)
 
 #. Convert a vector of ints into a matrix binary representation.
 
@@ -566,12 +566,12 @@ Thanks to Michiaki Ariga, there is now a
 
       I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128])
       B = ((I.reshape(-1,1) & (2**np.arange(8))) != 0).astype(int)
-      print B[:,::-1]
+      print(B[:,::-1])
 
       # Author: Daniel T. McDonald
 
       I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128], dtype=np.uint8)
-      print np.unpackbits(I[:, np.newaxis], axis=1)
+      print(np.unpackbits(I[:, np.newaxis], axis=1))
 
 
 #. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to
@@ -590,7 +590,7 @@ Thanks to Michiaki Ariga, there is now a
       P0 = np.random.uniform(-10,10,(10,2))
       P1 = np.random.uniform(-10,10,(10,2))
       p  = np.random.uniform(-10,10,( 1,2))
-      print distance(P0, P1, p)
+      print(distance(P0, P1, p))
 
 
 #. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P,
@@ -632,8 +632,8 @@ Thanks to Michiaki Ariga, there is now a
       r = [slice(start,stop) for start,stop in zip(R_start,R_stop)]
       z = [slice(start,stop) for start,stop in zip(Z_start,Z_stop)]
       R[r] = Z[z]
-      print Z
-      print R
+      print(Z)
+      print(R)
 
 
 #. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an
@@ -645,7 +645,7 @@ Thanks to Michiaki Ariga, there is now a
 
       Z = np.arange(1,15,dtype=uint32)
       R = stride_tricks.as_strided(Z,(11,4),(4,4))
-      print R
+      print(R)
 
 
 #. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
@@ -661,7 +661,7 @@ Thanks to Michiaki Ariga, there is now a
 
       C = (A[..., np.newaxis, np.newaxis] == B)
       rows = (C.sum(axis=(1,2,3)) >= B.shape[1]).nonzero()[0]
-      print rows
+      print(rows)
 
 
 #. Extract all the contiguous 3x3 blocks from a random 10x10 matrix.
@@ -675,7 +675,7 @@ Thanks to Michiaki Ariga, there is now a
       i = 1 + (Z.shape[0]-3)
       j = 1 + (Z.shape[1]-3)
       C = stride_tricks.as_strided(Z, shape=(i, j, n, n), strides=Z.strides + Z.strides)
-      print C
+      print(C)
 
 
 #. Create a 2D array subclass such that Z[i,j] == Z[j,i]
@@ -695,7 +695,7 @@ Thanks to Michiaki Ariga, there is now a
 
       S = symetric(np.random.randint(0,10,(5,5)))
       S[2,3] = 42
-      print S
+      print(S)
 
 #. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1).
    How to compute the sum of of the p matrix products at once ? (result has shape (n,1))
@@ -708,7 +708,7 @@ Thanks to Michiaki Ariga, there is now a
       M = np.ones((p,n,n))
       V = np.ones((p,n,1))
       S = np.tensordot(M, V, axes=[[0, 2], [0, 1]])
-      print S
+      print(S)
 
       # It works, because:
       # M is (p,n,n)
@@ -729,7 +729,7 @@ Thanks to Michiaki Ariga, there is now a
       T = np.ascontiguousarray(Z).view(np.dtype((np.void, Z.dtype.itemsize * Z.shape[1])))
       _, idx = np.unique(T, return_index=True)
       uZ = Z[idx]
-      print uZ
+      print(uZ)
 
 #. How to implement the Game of Life using numpy arrays ?
 
