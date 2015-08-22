@@ -226,6 +226,9 @@ point by point distances</p>
 
 <span class="comment"># Much faster with scipy</span>
 <span class="keyword namespace">import</span> <span class="name namespace">scipy</span>
+<span class="comment"># Thanks Gavin Heverly-Coulson (#issue 1)</span>
+<span class="keyword namespace">import</span> <span class="name namespace">scipy.spatial</span>
+
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">))</span>
 <span class="name">D</span> <span class="operator">=</span> <span class="name">scipy</span><span class="operator">.</span><span class="name">spatial</span><span class="operator">.</span><span class="name">distance</span><span class="operator">.</span><span class="name">cdist</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,</span><span class="name">Z</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">D</span><span class="punctuation">)</span>

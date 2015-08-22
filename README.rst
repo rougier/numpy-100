@@ -278,6 +278,9 @@ Thanks to Michiaki Ariga, there is now a
 
       # Much faster with scipy
       import scipy
+      # Thanks Gavin Heverly-Coulson (#issue 1)
+      import scipy.spatial
+      
       Z = np.random.random((10,2))
       D = scipy.spatial.distance.cdist(Z,Z)
       print(D)
