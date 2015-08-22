@@ -597,6 +597,7 @@ Thanks to Michiaki Ariga, there is now a
    how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?
 
    .. code-block:: python
+
       # Author: Italmassov Kuanysh
       # based on distance function from previous question
       P0 = np.random.uniform(-10, 10, (10,2))
