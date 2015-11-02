@@ -31,67 +31,92 @@ is:</p>
 <p>Thanks to Michiaki Ariga, there is now a
 <a class="reference external" href="https://github.com/chezou/julia-100-exercises">Julia version</a>.</p>
 <ol class="arabic">
-<li><p class="first">Import the numpy package under the name <tt class="docutils literal">np</tt></p>
+<li><p class="first">Import the numpy package under the name <tt class="docutils literal">np</tt> (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword namespace">as</span> <span class="name namespace">np</span>
 </pre>
 </li>
-<li><p class="first">Print the numpy version and the configuration.</p>
+<li><p class="first">Print the numpy version and the configuration (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">__version__</span><span class="punctuation">)</span>
 <span class="name">np</span><span class="operator">.</span><span class="name">__config__</span><span class="operator">.</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 </li>
-<li><p class="first">Create a null vector of size 10</p>
+<li><p class="first">Create a null vector of size 10 (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a null vector of size 10 but the fifth value which is 1</p>
+<li><p class="first">How to get the documentation of the numpy add function from the command line ? (★☆☆☆☆)</p>
+<pre class="code bash literal-block">
+python -c <span class="literal string double">&quot;import numpy; numpy.info(numpy.add)&quot;</span>
+</pre>
+</li>
+<li><p class="first">Create a null vector of size 10 but the fifth value which is 1 (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">Z</span><span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a vector with values ranging from 10 to 49</p>
+<li><p class="first">Create a vector with values ranging from 10 to 49 (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 3x3 matrix with values ranging from 0 to 8</p>
+<li><p class="first">Reverse a vector (first element becomes last) (★☆☆☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">50</span><span class="punctuation">)</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[::</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><p class="first">Create a 3x3 matrix with values ranging from 0 to 8 (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">9</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Find indices of non-zero elements from [1,2,0,0,4,0]</p>
+<li><p class="first">Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">nz</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">nonzero</span><span class="punctuation">([</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">])</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">nz</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 3x3 identity matrix</p>
+<li><p class="first">Create a 3x3 identity matrix (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">eye</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 5x5 matrix with values 1,2,3,4 just below the diagonal</p>
-<pre class="code python literal-block">
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">diag</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="operator">+</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">),</span><span class="name">k</span><span class="operator">=-</span><span class="literal number integer">1</span><span class="punctuation">)</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
-</pre>
-</li>
-<li><p class="first">Create a 3x3x3 array with random values</p>
+<li><p class="first">Create a 3x3x3 array with random values (★☆☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 8x8 matrix and fill it with a checkerboard pattern</p>
+<li><p class="first">Create a 10x10 array with random values and find the minimum and maximum values (★☆☆☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
+<span class="name">Zmin</span><span class="punctuation">,</span> <span class="name">Zmax</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">min</span><span class="punctuation">(),</span> <span class="name">Z</span><span class="operator">.</span><span class="name">max</span><span class="punctuation">()</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Zmin</span><span class="punctuation">,</span> <span class="name">Zmax</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Create a random vector of size 30 and find the mean value  (★☆☆☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">(</span><span class="literal number integer">30</span><span class="punctuation">)</span>
+<span class="name">m</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">()</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">m</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★★☆☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">diag</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="operator">+</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">),</span><span class="name">k</span><span class="operator">=-</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Create a 8x8 matrix and fill it with a checkerboard pattern (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="literal number integer">8</span><span class="punctuation">,</span><span class="literal number integer">8</span><span class="punctuation">),</span><span class="name">dtype</span><span class="operator">=</span><span class="name builtin">int</span><span class="punctuation">)</span>
 <span class="name">Z</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">::</span><span class="literal number integer">2</span><span class="punctuation">,::</span><span class="literal number integer">2</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>
@@ -99,20 +124,13 @@ is:</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 10x10 array with random values and find the minimum and maximum values</p>
-<pre class="code python literal-block">
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
-<span class="name">Zmin</span><span class="punctuation">,</span> <span class="name">Zmax</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">min</span><span class="punctuation">(),</span> <span class="name">Z</span><span class="operator">.</span><span class="name">max</span><span class="punctuation">()</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Zmin</span><span class="punctuation">,</span> <span class="name">Zmax</span><span class="punctuation">)</span>
-</pre>
-</li>
-<li><p class="first">Create a checkerboard 8x8 matrix using the tile function</p>
+<li><p class="first">Create a checkerboard 8x8 matrix using the tile function (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">tile</span><span class="punctuation">(</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([[</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">],[</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">0</span><span class="punctuation">]]),</span> <span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">))</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Normalize a 5x5 random matrix (between 0 and 1)</p>
+<li><p class="first">Normalize a 5x5 random matrix (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">))</span>
 <span class="name">Zmax</span><span class="punctuation">,</span> <span class="name">Zmin</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">max</span><span class="punctuation">(),</span> <span class="name">Z</span><span class="operator">.</span><span class="name">min</span><span class="punctuation">()</span>
@@ -120,33 +138,33 @@ is:</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)</p>
+<li><p class="first">Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">dot</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">)),</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">)))</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 5x5 matrix with row values ranging from 0 to 4</p>
+<li><p class="first">Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">))</span>
 <span class="name">Z</span> <span class="operator">+=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a vector of size 10 with values ranging from 0 to 1, both excluded</p>
+<li><p class="first">Create a vector of size 10 with values ranging from 0 to 1, both excluded (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">12</span><span class="punctuation">,</span><span class="name">endpoint</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">)[</span><span class="literal number integer">1</span><span class="punctuation">:</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">]</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a random vector of size 10 and sort it</p>
+<li><p class="first">Create a random vector of size 10 and sort it  (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">Z</span><span class="operator">.</span><span class="name">sort</span><span class="punctuation">()</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Consider two random array A anb B, check if they are equal.</p>
+<li><p class="first">Consider two random array A anb B, check if they are equal  (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">)</span>
 <span class="name">B</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">)</span>
@@ -154,14 +172,7 @@ is:</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">equal</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a random vector of size 30 and find the mean value</p>
-<pre class="code python literal-block">
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">(</span><span class="literal number integer">30</span><span class="punctuation">)</span>
-<span class="name">m</span> <span class="operator">=</span> <span class="name">Z</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">()</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">m</span><span class="punctuation">)</span>
-</pre>
-</li>
-<li><p class="first">Make an array immutable (read-only)</p>
+<li><p class="first">Make an array immutable (read-only) (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">Z</span><span class="operator">.</span><span class="name">flags</span><span class="operator">.</span><span class="name">writeable</span> <span class="operator">=</span> <span class="name builtin pseudo">False</span>
@@ -169,7 +180,7 @@ is:</p>
 </pre>
 </li>
 <li><p class="first">Consider a random 10x2 matrix representing cartesian coordinates, convert
-them to polar coordinates</p>
+them to polar coordinates (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">))</span>
 <span class="name">X</span><span class="punctuation">,</span><span class="name">Y</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[:,</span><span class="literal number integer">0</span><span class="punctuation">],</span> <span class="name">Z</span><span class="punctuation">[:,</span><span class="literal number integer">1</span><span class="punctuation">]</span>
@@ -179,7 +190,7 @@ them to polar coordinates</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">T</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create random vector of size 10 and replace the maximum value by 0</p>
+<li><p class="first">Create random vector of size 10 and replace the maximum value by 0 (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">Z</span><span class="punctuation">[</span><span class="name">Z</span><span class="operator">.</span><span class="name">argmax</span><span class="punctuation">()]</span> <span class="operator">=</span> <span class="literal number integer">0</span>
@@ -187,7 +198,7 @@ them to polar coordinates</p>
 </pre>
 </li>
 <li><p class="first">Create a structured array with <tt class="docutils literal">x</tt> and <tt class="docutils literal">y</tt> coordinates covering the
-[0,1]x[0,1] area.</p>
+[0,1]x[0,1] area (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">),</span> <span class="punctuation">[(</span><span class="literal string">'x'</span><span class="punctuation">,</span><span class="name builtin">float</span><span class="punctuation">),(</span><span class="literal string">'y'</span><span class="punctuation">,</span><span class="name builtin">float</span><span class="punctuation">)])</span>
 <span class="name">Z</span><span class="punctuation">[</span><span class="literal string">'x'</span><span class="punctuation">],</span> <span class="name">Z</span><span class="punctuation">[</span><span class="literal string">'y'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">meshgrid</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">),</span>
@@ -195,7 +206,7 @@ them to polar coordinates</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Print the minimum and maximum representable value for each numpy scalar type</p>
+<li><p class="first">Print the minimum and maximum representable value for each numpy scalar type (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="keyword">for</span> <span class="name">dtype</span> <span class="operator word">in</span> <span class="punctuation">[</span><span class="name">np</span><span class="operator">.</span><span class="name">int8</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">int32</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">int64</span><span class="punctuation">]:</span>
    <span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">iinfo</span><span class="punctuation">(</span><span class="name">dtype</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">min</span><span class="punctuation">)</span>
@@ -206,7 +217,7 @@ them to polar coordinates</p>
    <span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">finfo</span><span class="punctuation">(</span><span class="name">dtype</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">eps</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a structured array representing a position (x,y) and a color (r,g,b)</p>
+<li><p class="first">Create a structured array representing a position (x,y) and a color (r,g,b) (★★☆☆☆)</p>
 <pre class="code python literal-block">
  <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">,</span> <span class="punctuation">[</span> <span class="punctuation">(</span><span class="literal string">'position'</span><span class="punctuation">,</span> <span class="punctuation">[</span> <span class="punctuation">(</span><span class="literal string">'x'</span><span class="punctuation">,</span> <span class="name builtin">float</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">),</span>
                                    <span class="punctuation">(</span><span class="literal string">'y'</span><span class="punctuation">,</span> <span class="name builtin">float</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">)]),</span>
@@ -217,7 +228,7 @@ them to polar coordinates</p>
 </pre>
 </li>
 <li><p class="first">Consider a random vector with shape (100,2) representing coordinates, find
-point by point distances</p>
+point by point distances (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">random</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">))</span>
 <span class="name">X</span><span class="punctuation">,</span><span class="name">Y</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">atleast_2d</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">[:,</span><span class="literal number integer">0</span><span class="punctuation">]),</span> <span class="name">np</span><span class="operator">.</span><span class="name">atleast_2d</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">[:,</span><span class="literal number integer">1</span><span class="punctuation">])</span>
@@ -234,7 +245,18 @@ point by point distances</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">D</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Generate a generic 2D Gaussian-like array</p>
+<li><p class="first">Consider the following file:</p>
+<pre class="literal-block">
+1,2,3,4,5
+6,,,7,8
+,,9,10,11
+</pre>
+<p>How to read it ? (★★☆☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">genfromtxt</span><span class="punctuation">(</span><span class="literal string">&quot;missing.dat&quot;</span><span class="punctuation">,</span> <span class="name">delimiter</span><span class="operator">=</span><span class="literal string">&quot;,&quot;</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Generate a generic 2D Gaussian-like array (★★☆☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">X</span><span class="punctuation">,</span> <span class="name">Y</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">meshgrid</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">),</span> <span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
 <span class="name">D</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">sqrt</span><span class="punctuation">(</span><span class="name">X</span><span class="operator">*</span><span class="name">X</span><span class="operator">+</span><span class="name">Y</span><span class="operator">*</span><span class="name">Y</span><span class="punctuation">)</span>
@@ -243,7 +265,19 @@ point by point distances</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">G</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Subtract the mean of each row of a matrix</p>
+<li><p class="first">How to randomly place p elements in a 2D array ? (★★★☆☆)</p>
+<blockquote>
+<pre class="code python literal-block">
+<span class="comment"># Author: Divakar</span>
+
+<span class="name">n</span> <span class="operator">=</span> <span class="literal number integer">10</span>
+<span class="name">p</span> <span class="operator">=</span> <span class="literal number integer">3</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="name">n</span><span class="punctuation">,</span><span class="name">n</span><span class="punctuation">))</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">put</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">choice</span><span class="punctuation">(</span><span class="name builtin">range</span><span class="punctuation">(</span><span class="name">n</span><span class="operator">*</span><span class="name">n</span><span class="punctuation">),</span> <span class="name">p</span><span class="punctuation">,</span> <span class="name">replace</span><span class="operator">=</span><span class="name builtin pseudo">False</span><span class="punctuation">),</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+</pre>
+</blockquote>
+</li>
+<li><p class="first">Subtract the mean of each row of a matrix (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Warren Weckesser</span>
 
@@ -256,7 +290,16 @@ point by point distances</p>
 <span class="name">Y</span> <span class="operator">=</span> <span class="name">X</span> <span class="operator">-</span> <span class="name">X</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">How to tell if a given 2D array has null columns ?</p>
+<li><p class="first">How to I sort an array by the nth column ? (★★★☆☆)</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Steve Tjoa</span>
+
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">,(</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">[</span><span class="name">Z</span><span class="punctuation">[:,</span><span class="literal number integer">1</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">argsort</span><span class="punctuation">()])</span>
+</pre>
+</li>
+<li><p class="first">How to tell if a given 2D array has null columns ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Warren Weckesser</span>
 
@@ -264,7 +307,7 @@ point by point distances</p>
 <span class="keyword">print</span><span class="punctuation">((</span><span class="operator">~</span><span class="name">Z</span><span class="operator">.</span><span class="name">any</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">))</span><span class="operator">.</span><span class="name">any</span><span class="punctuation">())</span>
 </pre>
 </li>
-<li><p class="first">Find the nearest value from a given value in an array</p>
+<li><p class="first">Find the nearest value from a given value in an array (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">uniform</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="name">z</span> <span class="operator">=</span> <span class="literal number float">0.5</span>
@@ -272,19 +315,8 @@ point by point distances</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">m</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Consider the following file:</p>
-<pre class="literal-block">
-1,2,3,4,5
-6,,,7,8
-,,9,10,11
-</pre>
-<p>How to read it ?</p>
-<pre class="code python literal-block">
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">genfromtxt</span><span class="punctuation">(</span><span class="literal string">&quot;missing.dat&quot;</span><span class="punctuation">,</span> <span class="name">delimiter</span><span class="operator">=</span><span class="literal string">&quot;,&quot;</span><span class="punctuation">)</span>
-</pre>
-</li>
 <li><p class="first">Consider a generator function that generates 10 integers and use it to build an
-array</p>
+array (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="keyword">def</span> <span class="name function">generate</span><span class="punctuation">():</span>
     <span class="keyword">for</span> <span class="name">x</span> <span class="operator word">in</span> <span class="name builtin">xrange</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">):</span>
@@ -294,7 +326,7 @@ array</p>
 </pre>
 </li>
 <li><p class="first">Consider a given vector, how to add 1 to each element indexed by a second
-vector (be careful with repeated indices) ?</p>
+vector (be careful with repeated indices) ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Brett Olsen</span>
 
@@ -305,7 +337,7 @@ vector (be careful with repeated indices) ?</p>
 </pre>
 </li>
 <li><p class="first">How to accumulate elements of a vector (X) to an array (F) based on an index
-list (I) ?</p>
+list (I) ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Alan G Isaac</span>
 
@@ -316,7 +348,7 @@ list (I) ?</p>
 </pre>
 </li>
 <li><p class="first">Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique
-colors</p>
+colors (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Nadav Horesh</span>
 
@@ -327,7 +359,8 @@ colors</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">I</span><span class="punctuation">))</span>
 </pre>
 </li>
-<li><p class="first">Considering a four dimensions array, how to get sum over the last two axis at once ?</p>
+<li><p class="first">Considering a four dimensions array, how to get sum over the last two axis
+at once ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">,(</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">))</span>
 <span class="name builtin">sum</span> <span class="operator">=</span> <span class="name">A</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="name">A</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[:</span><span class="operator">-</span><span class="literal number integer">2</span><span class="punctuation">]</span> <span class="operator">+</span> <span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,))</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=-</span><span class="literal number integer">1</span><span class="punctuation">)</span>
@@ -335,7 +368,7 @@ colors</p>
 </pre>
 </li>
 <li><p class="first">Considering a one-dimensional vector D, how to compute means of subsets of D
-using a vector S of same size describing subset indices ?</p>
+using a vector S of same size describing subset indices ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Jaime Fernández del Río</span>
 
@@ -345,11 +378,9 @@ using a vector S of same size describing subset indices ?</p>
 <span class="name">D_counts</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">bincount</span><span class="punctuation">(</span><span class="name">S</span><span class="punctuation">)</span>
 <span class="name">D_means</span> <span class="operator">=</span> <span class="name">D_sums</span> <span class="operator">/</span> <span class="name">D_counts</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">D_means</span><span class="punctuation">)</span>
-
-<span class="name">I</span> <span class="name">often</span> <span class="name">need</span> <span class="name">to</span> <span class="name">compute</span> <span class="name">the</span> <span class="name">equivalent</span> <span class="name">of</span>
 </pre>
 </li>
-<li><p class="first">How to get the diagonal of a dot product ?</p>
+<li><p class="first">How to get the diagonal of a dot product ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Mathieu Blondel</span>
 
@@ -364,7 +395,7 @@ using a vector S of same size describing subset indices ?</p>
 </pre>
 </li>
 <li><p class="first">Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
-consecutive zeros interleaved between each value ?</p>
+consecutive zeros interleaved between each value ?  (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Warren Weckesser</span>
 
@@ -376,14 +407,14 @@ consecutive zeros interleaved between each value ?</p>
 </pre>
 </li>
 <li><p class="first">Consider an array of dimension (5,5,3), how to mulitply it by an array with
-dimensions (5,5) ?</p>
+dimensions (5,5) ?  (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
 <span class="name">B</span> <span class="operator">=</span> <span class="literal number integer">2</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">))</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">A</span> <span class="operator">*</span> <span class="name">B</span><span class="punctuation">[:,:,</span><span class="name builtin pseudo">None</span><span class="punctuation">])</span>
 </pre>
 </li>
-<li><p class="first">How to swap two rows of an array ?</p>
+<li><p class="first">How to swap two rows of an array ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Eelco Hoogendoorn</span>
 
@@ -392,23 +423,8 @@ dimensions (5,5) ?</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">A</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Consider a one-dimensional array Z, build a two-dimensional array whose
-first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
-row should be (Z[-3],Z[-2],Z[-1])</p>
-<pre class="code python literal-block">
-<span class="comment"># Author: Joe Kington / Erik Rigtorp</span>
-<span class="keyword namespace">from</span> <span class="name namespace">numpy.lib</span> <span class="keyword namespace">import</span> <span class="name">stride_tricks</span>
-
-<span class="keyword">def</span> <span class="name function">rolling</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span> <span class="name">window</span><span class="punctuation">):</span>
-    <span class="name">shape</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">a</span><span class="operator">.</span><span class="name">size</span> <span class="operator">-</span> <span class="name">window</span> <span class="operator">+</span> <span class="literal number integer">1</span><span class="punctuation">,</span> <span class="name">window</span><span class="punctuation">)</span>
-    <span class="name">strides</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">a</span><span class="operator">.</span><span class="name">itemsize</span><span class="punctuation">,</span> <span class="name">a</span><span class="operator">.</span><span class="name">itemsize</span><span class="punctuation">)</span>
-    <span class="keyword">return</span> <span class="name">stride_tricks</span><span class="operator">.</span><span class="name">as_strided</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span> <span class="name">shape</span><span class="operator">=</span><span class="name">shape</span><span class="punctuation">,</span> <span class="name">strides</span><span class="operator">=</span><span class="name">strides</span><span class="punctuation">)</span>
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">rolling</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">),</span> <span class="literal number integer">3</span><span class="punctuation">)</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
-</pre>
-</li>
 <li><p class="first">Consider a set of 10 triplets describing 10 triangles (with shared
-vertices), find the set of unique line segments composing all the triangles.</p>
+vertices), find the set of unique line segments composing all the triangles (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Nicolas P. Rougier</span>
 
@@ -422,7 +438,7 @@ vertices), find the set of unique line segments composing all the triangles.</p>
 </pre>
 </li>
 <li><p class="first">Given an array C that is a bincount, how to produce an array A such that
-np.bincount(A) == C ?</p>
+np.bincount(A) == C ?  (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Jaime Fernández del Río</span>
 
@@ -431,7 +447,7 @@ np.bincount(A) == C ?</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">A</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">How to compute averages using a sliding window over an array ?</p>
+<li><p class="first">How to compute averages using a sliding window over an array ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Jaime Fernández del Río</span>
 
@@ -443,12 +459,22 @@ np.bincount(A) == C ?</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">moving_average</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,</span> <span class="name">n</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">))</span>
 </pre>
 </li>
-<li><p class="first">How to get the documentation of the numpy add function from the command line ?</p>
-<pre class="code bash literal-block">
-python -c <span class="literal string double">&quot;import numpy; numpy.info(numpy.add)&quot;</span>
+<li><p class="first">Consider a one-dimensional array Z, build a two-dimensional array whose
+first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
+row should be (Z[-3],Z[-2],Z[-1]) (★★★☆☆)</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Joe Kington / Erik Rigtorp</span>
+<span class="keyword namespace">from</span> <span class="name namespace">numpy.lib</span> <span class="keyword namespace">import</span> <span class="name">stride_tricks</span>
+
+<span class="keyword">def</span> <span class="name function">rolling</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span> <span class="name">window</span><span class="punctuation">):</span>
+    <span class="name">shape</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">a</span><span class="operator">.</span><span class="name">size</span> <span class="operator">-</span> <span class="name">window</span> <span class="operator">+</span> <span class="literal number integer">1</span><span class="punctuation">,</span> <span class="name">window</span><span class="punctuation">)</span>
+    <span class="name">strides</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">a</span><span class="operator">.</span><span class="name">itemsize</span><span class="punctuation">,</span> <span class="name">a</span><span class="operator">.</span><span class="name">itemsize</span><span class="punctuation">)</span>
+    <span class="keyword">return</span> <span class="name">stride_tricks</span><span class="operator">.</span><span class="name">as_strided</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span> <span class="name">shape</span><span class="operator">=</span><span class="name">shape</span><span class="punctuation">,</span> <span class="name">strides</span><span class="operator">=</span><span class="name">strides</span><span class="punctuation">)</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">rolling</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">),</span> <span class="literal number integer">3</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">How to negate a boolean, or to change the sign of a float inplace ?</p>
+<li><p class="first">How to negate a boolean, or to change the sign of a float inplace ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Nathaniel J. Smith</span>
 
@@ -459,33 +485,8 @@ python -c <span class="literal string double">&quot;import numpy; numpy.info(num
 <span class="name">np</span><span class="operator">.</span><span class="name">negative</span><span class="punctuation">(</span><span class="name">arr</span><span class="punctuation">,</span> <span class="name">out</span><span class="operator">=</span><span class="name">arr</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3])</p>
-<pre class="code python literal-block">
-<span class="comment"># Author: Robert Kern</span>
-
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,(</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
-<span class="name">E</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">logical_and</span><span class="operator">.</span><span class="name">reduce</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">[:,</span><span class="literal number integer">1</span><span class="punctuation">:]</span> <span class="operator">==</span> <span class="name">Z</span><span class="punctuation">[:,:</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">],</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
-<span class="name">U</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[</span><span class="operator">~</span><span class="name">E</span><span class="punctuation">]</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">U</span><span class="punctuation">)</span>
-</pre>
-</li>
-<li><p class="first">Convert a vector of ints into a matrix binary representation.</p>
-<pre class="code python literal-block">
-<span class="comment"># Author: Warren Weckesser</span>
-
-<span class="name">I</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">,</span> <span class="literal number integer">15</span><span class="punctuation">,</span> <span class="literal number integer">16</span><span class="punctuation">,</span> <span class="literal number integer">32</span><span class="punctuation">,</span> <span class="literal number integer">64</span><span class="punctuation">,</span> <span class="literal number integer">128</span><span class="punctuation">])</span>
-<span class="name">B</span> <span class="operator">=</span> <span class="punctuation">((</span><span class="name">I</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">)</span> <span class="operator">&amp;</span> <span class="punctuation">(</span><span class="literal number integer">2</span><span class="operator">**</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">8</span><span class="punctuation">)))</span> <span class="operator">!=</span> <span class="literal number integer">0</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">astype</span><span class="punctuation">(</span><span class="name builtin">int</span><span class="punctuation">)</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">B</span><span class="punctuation">[:,::</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">])</span>
-
-<span class="comment"># Author: Daniel T. McDonald</span>
-
-<span class="name">I</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">,</span> <span class="literal number integer">15</span><span class="punctuation">,</span> <span class="literal number integer">16</span><span class="punctuation">,</span> <span class="literal number integer">32</span><span class="punctuation">,</span> <span class="literal number integer">64</span><span class="punctuation">,</span> <span class="literal number integer">128</span><span class="punctuation">],</span> <span class="name">dtype</span><span class="operator">=</span><span class="name">np</span><span class="operator">.</span><span class="name">uint8</span><span class="punctuation">)</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">unpackbits</span><span class="punctuation">(</span><span class="name">I</span><span class="punctuation">[:,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">],</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">))</span>
-</pre>
-</li>
 <li><p class="first">Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to
-compute distance from p to each line i (P0[i],P1[i]) ?</p>
+compute distance from p to each line i (P0[i],P1[i]) ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="keyword">def</span> <span class="name function">distance</span><span class="punctuation">(</span><span class="name">P0</span><span class="punctuation">,</span> <span class="name">P1</span><span class="punctuation">,</span> <span class="name">p</span><span class="punctuation">):</span>
     <span class="name">T</span> <span class="operator">=</span> <span class="name">P1</span> <span class="operator">-</span> <span class="name">P0</span>
@@ -502,7 +503,7 @@ compute distance from p to each line i (P0[i],P1[i]) ?</p>
 </pre>
 </li>
 <li><p class="first">Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P,
-how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?</p>
+how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Italmassov Kuanysh</span>
 <span class="comment"># based on distance function from previous question</span>
@@ -514,7 +515,7 @@ how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?<
 </li>
 <li><p class="first">Consider an arbitrary array, write a function that extract a subpart with a
 fixed shape and centered on a given element (pad with a <tt class="docutils literal">fill</tt> value when
-necessary)</p>
+necessary)  (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Nicolas Rougier</span>
 
@@ -546,30 +547,25 @@ necessary)</p>
 </pre>
 </li>
 <li><p class="first">Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an
-array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]] ?</p>
+array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]] ? (★★★☆☆)</p>
 <pre class="code python literal-block">
-<span class="comment"># Author: Stéfan van der Walt</span>
+<span class="comment"># Author: Stefan van der Walt</span>
 
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">15</span><span class="punctuation">,</span><span class="name">dtype</span><span class="operator">=</span><span class="name">uint32</span><span class="punctuation">)</span>
 <span class="name">R</span> <span class="operator">=</span> <span class="name">stride_tricks</span><span class="operator">.</span><span class="name">as_strided</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,(</span><span class="literal number integer">11</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">),(</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">))</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">R</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
-that contain elements of each row of B regardless of the order of the elements
-in B ?</p>
+<li><p class="first">Compute a matrix rank (★★★☆☆)</p>
 <pre class="code python literal-block">
-<span class="comment"># Author: Gabe Schwartz</span>
+<span class="comment"># Author: Stefan van der Walt</span>
 
-<span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,(</span><span class="literal number integer">8</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
-<span class="name">B</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,(</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">))</span>
-
-<span class="name">C</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">A</span><span class="punctuation">[</span><span class="operator">...</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">]</span> <span class="operator">==</span> <span class="name">B</span><span class="punctuation">)</span>
-<span class="name">rows</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">C</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span> <span class="operator">&gt;=</span> <span class="name">B</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">])</span><span class="operator">.</span><span class="name">nonzero</span><span class="punctuation">()[</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">rows</span><span class="punctuation">)</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">uniform</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,(</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
+<span class="name">U</span><span class="punctuation">,</span> <span class="name">S</span><span class="punctuation">,</span> <span class="name">V</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">linalg</span><span class="operator">.</span><span class="name">svd</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span> <span class="comment"># Singular Value Decomposition</span>
+<span class="name">rank</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">S</span> <span class="operator">&gt;</span> <span class="literal number float">1e-10</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Extract all the contiguous 3x3 blocks from a random 10x10 matrix.</p>
+<li><p class="first">Extract all the contiguous 3x3 blocks from a random 10x10 matrix (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Chris Barker</span>
 
@@ -581,7 +577,7 @@ in B ?</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">C</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 2D array subclass such that Z[i,j] == Z[j,i]</p>
+<li><p class="first">Create a 2D array subclass such that Z[i,j] == Z[j,i] (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Eric O. Lebigot</span>
 <span class="comment"># Note: only works for 2d array and value setting using indices</span>
@@ -600,9 +596,9 @@ in B ?</p>
 </pre>
 </li>
 <li><p class="first">Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1).
-How to compute the sum of of the p matrix products at once ? (result has shape (n,1))</p>
+How to compute the sum of of the p matrix products at once ? (result has shape (n,1)) (★★★☆☆)</p>
 <pre class="code python literal-block">
-<span class="comment"># Author: Stéfan van der Walt</span>
+<span class="comment"># Author: Stefan van der Walt</span>
 
 <span class="name">p</span><span class="punctuation">,</span> <span class="name">n</span> <span class="operator">=</span> <span class="literal number integer">10</span><span class="punctuation">,</span> <span class="literal number integer">20</span>
 <span class="name">M</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="name">p</span><span class="punctuation">,</span><span class="name">n</span><span class="punctuation">,</span><span class="name">n</span><span class="punctuation">))</span>
@@ -617,22 +613,17 @@ How to compute the sum of of the p matrix products at once ? (result has shape (
 <span class="comment"># and 2 and 1, to remain with a (n,1) vector.</span>
 </pre>
 </li>
-<li><p class="first">Given a two dimensional array, how to extract unique rows ?</p>
-<div class="note">
-<p class="first admonition-title">Note</p>
-<p class="last">See <a class="reference external" href="http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/">stackoverflow</a> for explanations.</p>
-</div>
+<li><p class="first">Consider a 16x16 array, how to get the block-sum (block size is 4x4) ? (★★★☆☆)</p>
 <pre class="code python literal-block">
-<span class="comment"># Author: Jaime Fernández del Río</span>
+<span class="comment"># Author: Robert Kern</span>
 
-<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,(</span><span class="literal number integer">6</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
-<span class="name">T</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ascontiguousarray</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">view</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">dtype</span><span class="punctuation">((</span><span class="name">np</span><span class="operator">.</span><span class="name">void</span><span class="punctuation">,</span> <span class="name">Z</span><span class="operator">.</span><span class="name">dtype</span><span class="operator">.</span><span class="name">itemsize</span> <span class="operator">*</span> <span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">])))</span>
-<span class="name">_</span><span class="punctuation">,</span> <span class="name">idx</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">T</span><span class="punctuation">,</span> <span class="name">return_index</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">)</span>
-<span class="name">uZ</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[</span><span class="name">idx</span><span class="punctuation">]</span>
-<span class="keyword">print</span><span class="punctuation">(</span><span class="name">uZ</span><span class="punctuation">)</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">(</span><span class="literal number integer">16</span><span class="punctuation">,</span><span class="literal number integer">16</span><span class="punctuation">)</span>
+<span class="name">k</span> <span class="operator">=</span> <span class="literal number integer">4</span>
+<span class="name">S</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">add</span><span class="operator">.</span><span class="name">reduceat</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">add</span><span class="operator">.</span><span class="name">reduceat</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span> <span class="name">k</span><span class="punctuation">),</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">),</span>
+                                       <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">],</span> <span class="name">k</span><span class="punctuation">),</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">How to implement the Game of Life using numpy arrays ?</p>
+<li><p class="first">How to implement the Game of Life using numpy arrays ? (★★★☆☆)</p>
 <pre class="code python literal-block">
 <span class="comment"># Author: Nicolas Rougier</span>
 
@@ -651,6 +642,80 @@ How to compute the sum of of the p matrix products at once ? (result has shape (
 
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,(</span><span class="literal number integer">50</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">))</span>
 <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">):</span> <span class="name">Z</span> <span class="operator">=</span> <span class="name">iterate</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Given an arbitrary number of vectors, build the cartesian product (every
+combinations of every item) (★★★☆☆)</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Stefan Van der Walt</span>
+
+<span class="keyword">def</span> <span class="name function">cartesian</span><span class="punctuation">(</span><span class="name">arrays</span><span class="punctuation">):</span>
+    <span class="name">arrays</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="name">np</span><span class="operator">.</span><span class="name">asarray</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">)</span> <span class="keyword">for</span> <span class="name">a</span> <span class="operator word">in</span> <span class="name">arrays</span><span class="punctuation">]</span>
+    <span class="name">shape</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name builtin">len</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span> <span class="keyword">for</span> <span class="name">x</span> <span class="operator word">in</span> <span class="name">arrays</span><span class="punctuation">)</span>
+
+    <span class="name">ix</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">indices</span><span class="punctuation">(</span><span class="name">shape</span><span class="punctuation">,</span> <span class="name">dtype</span><span class="operator">=</span><span class="name builtin">int</span><span class="punctuation">)</span>
+    <span class="name">ix</span> <span class="operator">=</span> <span class="name">ix</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="name builtin">len</span><span class="punctuation">(</span><span class="name">arrays</span><span class="punctuation">),</span> <span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">T</span>
+
+    <span class="keyword">for</span> <span class="name">n</span><span class="punctuation">,</span> <span class="name">arr</span> <span class="operator word">in</span> <span class="name builtin">enumerate</span><span class="punctuation">(</span><span class="name">arrays</span><span class="punctuation">):</span>
+        <span class="name">ix</span><span class="punctuation">[:,</span> <span class="name">n</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">arrays</span><span class="punctuation">[</span><span class="name">n</span><span class="punctuation">][</span><span class="name">ix</span><span class="punctuation">[:,</span> <span class="name">n</span><span class="punctuation">]]</span>
+
+    <span class="keyword">return</span> <span class="name">ix</span>
+
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">cartesian</span><span class="punctuation">(([</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">],</span> <span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">],</span> <span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="literal number integer">7</span><span class="punctuation">])))</span>
+</pre>
+</li>
+<li><p class="first">Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
+that contain elements of each row of B regardless of the order of the elements
+in B ? (★★★★☆)</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Gabe Schwartz</span>
+
+<span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,(</span><span class="literal number integer">8</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
+<span class="name">B</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,(</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">))</span>
+
+<span class="name">C</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">A</span><span class="punctuation">[</span><span class="operator">...</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">]</span> <span class="operator">==</span> <span class="name">B</span><span class="punctuation">)</span>
+<span class="name">rows</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">C</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">axis</span><span class="operator">=</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span> <span class="operator">&gt;=</span> <span class="name">B</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">])</span><span class="operator">.</span><span class="name">nonzero</span><span class="punctuation">()[</span><span class="literal number integer">0</span><span class="punctuation">]</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">rows</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3]) (★★★★☆)</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Robert Kern</span>
+
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">,(</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
+<span class="name">E</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">logical_and</span><span class="operator">.</span><span class="name">reduce</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">[:,</span><span class="literal number integer">1</span><span class="punctuation">:]</span> <span class="operator">==</span> <span class="name">Z</span><span class="punctuation">[:,:</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">],</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+<span class="name">U</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[</span><span class="operator">~</span><span class="name">E</span><span class="punctuation">]</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">U</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Convert a vector of ints into a matrix binary representation (★★★★☆)</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Warren Weckesser</span>
+
+<span class="name">I</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">,</span> <span class="literal number integer">15</span><span class="punctuation">,</span> <span class="literal number integer">16</span><span class="punctuation">,</span> <span class="literal number integer">32</span><span class="punctuation">,</span> <span class="literal number integer">64</span><span class="punctuation">,</span> <span class="literal number integer">128</span><span class="punctuation">])</span>
+<span class="name">B</span> <span class="operator">=</span> <span class="punctuation">((</span><span class="name">I</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">)</span> <span class="operator">&amp;</span> <span class="punctuation">(</span><span class="literal number integer">2</span><span class="operator">**</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">8</span><span class="punctuation">)))</span> <span class="operator">!=</span> <span class="literal number integer">0</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">astype</span><span class="punctuation">(</span><span class="name builtin">int</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">B</span><span class="punctuation">[:,::</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">])</span>
+
+<span class="comment"># Author: Daniel T. McDonald</span>
+
+<span class="name">I</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">,</span> <span class="literal number integer">15</span><span class="punctuation">,</span> <span class="literal number integer">16</span><span class="punctuation">,</span> <span class="literal number integer">32</span><span class="punctuation">,</span> <span class="literal number integer">64</span><span class="punctuation">,</span> <span class="literal number integer">128</span><span class="punctuation">],</span> <span class="name">dtype</span><span class="operator">=</span><span class="name">np</span><span class="operator">.</span><span class="name">uint8</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">unpackbits</span><span class="punctuation">(</span><span class="name">I</span><span class="punctuation">[:,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">],</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">))</span>
+</pre>
+</li>
+<li><p class="first">Given a two dimensional array, how to extract unique rows ?  (★★★★☆)</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">See <a class="reference external" href="http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/">stackoverflow</a> for explanations.</p>
+</div>
+<pre class="code python literal-block">
+<span class="comment"># Author: Jaime Fernández del Río</span>
+
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">randint</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">,(</span><span class="literal number integer">6</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">))</span>
+<span class="name">T</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ascontiguousarray</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">view</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">dtype</span><span class="punctuation">((</span><span class="name">np</span><span class="operator">.</span><span class="name">void</span><span class="punctuation">,</span> <span class="name">Z</span><span class="operator">.</span><span class="name">dtype</span><span class="operator">.</span><span class="name">itemsize</span> <span class="operator">*</span> <span class="name">Z</span><span class="operator">.</span><span class="name">shape</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">])))</span>
+<span class="name">_</span><span class="punctuation">,</span> <span class="name">idx</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">T</span><span class="punctuation">,</span> <span class="name">return_index</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">)</span>
+<span class="name">uZ</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[</span><span class="name">idx</span><span class="punctuation">]</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">uZ</span><span class="punctuation">)</span>
 </pre>
 </li>
 </ol>

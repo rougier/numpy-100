@@ -30,14 +30,14 @@ Thanks to Michiaki Ariga, there is now a
 `Julia version <https://github.com/chezou/julia-100-exercises>`_.
 
 
-#. Import the numpy package under the name ``np``
+#. Import the numpy package under the name ``np`` (★☆☆☆☆) 
 
    .. code-block:: python
 
       import numpy as np
 
 
-#. Print the numpy version and the configuration.
+#. Print the numpy version and the configuration (★☆☆☆☆) 
 
    .. code-block:: python
 
@@ -45,15 +45,22 @@ Thanks to Michiaki Ariga, there is now a
       np.__config__.show()
 
 
-#. Create a null vector of size 10
+#. Create a null vector of size 10 (★☆☆☆☆) 
 
    .. code-block:: python
 
       Z = np.zeros(10)
       print(Z)
 
+      
+#. How to get the documentation of the numpy add function from the command line ? (★☆☆☆☆) 
 
-#. Create a null vector of size 10 but the fifth value which is 1
+   .. code-block:: bash
+
+      python -c "import numpy; numpy.info(numpy.add)"
+
+
+#. Create a null vector of size 10 but the fifth value which is 1 (★☆☆☆☆) 
 
    .. code-block:: python
 
@@ -62,7 +69,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Create a vector with values ranging from 10 to 49
+#. Create a vector with values ranging from 10 to 49 (★☆☆☆☆) 
 
    .. code-block:: python
 
@@ -70,7 +77,15 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Create a 3x3 matrix with values ranging from 0 to 8
+#. Reverse a vector (first element becomes last) (★☆☆☆☆) 
+
+   .. code-block:: python
+
+      Z = np.arange(50)
+      Z = Z[::-1]
+
+
+#. Create a 3x3 matrix with values ranging from 0 to 8 (★☆☆☆☆) 
 
    .. code-block:: python
 
@@ -78,7 +93,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Find indices of non-zero elements from [1,2,0,0,4,0]
+#. Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆☆☆) 
 
    .. code-block:: python
 
@@ -86,7 +101,7 @@ Thanks to Michiaki Ariga, there is now a
       print(nz)
 
 
-#. Create a 3x3 identity matrix
+#. Create a 3x3 identity matrix (★☆☆☆☆) 
 
    .. code-block:: python
 
@@ -94,22 +109,41 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal
-
-   .. code-block:: python
-
-      Z = np.diag(1+np.arange(4),k=-1)
-      print(Z)
-
-
-#. Create a 3x3x3 array with random values
+#. Create a 3x3x3 array with random values (★☆☆☆☆) 
 
    .. code-block:: python
 
       Z = np.random.random((3,3,3))
       print(Z)
 
-#. Create a 8x8 matrix and fill it with a checkerboard pattern
+
+#. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆☆☆) 
+
+   .. code-block:: python
+
+      Z = np.random.random((10,10))
+      Zmin, Zmax = Z.min(), Z.max()
+      print(Zmin, Zmax)
+
+      
+#. Create a random vector of size 30 and find the mean value  (★☆☆☆☆) 
+
+   .. code-block:: python
+
+      Z = np.random.random(30)
+      m = Z.mean()
+      print(m)
+
+      
+#. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★★☆☆☆) 
+
+   .. code-block:: python
+
+      Z = np.diag(1+np.arange(4),k=-1)
+      print(Z)
+      
+
+#. Create a 8x8 matrix and fill it with a checkerboard pattern (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -119,16 +153,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Create a 10x10 array with random values and find the minimum and maximum values
-
-   .. code-block:: python
-
-      Z = np.random.random((10,10))
-      Zmin, Zmax = Z.min(), Z.max()
-      print(Zmin, Zmax)
-
-
-#. Create a checkerboard 8x8 matrix using the tile function
+#. Create a checkerboard 8x8 matrix using the tile function (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -136,7 +161,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Normalize a 5x5 random matrix (between 0 and 1)
+#. Normalize a 5x5 random matrix (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -146,7 +171,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)
+#. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -154,7 +179,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Create a 5x5 matrix with row values ranging from 0 to 4
+#. Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -163,7 +188,7 @@ Thanks to Michiaki Ariga, there is now a
     print(Z)
 
 
-#. Create a vector of size 10 with values ranging from 0 to 1, both excluded
+#. Create a vector of size 10 with values ranging from 0 to 1, both excluded (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -171,7 +196,7 @@ Thanks to Michiaki Ariga, there is now a
     print(Z)
 
 
-#. Create a random vector of size 10 and sort it
+#. Create a random vector of size 10 and sort it  (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -180,7 +205,7 @@ Thanks to Michiaki Ariga, there is now a
     print(Z)
 
 
-#. Consider two random array A anb B, check if they are equal.
+#. Consider two random array A anb B, check if they are equal  (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -190,16 +215,8 @@ Thanks to Michiaki Ariga, there is now a
       print(equal)
 
 
-#. Create a random vector of size 30 and find the mean value
 
-   .. code-block:: python
-
-      Z = np.random.random(30)
-      m = Z.mean()
-      print(m)
-
-
-#. Make an array immutable (read-only)
+#. Make an array immutable (read-only) (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -209,7 +226,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Consider a random 10x2 matrix representing cartesian coordinates, convert
-   them to polar coordinates
+   them to polar coordinates (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -221,7 +238,7 @@ Thanks to Michiaki Ariga, there is now a
       print(T)
 
 
-#. Create random vector of size 10 and replace the maximum value by 0
+#. Create random vector of size 10 and replace the maximum value by 0 (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -231,7 +248,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Create a structured array with ``x`` and ``y`` coordinates covering the
-   [0,1]x[0,1] area.
+   [0,1]x[0,1] area (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -241,7 +258,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
 
 
-#. Print the minimum and maximum representable value for each numpy scalar type
+#. Print the minimum and maximum representable value for each numpy scalar type (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -254,7 +271,7 @@ Thanks to Michiaki Ariga, there is now a
          print(np.finfo(dtype).eps)
 
 
-#. Create a structured array representing a position (x,y) and a color (r,g,b)
+#. Create a structured array representing a position (x,y) and a color (r,g,b) (★★☆☆☆)
 
    .. code-block:: python
 
@@ -267,7 +284,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Consider a random vector with shape (100,2) representing coordinates, find
-   point by point distances
+   point by point distances (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -285,8 +302,21 @@ Thanks to Michiaki Ariga, there is now a
       D = scipy.spatial.distance.cdist(Z,Z)
       print(D)
 
+      
+#. Consider the following file::
 
-#. Generate a generic 2D Gaussian-like array
+    1,2,3,4,5
+    6,,,7,8
+    ,,9,10,11
+
+   How to read it ? (★★☆☆☆) 
+
+   .. code-block:: python
+
+      Z = np.genfromtxt("missing.dat", delimiter=",")
+
+      
+#. Generate a generic 2D Gaussian-like array (★★☆☆☆) 
 
    .. code-block:: python
 
@@ -296,7 +326,18 @@ Thanks to Michiaki Ariga, there is now a
       G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
       print(G)
 
-#. Subtract the mean of each row of a matrix
+#. How to randomly place p elements in a 2D array ? (★★★☆☆)
+
+    .. code-block:: python
+
+        # Author: Divakar
+       
+        n = 10
+        p = 3
+        Z = np.zeros((n,n))
+        np.put(Z, np.random.choice(range(n*n), p, replace=False),1)
+
+#. Subtract the mean of each row of a matrix (★★★☆☆) 
 
    .. code-block:: python
 
@@ -310,9 +351,18 @@ Thanks to Michiaki Ariga, there is now a
       # Older versions of numpy
       Y = X - X.mean(axis=1).reshape(-1, 1)
 
+#. How to I sort an array by the nth column ? (★★★☆☆) 
+
+   .. code-block:: python
+
+      # Author: Steve Tjoa
+      
+      Z = np.random.randint(0,10,(3,3))
+      print(Z)
+      print(Z[Z[:,1].argsort()])
    
 
-#. How to tell if a given 2D array has null columns ?
+#. How to tell if a given 2D array has null columns ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -321,7 +371,8 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.random.randint(0,3,(3,10))
       print((~Z.any(axis=0)).any())
 
-#. Find the nearest value from a given value in an array
+      
+#. Find the nearest value from a given value in an array (★★★☆☆) 
 
    .. code-block:: python
 
@@ -331,21 +382,10 @@ Thanks to Michiaki Ariga, there is now a
       print(m)
 
 
-#. Consider the following file::
-
-    1,2,3,4,5
-    6,,,7,8
-    ,,9,10,11
-
-   How to read it ?
-
-   .. code-block:: python
-
-      Z = np.genfromtxt("missing.dat", delimiter=",")
 
 
 #. Consider a generator function that generates 10 integers and use it to build an
-   array
+   array (★★★☆☆) 
 
    .. code-block:: python
 
@@ -357,7 +397,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Consider a given vector, how to add 1 to each element indexed by a second
-   vector (be careful with repeated indices) ?
+   vector (be careful with repeated indices) ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -370,7 +410,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. How to accumulate elements of a vector (X) to an array (F) based on an index
-   list (I) ?
+   list (I) ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -383,7 +423,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique
-   colors
+   colors (★★★☆☆) 
 
    .. code-block:: python
 
@@ -396,7 +436,8 @@ Thanks to Michiaki Ariga, there is now a
       print(np.unique(I))
 
 
-#. Considering a four dimensions array, how to get sum over the last two axis at once ?
+#. Considering a four dimensions array, how to get sum over the last two axis
+   at once ? (★★★☆☆)
 
    .. code-block:: python
 
@@ -406,7 +447,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Considering a one-dimensional vector D, how to compute means of subsets of D
-   using a vector S of same size describing subset indices ?
+   using a vector S of same size describing subset indices ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -419,9 +460,8 @@ Thanks to Michiaki Ariga, there is now a
       D_means = D_sums / D_counts
       print(D_means)
 
-      I often need to compute the equivalent of
 
-#. How to get the diagonal of a dot product ?
+#. How to get the diagonal of a dot product ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -438,7 +478,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3
-   consecutive zeros interleaved between each value ?
+   consecutive zeros interleaved between each value ?  (★★★☆☆) 
 
    .. code-block:: python
 
@@ -452,7 +492,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Consider an array of dimension (5,5,3), how to mulitply it by an array with
-   dimensions (5,5) ?
+   dimensions (5,5) ?  (★★★☆☆) 
 
    .. code-block:: python
 
@@ -461,8 +501,7 @@ Thanks to Michiaki Ariga, there is now a
       print(A * B[:,:,None])
 
 
-#. How to swap two rows of an array ?
-
+#. How to swap two rows of an array ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -473,25 +512,8 @@ Thanks to Michiaki Ariga, there is now a
       print(A)
 
 
-#. Consider a one-dimensional array Z, build a two-dimensional array whose
-   first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
-   row should be (Z[-3],Z[-2],Z[-1])
-
-   .. code-block:: python
-
-      # Author: Joe Kington / Erik Rigtorp
-      from numpy.lib import stride_tricks
-
-      def rolling(a, window):
-          shape = (a.size - window + 1, window)
-          strides = (a.itemsize, a.itemsize)
-          return stride_tricks.as_strided(a, shape=shape, strides=strides)
-      Z = rolling(np.arange(10), 3)
-      print(Z)
-
-
 #. Consider a set of 10 triplets describing 10 triangles (with shared
-   vertices), find the set of unique line segments composing all the triangles.
+   vertices), find the set of unique line segments composing all the triangles (★★★☆☆) 
 
    .. code-block:: python
 
@@ -507,7 +529,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Given an array C that is a bincount, how to produce an array A such that
-   np.bincount(A) == C ?
+   np.bincount(A) == C ?  (★★★☆☆) 
 
    .. code-block:: python
 
@@ -517,7 +539,8 @@ Thanks to Michiaki Ariga, there is now a
      A = np.repeat(np.arange(len(C)), C)
      print(A)
 
-#. How to compute averages using a sliding window over an array ?
+     
+#. How to compute averages using a sliding window over an array ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -530,13 +553,24 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.arange(20)
       print(moving_average(Z, n=3))
 
-#. How to get the documentation of the numpy add function from the command line ?
+#. Consider a one-dimensional array Z, build a two-dimensional array whose
+   first row is (Z[0],Z[1],Z[2]) and each subsequent row is shifted by 1 (last
+   row should be (Z[-3],Z[-2],Z[-1]) (★★★☆☆) 
 
-   .. code-block:: bash
+   .. code-block:: python
 
-      python -c "import numpy; numpy.info(numpy.add)"
+      # Author: Joe Kington / Erik Rigtorp
+      from numpy.lib import stride_tricks
 
-#. How to negate a boolean, or to change the sign of a float inplace ?
+      def rolling(a, window):
+          shape = (a.size - window + 1, window)
+          strides = (a.itemsize, a.itemsize)
+          return stride_tricks.as_strided(a, shape=shape, strides=strides)
+      Z = rolling(np.arange(10), 3)
+      print(Z)
+
+
+#. How to negate a boolean, or to change the sign of a float inplace ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -549,36 +583,9 @@ Thanks to Michiaki Ariga, there is now a
       np.negative(arr, out=arr)
 
 
-#. Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3])
-
-   .. code-block:: python
-
-      # Author: Robert Kern
-
-      Z = np.random.randint(0,5,(10,3))
-      E = np.logical_and.reduce(Z[:,1:] == Z[:,:-1], axis=1)
-      U = Z[~E]
-      print(Z)
-      print(U)
-
-#. Convert a vector of ints into a matrix binary representation.
-
-   .. code-block:: python
-
-      # Author: Warren Weckesser
-
-      I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128])
-      B = ((I.reshape(-1,1) & (2**np.arange(8))) != 0).astype(int)
-      print(B[:,::-1])
-
-      # Author: Daniel T. McDonald
-
-      I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128], dtype=np.uint8)
-      print(np.unpackbits(I[:, np.newaxis], axis=1))
-
 
 #. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to
-   compute distance from p to each line i (P0[i],P1[i]) ?
+   compute distance from p to each line i (P0[i],P1[i]) ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -597,7 +604,7 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P,
-   how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ?
+   how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i]) ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -610,7 +617,7 @@ Thanks to Michiaki Ariga, there is now a
 
 #. Consider an arbitrary array, write a function that extract a subpart with a
    fixed shape and centered on a given element (pad with a ``fill`` value when
-   necessary)
+   necessary)  (★★★☆☆) 
 
    .. code:: python
 
@@ -644,34 +651,28 @@ Thanks to Michiaki Ariga, there is now a
 
 
 #. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an
-   array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]] ?
+   array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]] ? (★★★☆☆) 
 
    .. code-block:: python
 
-      # Author: Stéfan van der Walt
+      # Author: Stefan van der Walt
 
       Z = np.arange(1,15,dtype=uint32)
       R = stride_tricks.as_strided(Z,(11,4),(4,4))
       print(R)
 
-
-#. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
-   that contain elements of each row of B regardless of the order of the elements
-   in B ?
+#. Compute a matrix rank (★★★☆☆)
 
    .. code-block:: python
 
-      # Author: Gabe Schwartz
+      # Author: Stefan van der Walt
+    
+      Z = np.random.uniform(0,1,(10,10))
+      U, S, V = np.linalg.svd(Z) # Singular Value Decomposition
+      rank = np.sum(S > 1e-10)
 
-      A = np.random.randint(0,5,(8,3))
-      B = np.random.randint(0,5,(2,2))
-
-      C = (A[..., np.newaxis, np.newaxis] == B)
-      rows = (C.sum(axis=(1,2,3)) >= B.shape[1]).nonzero()[0]
-      print(rows)
-
-
-#. Extract all the contiguous 3x3 blocks from a random 10x10 matrix.
+      
+#. Extract all the contiguous 3x3 blocks from a random 10x10 matrix (★★★☆☆) 
 
    .. code-block:: python
 
@@ -685,7 +686,7 @@ Thanks to Michiaki Ariga, there is now a
       print(C)
 
 
-#. Create a 2D array subclass such that Z[i,j] == Z[j,i]
+#. Create a 2D array subclass such that Z[i,j] == Z[j,i] (★★★☆☆) 
 
    .. code-block:: python
 
@@ -705,11 +706,11 @@ Thanks to Michiaki Ariga, there is now a
       print(S)
 
 #. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1).
-   How to compute the sum of of the p matrix products at once ? (result has shape (n,1))
+   How to compute the sum of of the p matrix products at once ? (result has shape (n,1)) (★★★☆☆) 
 
    .. code-block:: python
 
-      # Author: Stéfan van der Walt
+      # Author: Stefan van der Walt
 
       p, n = 10, 20
       M = np.ones((p,n,n))
@@ -724,21 +725,19 @@ Thanks to Michiaki Ariga, there is now a
       # and 2 and 1, to remain with a (n,1) vector.
 
 
-#. Given a two dimensional array, how to extract unique rows ?
-
-   .. note:: See `stackoverflow <http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/>`_ for explanations.
+#. Consider a 16x16 array, how to get the block-sum (block size is 4x4) ? (★★★☆☆) 
 
    .. code-block:: python
 
-      # Author: Jaime Fernández del Río
+      # Author: Robert Kern
+                         
+      Z = np.ones(16,16)
+      k = 4
+      S = np.add.reduceat(np.add.reduceat(Z, np.arange(0, Z.shape[0], k), axis=0),
+                                             np.arange(0, Z.shape[1], k), axis=1)
+                   
 
-      Z = np.random.randint(0,2,(6,3))
-      T = np.ascontiguousarray(Z).view(np.dtype((np.void, Z.dtype.itemsize * Z.shape[1])))
-      _, idx = np.unique(T, return_index=True)
-      uZ = Z[idx]
-      print(uZ)
-
-#. How to implement the Game of Life using numpy arrays ?
+#. How to implement the Game of Life using numpy arrays ? (★★★☆☆) 
 
    .. code-block:: python
 
@@ -759,3 +758,84 @@ Thanks to Michiaki Ariga, there is now a
 
       Z = np.random.randint(0,2,(50,50))
       for i in range(100): Z = iterate(Z)
+
+#. Given an arbitrary number of vectors, build the cartesian product (every
+   combinations of every item) (★★★☆☆)
+   
+   .. code-block:: python
+
+      # Author: Stefan Van der Walt
+
+      def cartesian(arrays):
+          arrays = [np.asarray(a) for a in arrays]
+          shape = (len(x) for x in arrays)
+
+          ix = np.indices(shape, dtype=int)
+          ix = ix.reshape(len(arrays), -1).T
+
+          for n, arr in enumerate(arrays):
+              ix[:, n] = arrays[n][ix[:, n]]
+
+          return ix
+
+      print (cartesian(([1, 2, 3], [4, 5], [6, 7])))
+
+      
+#. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
+   that contain elements of each row of B regardless of the order of the elements
+   in B ? (★★★★☆) 
+
+   .. code-block:: python
+
+      # Author: Gabe Schwartz
+
+      A = np.random.randint(0,5,(8,3))
+      B = np.random.randint(0,5,(2,2))
+
+      C = (A[..., np.newaxis, np.newaxis] == B)
+      rows = (C.sum(axis=(1,2,3)) >= B.shape[1]).nonzero()[0]
+      print(rows)
+
+
+#. Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3]) (★★★★☆) 
+
+   .. code-block:: python
+
+      # Author: Robert Kern
+
+      Z = np.random.randint(0,5,(10,3))
+      E = np.logical_and.reduce(Z[:,1:] == Z[:,:-1], axis=1)
+      U = Z[~E]
+      print(Z)
+      print(U)
+
+      
+#. Convert a vector of ints into a matrix binary representation (★★★★☆) 
+
+   .. code-block:: python
+
+      # Author: Warren Weckesser
+
+      I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128])
+      B = ((I.reshape(-1,1) & (2**np.arange(8))) != 0).astype(int)
+      print(B[:,::-1])
+
+      # Author: Daniel T. McDonald
+
+      I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128], dtype=np.uint8)
+      print(np.unpackbits(I[:, np.newaxis], axis=1))
+
+
+#. Given a two dimensional array, how to extract unique rows ?  (★★★★☆) 
+
+   .. note:: See `stackoverflow <http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/>`_ for explanations.
+
+   .. code-block:: python
+
+      # Author: Jaime Fernández del Río
+
+      Z = np.random.randint(0,2,(6,3))
+      T = np.ascontiguousarray(Z).view(np.dtype((np.void, Z.dtype.itemsize * Z.shape[1])))
+      _, idx = np.unique(T, return_index=True)
+      uZ = Z[idx]
+      print(uZ)
