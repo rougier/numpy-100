@@ -780,7 +780,36 @@ Thanks to Michiaki Ariga, there is now a
 
       print (cartesian(([1, 2, 3], [4, 5], [6, 7])))
 
-      
+
+#. How to create a record array from a regular array ? (★★★☆☆) 
+   
+   .. code-block:: python
+
+      Z = np.array([("Hello", 2.5, 3),
+                    ("World", 3.6, 2)])
+      R = np.core.records.fromarrays(Z.T, 
+                                     names='col1, col2, col3',
+                                     formats = 'S8, f8, i8')
+
+#. Comsider a large vector Z, compute Z to the power of 3 using 3 different
+   methods (★★★☆☆)
+   
+   .. code-block:: python
+
+      Author: Ryan G.
+                   
+      x = np.random.rand(5e7)
+
+      %timeit np.power(x,3)
+      1 loops, best of 3: 574 ms per loop
+
+      %timeit x*x*x
+      1 loops, best of 3: 429 ms per loop
+
+      %timeit np.einsum('i,i,i->i',x,x,x)
+      1 loops, best of 3: 244 ms per loop
+ 
+                   
 #. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
    that contain elements of each row of B regardless of the order of the elements
    in B ? (★★★★☆) 
@@ -826,7 +855,7 @@ Thanks to Michiaki Ariga, there is now a
       print(np.unpackbits(I[:, np.newaxis], axis=1))
 
 
-#. Given a two dimensional array, how to extract unique rows ?  (★★★★☆) 
+#. Given a two dimensional array, how to extract unique rows ? (★★★★☆) 
 
    .. note:: See `stackoverflow <http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/>`_ for explanations.
 
@@ -839,3 +868,37 @@ Thanks to Michiaki Ariga, there is now a
       _, idx = np.unique(T, return_index=True)
       uZ = Z[idx]
       print(uZ)
+
+#. Considering 2 vectors A & B, write the einsum equivalent of inner, outer,
+   sum, and mul function (★★★★☆) 
+
+
+   .. code-block:: python
+
+      # Author: Alex Riley
+      # Make sure to read: http://ajcr.net/Basic-guide-to-einsum/
+
+      np.einsum('i->', A)       # np.sum(A)
+      np.einsum('i,i->i', A, B) # A * B
+      np.einsum('i,i', A, B)	# np.inner(A, B)
+      np.einsum('i,j', A, B)    # np.outer(A, B)
+
+
+#. Considering a path described by two vectors (X,Y), how to sample it using
+   equidistant samples (★★★★★) ?
+
+   .. code-block:: python
+
+      # Author: Bas Swinckels
+
+      phi = np.arange(0, 10*np.pi, 0.1)
+      a = 1
+      x = a*phi*np.cos(phi)
+      y = a*phi*np.sin(phi)
+
+      dr = (np.diff(x)**2 + np.diff(y)**2)**.5 # segment lengths
+      r = np.zeros_like(x)
+      r[1:] = np.cumsum(dr)                # integrate path
+      r_int = np.linspace(0, r.max(), 200) # regular spaced path
+      x_int = np.interp(r_int, r, x)       # integrate path
+      y_int = np.interp(r_int, r, y)

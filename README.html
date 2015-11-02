@@ -664,6 +664,32 @@ combinations of every item) (★★★☆☆)</p>
 <span class="keyword">print</span> <span class="punctuation">(</span><span class="name">cartesian</span><span class="punctuation">(([</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">],</span> <span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">],</span> <span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="literal number integer">7</span><span class="punctuation">])))</span>
 </pre>
 </li>
+<li><p class="first">How to create a record array from a regular array ? (★★★☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">([(</span><span class="literal string">&quot;Hello&quot;</span><span class="punctuation">,</span> <span class="literal number float">2.5</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">),</span>
+              <span class="punctuation">(</span><span class="literal string">&quot;World&quot;</span><span class="punctuation">,</span> <span class="literal number float">3.6</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">)])</span>
+<span class="name">R</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">core</span><span class="operator">.</span><span class="name">records</span><span class="operator">.</span><span class="name">fromarrays</span><span class="punctuation">(</span><span class="name">Z</span><span class="operator">.</span><span class="name">T</span><span class="punctuation">,</span>
+                               <span class="name">names</span><span class="operator">=</span><span class="literal string">'col1, col2, col3'</span><span class="punctuation">,</span>
+                               <span class="name">formats</span> <span class="operator">=</span> <span class="literal string">'S8, f8, i8'</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Comsider a large vector Z, compute Z to the power of 3 using 3 different
+methods (★★★☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Author</span><span class="punctuation">:</span> <span class="name">Ryan</span> <span class="name">G</span><span class="operator">.</span>
+
+<span class="name">x</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">rand</span><span class="punctuation">(</span><span class="literal number float">5e7</span><span class="punctuation">)</span>
+
+<span class="operator">%</span><span class="name">timeit</span> <span class="name">np</span><span class="operator">.</span><span class="name">power</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">)</span>
+<span class="literal number integer">1</span> <span class="name">loops</span><span class="punctuation">,</span> <span class="name">best</span> <span class="name">of</span> <span class="literal number integer">3</span><span class="punctuation">:</span> <span class="literal number integer">574</span> <span class="name">ms</span> <span class="name">per</span> <span class="name">loop</span>
+
+<span class="operator">%</span><span class="name">timeit</span> <span class="name">x</span><span class="operator">*</span><span class="name">x</span><span class="operator">*</span><span class="name">x</span>
+<span class="literal number integer">1</span> <span class="name">loops</span><span class="punctuation">,</span> <span class="name">best</span> <span class="name">of</span> <span class="literal number integer">3</span><span class="punctuation">:</span> <span class="literal number integer">429</span> <span class="name">ms</span> <span class="name">per</span> <span class="name">loop</span>
+
+<span class="operator">%</span><span class="name">timeit</span> <span class="name">np</span><span class="operator">.</span><span class="name">einsum</span><span class="punctuation">(</span><span class="literal string">'i,i,i-&gt;i'</span><span class="punctuation">,</span><span class="name">x</span><span class="punctuation">,</span><span class="name">x</span><span class="punctuation">,</span><span class="name">x</span><span class="punctuation">)</span>
+<span class="literal number integer">1</span> <span class="name">loops</span><span class="punctuation">,</span> <span class="name">best</span> <span class="name">of</span> <span class="literal number integer">3</span><span class="punctuation">:</span> <span class="literal number integer">244</span> <span class="name">ms</span> <span class="name">per</span> <span class="name">loop</span>
+</pre>
+</li>
 <li><p class="first">Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A
 that contain elements of each row of B regardless of the order of the elements
 in B ? (★★★★☆)</p>
@@ -703,7 +729,7 @@ in B ? (★★★★☆)</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">unpackbits</span><span class="punctuation">(</span><span class="name">I</span><span class="punctuation">[:,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">],</span> <span class="name">axis</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">))</span>
 </pre>
 </li>
-<li><p class="first">Given a two dimensional array, how to extract unique rows ?  (★★★★☆)</p>
+<li><p class="first">Given a two dimensional array, how to extract unique rows ? (★★★★☆)</p>
 <div class="note">
 <p class="first admonition-title">Note</p>
 <p class="last">See <a class="reference external" href="http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array/">stackoverflow</a> for explanations.</p>
@@ -716,6 +742,36 @@ in B ? (★★★★☆)</p>
 <span class="name">_</span><span class="punctuation">,</span> <span class="name">idx</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">T</span><span class="punctuation">,</span> <span class="name">return_index</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">)</span>
 <span class="name">uZ</span> <span class="operator">=</span> <span class="name">Z</span><span class="punctuation">[</span><span class="name">idx</span><span class="punctuation">]</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">uZ</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">Considering 2 vectors A &amp; B, write the einsum equivalent of inner, outer,
+sum, and mul function (★★★★☆)</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Alex Riley</span>
+<span class="comment"># Make sure to read: http://ajcr.net/Basic-guide-to-einsum/</span>
+
+<span class="name">np</span><span class="operator">.</span><span class="name">einsum</span><span class="punctuation">(</span><span class="literal string">'i-&gt;'</span><span class="punctuation">,</span> <span class="name">A</span><span class="punctuation">)</span>       <span class="comment"># np.sum(A)</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">einsum</span><span class="punctuation">(</span><span class="literal string">'i,i-&gt;i'</span><span class="punctuation">,</span> <span class="name">A</span><span class="punctuation">,</span> <span class="name">B</span><span class="punctuation">)</span> <span class="comment"># A * B</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">einsum</span><span class="punctuation">(</span><span class="literal string">'i,i'</span><span class="punctuation">,</span> <span class="name">A</span><span class="punctuation">,</span> <span class="name">B</span><span class="punctuation">)</span>    <span class="comment"># np.inner(A, B)</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">einsum</span><span class="punctuation">(</span><span class="literal string">'i,j'</span><span class="punctuation">,</span> <span class="name">A</span><span class="punctuation">,</span> <span class="name">B</span><span class="punctuation">)</span>    <span class="comment"># np.outer(A, B)</span>
+</pre>
+</li>
+<li><p class="first">Considering a path described by two vectors (X,Y), how to sample it using
+equidistant samples (★★★★★) ?</p>
+<pre class="code python literal-block">
+<span class="comment"># Author: Bas Swinckels</span>
+
+<span class="name">phi</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">pi</span><span class="punctuation">,</span> <span class="literal number float">0.1</span><span class="punctuation">)</span>
+<span class="name">a</span> <span class="operator">=</span> <span class="literal number integer">1</span>
+<span class="name">x</span> <span class="operator">=</span> <span class="name">a</span><span class="operator">*</span><span class="name">phi</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">cos</span><span class="punctuation">(</span><span class="name">phi</span><span class="punctuation">)</span>
+<span class="name">y</span> <span class="operator">=</span> <span class="name">a</span><span class="operator">*</span><span class="name">phi</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">sin</span><span class="punctuation">(</span><span class="name">phi</span><span class="punctuation">)</span>
+
+<span class="name">dr</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">diff</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span><span class="operator">**</span><span class="literal number integer">2</span> <span class="operator">+</span> <span class="name">np</span><span class="operator">.</span><span class="name">diff</span><span class="punctuation">(</span><span class="name">y</span><span class="punctuation">)</span><span class="operator">**</span><span class="literal number integer">2</span><span class="punctuation">)</span><span class="operator">**.</span><span class="literal number integer">5</span> <span class="comment"># segment lengths</span>
+<span class="name">r</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros_like</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span>
+<span class="name">r</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">:]</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">cumsum</span><span class="punctuation">(</span><span class="name">dr</span><span class="punctuation">)</span>                <span class="comment"># integrate path</span>
+<span class="name">r_int</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">r</span><span class="operator">.</span><span class="name">max</span><span class="punctuation">(),</span> <span class="literal number integer">200</span><span class="punctuation">)</span> <span class="comment"># regular spaced path</span>
+<span class="name">x_int</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">interp</span><span class="punctuation">(</span><span class="name">r_int</span><span class="punctuation">,</span> <span class="name">r</span><span class="punctuation">,</span> <span class="name">x</span><span class="punctuation">)</span>       <span class="comment"># integrate path</span>
+<span class="name">y_int</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">interp</span><span class="punctuation">(</span><span class="name">r_int</span><span class="punctuation">,</span> <span class="name">r</span><span class="punctuation">,</span> <span class="name">y</span><span class="punctuation">)</span>
 </pre>
 </li>
 </ol>
