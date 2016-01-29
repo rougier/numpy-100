@@ -18,6 +18,10 @@ html: $(HTML_OBJECTS)
 
 latex: $(LATEX_OBJECTS)
 
+wording: README.rst
+			grep -e "\#\." README.rst > README-Wording.rst
+
+
 %.html: %.rst Makefile
 	@echo "  - $@"
 	@$(RST2HTML) $(RST2HTML_OPTIONS) $< $@
@@ -31,5 +35,3 @@ clean:
 
 distclean: clean
 	@-rm -f `find . -name "*~"`
-
-
