@@ -26,7 +26,7 @@ http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html
 
 Repository is at: https://github.com/rougier/numpy-100
 
-Wordings without solution can be found at https://github.com/rougier/numpy-100/README-Wording.html
+Wordings without solution can be found at https://github.com/rougier/numpy-100/README-Wording.htmlss
 
 Thanks to Michiaki Ariga, there is now a
 `Julia version <https://github.com/chezou/julia-100-exercises>`_.
