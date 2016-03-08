@@ -3,8 +3,8 @@ RST2HTML         = rst2html.py
 RST2LATEX        = rst2latex.py
 STYLESHEET       = numpy.css
 RST2HTML_OPTIONS = --strip-comments             \
-                   --report=3                   \
-	               --stylesheet=$(STYLESHEET)   \
+                   --report=2                   \
+                   --stylesheet=$(STYLESHEET)   \
                    --link-stylesheet
 RST2LATEX_OPTIONS = --strip-comments            \
                    --report=3                   \
