@@ -834,17 +834,17 @@ Thanks to Michiaki Ariga, there is now a
 
 #. How to get the n largest values of an array (★★★)
 
-      .. code-block:: python
+   .. code-block:: python
 
-         Z = np.arange(10000)
-         np.random.shuffle(Z)
-         n = 5
+      Z = np.arange(10000)
+      np.random.shuffle(Z)
+      n = 5
 
-         # Slow
-         print (Z[np.argsort(Z)[-n:]])
+      # Slow
+      print (Z[np.argsort(Z)[-n:]])
       
-         # Fast
-         print (Z[np.argpartition(-Z,n)[:n]])
+      # Fast
+      print (Z[np.argpartition(-Z,n)[:n]])
       
 
 #. Given an arbitrary number of vectors, build the cartesian product (every
