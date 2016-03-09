@@ -313,13 +313,6 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.zeros((25,25))
       print(Z)
 
-#. How to print all the values of an array ?  (★★☆)
-
-   .. code-block:: python
-
-      np.set_printoptions(threshold=np.nan)
-      Z = np.zeros((25,25))
-      print(Z)
 
 #. How to find the closest value (to a given scalar) in an array ?  (★★☆)
    
