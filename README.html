@@ -39,7 +39,7 @@ is:</p>
 <li><p class="first">Print the numpy version and the configuration (★☆☆)</p>
 <pre class="code python literal-block">
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">__version__</span><span class="punctuation">)</span>
-<span class="name">np</span><span class="operator">.</span><span class="name">__config__</span><span class="operator">.</span><span class="name">show</span><span class="punctuation">()</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">show_config</span><span class="punctuation">()</span>
 </pre>
 </li>
 <li><p class="first">Create a null vector of size 10 (★☆☆)</p>
@@ -164,17 +164,13 @@ python -c <span class="literal string double">&quot;import numpy; numpy.info(num
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Given a 1D array, negate all elements which are between 3 and 8, in place.  (★☆☆)
-.. code-block:: python</p>
-<blockquote>
-<p># Author: Evgeni Burovski</p>
-<p>Z = np.arange(11)
-Z[(3 &lt; Z) &amp; (Z &lt;= 8)] <a href="#id1"><span class="problematic" id="id2">*</span></a>= -1</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">README.rst</tt>, line 209); <em><a href="#id2">backlink</a></em></p>
-<p>Inline emphasis start-string without end-string.</p>
-</div>
-</blockquote>
+<li><p class="first">Given a 1D array, negate all elements which are between 3 and 8, in place.  (★☆☆)</p>
+<pre class="code python literal-block">
+<span class="comment single"># Author: Evgeni Burovski</span>
+
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">11</span><span class="punctuation">)</span>
+<span class="name">Z</span><span class="punctuation">[(</span><span class="literal number integer">3</span> <span class="operator">&lt;</span> <span class="name">Z</span><span class="punctuation">)</span> <span class="operator">&amp;</span> <span class="punctuation">(</span><span class="name">Z</span> <span class="operator">&lt;=</span> <span class="literal number integer">8</span><span class="punctuation">)]</span> <span class="operator">*=</span> <span class="operator">-</span><span class="literal number integer">1</span>
+</pre>
 </li>
 <li><p class="first">Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)</p>
 <pre class="code python literal-block">

@@ -201,7 +201,8 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.dot(np.ones((5,3)), np.ones((3,2)))
       print(Z)
 
-#. Given a 1D array, negate all elements which are between 3 and 8, in place.  (★☆☆) 
+#. Given a 1D array, negate all elements which are between 3 and 8, in place.  (★☆☆)
+   
    .. code-block:: python
 
       # Author: Evgeni Burovski
