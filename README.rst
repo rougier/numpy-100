@@ -201,6 +201,14 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.dot(np.ones((5,3)), np.ones((3,2)))
       print(Z)
 
+#. Given a 1D array, negate all elements which are between 3 and 8, in place.  (★☆☆) 
+   .. code-block:: python
+
+      # Author: Evgeni Burovski
+
+      Z = np.arange(11)
+      Z[(3 < Z) & (Z <= 8)] *= -1
+
 
 #. Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆) 
 
@@ -231,7 +239,7 @@ Thanks to Michiaki Ariga, there is now a
     print(Z)
 
 
-#. Create a random vector of size 10 and sort it  (★★☆) 
+#. Create a random vector of size 10 and sort it (★★☆) 
 
    .. code-block:: python
 
@@ -240,6 +248,16 @@ Thanks to Michiaki Ariga, there is now a
     print(Z)
 
 
+#. How to sum a small array faster than np.sum ? (★★☆) 
+
+   .. code-block:: python
+
+      # Author: Evgeni Burovski
+   
+      Z = np.arange(10)
+      np.add.reduce(Z)
+
+      
 #. Consider two random array A anb B, check if they are equal  (★★☆) 
 
    .. code-block:: python
@@ -291,6 +309,18 @@ Thanks to Michiaki Ariga, there is now a
       Z['x'], Z['y'] = np.meshgrid(np.linspace(0,1,10),
                                    np.linspace(0,1,10))
       print(Z)
+
+
+#. Given two arrays, X and Y, construct the Cauchy matrix C (Cij = 1/(xi - yj))
+
+   .. code-block:: python
+
+      # Author: Evgeni Burovski
+                   
+      X = np.arange(8)
+      Y = X + 0.5
+      C = 1.0 / np.subtract.outer(X, Y)
+      print(np.linalg.det(C))
 
 
 #. Print the minimum and maximum representable value for each numpy scalar type (★★☆) 
@@ -919,6 +949,7 @@ Thanks to Michiaki Ariga, there is now a
       print(Z)
       print(U)
 
+
       
 #. Convert a vector of ints into a matrix binary representation (★★★) 
 
@@ -981,3 +1012,20 @@ Thanks to Michiaki Ariga, there is now a
       r_int = np.linspace(0, r.max(), 200) # regular spaced path
       x_int = np.interp(r_int, r, x)       # integrate path
       y_int = np.interp(r_int, r, y)
+
+
+#. Given an integer n and a 2D array X, select from X the rows which can be
+   interpreted as draws from a multinomial distribution with n degrees, i.e.,
+   the rows which only contain integers and which sum to n. (★★★)
+
+   .. code-block:: python
+
+      # Author: Evgeni Burovski
+      
+      X = np.asarray([[1.0, 0.0, 3.0, 8.0],
+                      [2.0, 0.0, 1.0, 1.0],
+                      [1.5, 2.5, 1.0, 0.0]])
+      n = 4
+      M = np.logical_and.reduce(np.mod(X, 1) == 0, axis=-1)
+      M &= (X.sum(axis=-1) == n)
+      print(X[M])
