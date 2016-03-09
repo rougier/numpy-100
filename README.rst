@@ -41,7 +41,7 @@ Thanks to Michiaki Ariga, there is now a
    .. code-block:: python
 
       print(np.__version__)
-      np.__config__.show()
+      np.show_config()
 
 
 #. Create a null vector of size 10 (★☆☆) 
