@@ -40,7 +40,7 @@ Thanks to Michiaki Ariga, there is now a
 
    .. code-block:: python
 
-      print(np.__version__)
+      print(np.version.version)
       np.show_config()
 
 
