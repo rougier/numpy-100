@@ -1113,6 +1113,7 @@ Thanks to Michiaki Ariga, there is now a
 
     # Author: Jessica B. Hamrick
 
+    X = np.random.randn(100) # random 1D array
     N = 1000 # number of bootstrap samples
     idx = np.random.randint(0, X.size, (N, X.size))
     means = X[idx].mean(axis=1)
