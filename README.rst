@@ -1118,13 +1118,13 @@ Thanks to Michiaki Ariga, there is now a
    (i.e., resample the elements of an array with replacement N times, compute
    the mean of each sample, and then compute percentiles over the means). (★★★)
 
-  .. code-block:: python
+   .. code-block:: python
 
-     # Author: Jessica B. Hamrick
+      # Author: Jessica B. Hamrick
 
-     X = np.random.randn(100) # random 1D array
-     N = 1000 # number of bootstrap samples
-     idx = np.random.randint(0, X.size, (N, X.size))
-     means = X[idx].mean(axis=1)
-     confint = np.percentile(means, [2.5, 97.5])
-     print(confint)
+      X = np.random.randn(100) # random 1D array
+      N = 1000 # number of bootstrap samples
+      idx = np.random.randint(0, X.size, (N, X.size))
+      means = X[idx].mean(axis=1)
+      confint = np.percentile(means, [2.5, 97.5])
+      print(confint)
