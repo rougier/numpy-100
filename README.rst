@@ -1107,7 +1107,7 @@ Thanks to Michiaki Ariga, there is now a
       M &= (X.sum(axis=-1) == n)
       print(X[M])
 
-#. Compute bootstrapped 95% confidence intervals for the mean of a 1D array X (i.e., resample the elements of an array with replacement N times, compute the mean of each sample, and then compute percentiles over the means).
+#. Compute bootstrapped 95% confidence intervals for the mean of a 1D array X (i.e., resample the elements of an array with replacement N times, compute the mean of each sample, and then compute percentiles over the means). (★★★)
 
   .. code-block:: python
 
