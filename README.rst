@@ -256,11 +256,9 @@ Thanks to Michiaki Ariga, there is now a
 
    .. code-block:: python
 
-      np.array(0) // np.array(0)
-      
-      np.array(0) // np.array(0.)
       np.array(0) / np.array(0)
-      np.array(0) / np.array(0.)
+      np.array(0) // np.array(0)
+      np.array([np.nan]).astype(int).astype(float)
       
 #. How to round away from zero a float array ? (★☆☆)
    
@@ -271,6 +269,7 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.random.uniform(-10,+10,10)
       print (np.trunc(Z + np.copysign(0.5, Z)))
 
+
 #. How to find common values between two arrays? (★☆☆)
 
    .. code-block:: python
@@ -279,6 +278,11 @@ Thanks to Michiaki Ariga, there is now a
       Z2 = np.random.randint(0,10,10)
       print(np.intersect1d(Z1,Z2))
 
+#. Is the following expressions true? (★☆☆)
+
+   .. code-block:: python
+
+      np.sqrt(-1) == np.emath.sqrt([-1])
 
 #. Extract the integer part of a random array using 5 different methods (★★☆)
 
