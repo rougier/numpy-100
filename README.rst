@@ -1106,3 +1106,15 @@ Thanks to Michiaki Ariga, there is now a
       M = np.logical_and.reduce(np.mod(X, 1) == 0, axis=-1)
       M &= (X.sum(axis=-1) == n)
       print(X[M])
+
+#. Compute bootstrapped 95% confidence intervals for the mean of a 1D array X (i.e., resample the elements of an array with replacement N times, compute the mean of each sample, and then compute percentiles over the means).
+
+  .. code-block:: python
+
+    # Author: Jessica B. Hamrick
+
+    N = 1000 # number of bootstrap samples
+    idx = np.random.randint(0, X.size, (N, X.size))
+    means = X[idx].mean(axis=1)
+    confint = np.percentile(means, [2.5, 97.5])
+    print(confint)
