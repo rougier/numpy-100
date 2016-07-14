@@ -282,7 +282,7 @@ Thanks to Michiaki Ariga, there is now a
 
    .. code-block:: python
 
-      np.sqrt(-1) == np.emath.sqrt([-1])
+      np.sqrt(-1) == np.emath.sqrt(-1)
 
 #. Extract the integer part of a random array using 5 different methods (★★☆)
 
