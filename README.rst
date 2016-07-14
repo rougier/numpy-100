@@ -141,14 +141,20 @@ Thanks to Michiaki Ariga, there is now a
       print(m)
 
       
-#. Create a 2d array with 1 on the border and 0 inside  (★☆☆) 
+#. Create a 2d array with 1 on the border and 0 inside (★☆☆) 
 
    .. code-block:: python
 
       Z = np.ones((10,10))
       Z[1:-1,1:-1] = 0
 
-                   
+#. How to add a border (filled with 0's) around an existing array ? (★☆☆)
+   
+   .. code-block:: python
+
+      Z = np.ones((5,5))
+      Z = np.pad(Z, pad_width=1, mode='constant', constant_values=0)
+
 #. What is the result of the following expression? (★☆☆)
 
    .. code-block:: python

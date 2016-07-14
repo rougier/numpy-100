@@ -116,10 +116,16 @@ python -c <span class="literal string double">&quot;import numpy; numpy.info(num
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">m</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">Create a 2d array with 1 on the border and 0 inside  (★☆☆)</p>
+<li><p class="first">Create a 2d array with 1 on the border and 0 inside (★☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
 <span class="name">Z</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">:</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">:</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">0</span>
+</pre>
+</li>
+<li><p class="first">How to add a border (filled with 0's) around an existing array ? (★☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">((</span><span class="literal number integer">5</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">))</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">pad</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">,</span> <span class="name">pad_width</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="name">mode</span><span class="operator">=</span><span class="literal string single">'constant'</span><span class="punctuation">,</span> <span class="name">constant_values</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">)</span>
 </pre>
 </li>
 <li><p class="first">What is the result of the following expression? (★☆☆)</p>
