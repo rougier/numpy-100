@@ -271,6 +271,14 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.random.uniform(-10,+10,10)
       print (np.trunc(Z + np.copysign(0.5, Z)))
 
+#. How to find common values between two arrays? (★☆☆)
+
+   .. code-block:: python
+
+      Z1 = np.random.randint(0,10,10)
+      Z2 = np.random.randint(0,10,10)
+      print(np.intersect1d(Z1,Z2))
+
 
 #. Extract the integer part of a random array using 5 different methods (★★☆)
 
