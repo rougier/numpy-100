@@ -4,12 +4,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
-<title>﻿100 numpy exercises</title>
+<title>100 numpy exercises</title>
 <link rel="stylesheet" href="numpy.css" type="text/css" />
 </head>
 <body>
 <div class="document" id="numpy-exercises">
-<h1 class="title">﻿100 numpy exercises</h1>
+<h1 class="title">100 numpy exercises</h1>
 <h2 class="subtitle" id="a-joint-effort-of-the-numpy-community">A joint effort of the numpy community</h2>
 
 <p>The goal is both to offer a quick reference for new and old users and to
@@ -46,6 +46,12 @@ is:</p>
 <pre class="code python literal-block">
 <span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">How to find the memory size of any array (★☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">zeros</span><span class="punctuation">((</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">))</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;</span><span class="literal string interpol">%d</span><span class="literal string double"> bytes&quot;</span> <span class="operator">%</span> <span class="punctuation">(</span><span class="name">Z</span><span class="operator">.</span><span class="name">size</span> <span class="operator">*</span> <span class="name">Z</span><span class="operator">.</span><span class="name">itesize</span><span class="punctuation">))</span>
 </pre>
 </li>
 <li><p class="first">How to get the documentation of the numpy add function from the command line? (★☆☆)</p>

@@ -51,7 +51,14 @@ Thanks to Michiaki Ariga, there is now a
       Z = np.zeros(10)
       print(Z)
 
-      
+#. How to find the memory size of any array (★☆☆) 
+
+   .. code-block:: python
+
+      Z = np.zeros((10,10))
+      print("%d bytes" % (Z.size * Z.itesize))
+
+                   
 #. How to get the documentation of the numpy add function from the command line? (★☆☆) 
 
    .. code-block:: bash
