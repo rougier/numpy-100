@@ -1,6 +1,6 @@
 ## 100 numpy exercises
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/rougier/numpy-100)
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/rougier/numpy-100/notebooks/100%20Numpy%20exercises.ipynb)
 
 This is a collection of exercises that have been collected in the numpy mailing
 list, on stack overflow and in the numpy documentation. I've also created some
