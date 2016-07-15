@@ -11,6 +11,4 @@ those who teach.
 → [Test them on Binder](http://mybinder.org:/repo/rougier/numpy-100)  
 → [Read them on GitHub](100 Numpy exercises.md)  
 
-
 This work is licensed under a MIT license.
-
