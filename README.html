@@ -238,6 +238,18 @@ python -c <span class="literal string double">&quot;import numpy; numpy.info(num
 <span class="name">np</span><span class="operator">.</span><span class="name">sqrt</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">)</span> <span class="operator">==</span> <span class="name">np</span><span class="operator">.</span><span class="name">emath</span><span class="operator">.</span><span class="name">sqrt</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </li>
+<li><p class="first">How to get the current date ? (★☆☆)</p>
+<pre class="code python literal-block">
+<span class="name">np</span><span class="operator">.</span><span class="name">datetime64</span><span class="punctuation">(</span><span class="literal string single">'today'</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">datetime64</span><span class="punctuation">(</span><span class="literal string single">'now'</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span>
+</pre>
+</li>
+<li><p class="first">How to get all the dates corresponding to the month of July 2016? (★★☆)</p>
+<pre class="code python literal-block">
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal string single">'2016-07'</span><span class="punctuation">,</span> <span class="literal string single">'2016-08'</span><span class="punctuation">,</span> <span class="name">dtype</span><span class="operator">=</span><span class="literal string single">'datetime64[D]'</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">Z</span><span class="punctuation">)</span>
+</pre>
+</li>
 <li><p class="first">How to compute ((A+B)*(-A/2)) in place (without copy)? (★★☆)</p>
 <pre class="code python literal-block">
 <span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">)</span><span class="operator">*</span><span class="literal number integer">1</span>

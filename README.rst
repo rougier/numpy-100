@@ -284,6 +284,21 @@ Thanks to Michiaki Ariga, there is now a
 
       np.sqrt(-1) == np.emath.sqrt(-1)
 
+#. How to get the current date ? (★☆☆) 
+
+   .. code-block:: python
+
+      np.datetime64('today', 'D')
+      np.datetime64('now', 'D')
+      
+#. How to get all the dates corresponding to the month of July 2016? (★★☆) 
+
+   .. code-block:: python
+
+      Z = np.arange('2016-07', '2016-08', dtype='datetime64[D]')
+      print(Z)
+      
+
 #. How to compute ((A+B)*(-A/2)) in place (without copy)? (★★☆)
 
    .. code-block:: python
