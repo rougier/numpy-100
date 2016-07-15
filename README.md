@@ -8,7 +8,7 @@ to reach the 100 limit. The goal of this collection is to offer a quick
 reference for both old and new users but also to provide a set of exercices for
 those who teach.
 
-→ [Test them on Binder](http://mybinder.org:/repo/rougier/numpy-100)  
+→ [Test them on Binder](http://mybinder.org:/repo/rougier/numpy-100/notebooks/100%20Numpy%20exercises.ipynb)  
 → [Read them on GitHub](100 Numpy exercises.md)  
 
 
