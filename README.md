@@ -9,6 +9,6 @@ reference for both old and new users but also to provide a set of exercices for
 those who teach.
 
 → [Test them on Binder](http://mybinder.org:/repo/rougier/numpy-100)  
-→ [Read them on GitHub](100 Numpy exercises.rst)  
+→ [Read them on GitHub](100 Numpy exercises.md)  
 
 
