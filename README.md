@@ -12,3 +12,5 @@ those who teach.
 → [Read them on GitHub](100 Numpy exercises.md)  
 
 
+This work is licensed under a MIT license.
+

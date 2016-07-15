@@ -593,7 +593,7 @@ print(Z)
 print(Z[Z[:,1].argsort()])
 ```
 
-### 60. How to tell if a given 2D array has null columns? (★★☆)
+#### 60. How to tell if a given 2D array has null columns? (★★☆)
 
 
 ```python
