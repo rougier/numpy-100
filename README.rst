@@ -284,6 +284,18 @@ Thanks to Michiaki Ariga, there is now a
 
       np.sqrt(-1) == np.emath.sqrt(-1)
 
+#. How to compute ((A+B)*(-A/2)) in place (without copy)? (★★☆)
+
+   .. code-block:: python
+
+      A = np.ones(3)*1
+      B = np.ones(3)*2
+      C = np.ones(3)*3
+      np.add(A,B,out=B)
+      np.divide(A,2,out=A)
+      np.negative(A,out=A)
+      np.multiply(A,B,out=A)
+      
 #. Extract the integer part of a random array using 5 different methods (★★☆)
 
    .. code-block:: python
