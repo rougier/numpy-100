@@ -611,7 +611,18 @@ Thanks to Michiaki Ariga, there is now a
       m = Z.flat[np.abs(Z - z).argmin()]
       print(m)
 
-      
+#. Considering two arrays with shape (1,3) and (3,1), how to compute their sum
+   using an iterator? (★★☆)
+
+   .. code-block:: python
+
+      A = np.arange(3).reshape(3,1)
+      B = np.arange(3).reshape(1,3)
+      it = np.nditer([A,B,None]):
+      for x,y,z in it: z[...] = x + y
+      C = it.operands[2]
+
+
 #. Create an array class that has a `name` attribute (★★☆)
 
    .. code-block:: python

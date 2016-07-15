@@ -511,6 +511,16 @@ point by point distances (★★☆)</p>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">m</span><span class="punctuation">)</span>
 </pre>
 </li>
+<li><p class="first">Considering two arrays with shape (1,3) and (3,1), how to compute their sum
+using an iterator? (★★☆)</p>
+<pre class="code python literal-block">
+<span class="name">A</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+<span class="name">B</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">3</span><span class="punctuation">)</span>
+<span class="name">it</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">nditer</span><span class="punctuation">([</span><span class="name">A</span><span class="punctuation">,</span><span class="name">B</span><span class="punctuation">,</span><span class="name builtin pseudo">None</span><span class="punctuation">]):</span>
+<span class="keyword">for</span> <span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">,</span><span class="name">z</span> <span class="operator word">in</span> <span class="name">it</span><span class="punctuation">:</span> <span class="name">z</span><span class="punctuation">[</span><span class="operator">...</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">x</span> <span class="operator">+</span> <span class="name">y</span>
+<span class="name">C</span> <span class="operator">=</span> <span class="name">it</span><span class="operator">.</span><span class="name">operands</span><span class="punctuation">[</span><span class="literal number integer">2</span><span class="punctuation">]</span>
+</pre>
+</li>
 <li><p class="first">Create an array class that has a <cite>name</cite> attribute (★★☆)</p>
 <pre class="code python literal-block">
 <span class="keyword">class</span> <span class="name class">NamedArray</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">ndarray</span><span class="punctuation">):</span>
