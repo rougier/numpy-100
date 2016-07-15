@@ -278,18 +278,32 @@ Thanks to Michiaki Ariga, there is now a
       Z2 = np.random.randint(0,10,10)
       print(np.intersect1d(Z1,Z2))
 
+#. How to ignore all numpy warnings (not recommended)? (★☆☆)
+   
+   .. code-block:: python
+
+      # Suicide mode on
+      defaults = np.seterr(all="ignore")
+      Z = np.ones(1)/0
+
+      # Back to sanity
+      np.seterr(**defaults)
+      
+   
 #. Is the following expressions true? (★☆☆)
 
    .. code-block:: python
 
       np.sqrt(-1) == np.emath.sqrt(-1)
 
-#. How to get the current date ? (★☆☆) 
+#. How to get the dates of yesterday, today and tomorrow? (★☆☆) 
 
    .. code-block:: python
 
-      np.datetime64('today', 'D')
-      np.datetime64('now', 'D')
+      yesterday = np.datetime64('today', 'D') - np.timedelta64(1, 'D')
+      today     = np.datetime64('today', 'D')
+      tomorrow  = np.datetime64('today', 'D') + np.timedelta64(1, 'D')
+
       
 #. How to get all the dates corresponding to the month of July 2016? (★★☆) 
 

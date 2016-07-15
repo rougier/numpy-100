@@ -233,15 +233,26 @@ python -c <span class="literal string double">&quot;import numpy; numpy.info(num
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">intersect1d</span><span class="punctuation">(</span><span class="name">Z1</span><span class="punctuation">,</span><span class="name">Z2</span><span class="punctuation">))</span>
 </pre>
 </li>
+<li><p class="first">How to ignore all numpy warnings (not recommended)? (★☆☆)</p>
+<pre class="code python literal-block">
+<span class="comment single"># Suicide mode on</span>
+<span class="name">defaults</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">seterr</span><span class="punctuation">(</span><span class="name builtin">all</span><span class="operator">=</span><span class="literal string double">&quot;ignore&quot;</span><span class="punctuation">)</span>
+<span class="name">Z</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">ones</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="operator">/</span><span class="literal number integer">0</span>
+
+<span class="comment single"># Back to sanity</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">seterr</span><span class="punctuation">(</span><span class="operator">**</span><span class="name">defaults</span><span class="punctuation">)</span>
+</pre>
+</li>
 <li><p class="first">Is the following expressions true? (★☆☆)</p>
 <pre class="code python literal-block">
 <span class="name">np</span><span class="operator">.</span><span class="name">sqrt</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">)</span> <span class="operator">==</span> <span class="name">np</span><span class="operator">.</span><span class="name">emath</span><span class="operator">.</span><span class="name">sqrt</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </li>
-<li><p class="first">How to get the current date ? (★☆☆)</p>
+<li><p class="first">How to get the dates of yesterday, today and tomorrow? (★☆☆)</p>
 <pre class="code python literal-block">
-<span class="name">np</span><span class="operator">.</span><span class="name">datetime64</span><span class="punctuation">(</span><span class="literal string single">'today'</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span>
-<span class="name">np</span><span class="operator">.</span><span class="name">datetime64</span><span class="punctuation">(</span><span class="literal string single">'now'</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span>
+<span class="name">yesterday</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">datetime64</span><span class="punctuation">(</span><span class="literal string single">'today'</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span> <span class="operator">-</span> <span class="name">np</span><span class="operator">.</span><span class="name">timedelta64</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span>
+<span class="name">today</span>     <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">datetime64</span><span class="punctuation">(</span><span class="literal string single">'today'</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span>
+<span class="name">tomorrow</span>  <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">datetime64</span><span class="punctuation">(</span><span class="literal string single">'today'</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="name">np</span><span class="operator">.</span><span class="name">timedelta64</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal string single">'D'</span><span class="punctuation">)</span>
 </pre>
 </li>
 <li><p class="first">How to get all the dates corresponding to the month of July 2016? (★★☆)</p>
