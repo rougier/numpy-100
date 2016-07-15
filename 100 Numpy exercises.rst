@@ -1,32 +1,14 @@
 ﻿100 numpy exercises
-=====================================
+===================
 
-A joint effort of the numpy community
--------------------------------------
+This is a collection of exercises that have been collected in the numpy mailing
+list, on stack overflow and in the numpy documentation. I've also created some
+to reach the 100 limit. The goal of this collection is to offer a quick
+reference for both old and new users but also to provide a set of exercices for
+those who teach.
 
-The goal is both to offer a quick reference for new and old users and to
-provide also a set of exercices for those who teach. If you remember having
-asked or answered a (short) problem, you can send a pull request. The format
-is:
-
-::
-
-  #. Find indices of non-zero elements from [1,2,0,0,4,0]
-
-     .. code:: python
-
-        # Author: Somebody
-
-        print(np.nonzero([1,2,0,0,4,0]))
-
-
-Here is what the page looks like so far:
-http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html
-
-Repository is at: https://github.com/rougier/numpy-100
-
-Thanks to Michiaki Ariga, there is now a
-`Julia version <https://github.com/chezou/julia-100-exercises>`_.
+If you find an error or think you've a better way to solve some of them, feel
+free to open an issue at https://github.com/rougier/numpy-100
 
 
 #. Import the numpy package under the name ``np`` (★☆☆) 
