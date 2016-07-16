@@ -11,4 +11,5 @@ those who teach.
 → [Test them on Binder](http://mybinder.org:/repo/rougier/numpy-100/notebooks/100%20Numpy%20exercises.ipynb)  
 → [Read them on GitHub](100 Numpy exercises.md)  
 
-This work is licensed under a MIT license.
+This work is licensed under a MIT license.  
+[![DOI](https://zenodo.org/badge/10173/rougier/numpy-100.svg)](https://zenodo.org/badge/latestdoi/10173/rougier/numpy-100)
