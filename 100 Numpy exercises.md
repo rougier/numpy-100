@@ -1,14 +1,10 @@
 
 # 100 numpy exercises
 
-This is a collection of exercises that have been collected in the numpy mailing
-list, on stack overflow and in the numpy documentation. I've also created some
-to reach the 100 limit. The goal of this collection is to offer a quick
-reference for both old and new users but also to provide a set of exercices for
-those who teach.
+This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow and in the numpy documentation. The goal of this collection is to offer a quick reference for both old and new users but also to provide a set of exercices for those who teach.
 
-If you find an error or think you've a better way to solve some of them, feel
-free to open an issue at <https://github.com/rougier/numpy-100>
+
+If you find an error or think you've a better way to solve some of them, feel free to open an issue at <https://github.com/rougier/numpy-100>
 
 #### 1. Import the numpy package under the name `np` (★☆☆)
 
@@ -43,7 +39,10 @@ print("%d bytes" % (Z.size * Z.itemsize))
 
 #### 5.  How to get the documentation of the numpy add function from the command line? (★☆☆)
 
-$ `python -c "import numpy; numpy.info(numpy.add)"`
+
+```python
+%run `python -c "import numpy; numpy.info(numpy.add)"`
+```
 
 #### 6.  Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
 
@@ -650,6 +649,11 @@ print (Z.name)
 Z = np.ones(10)
 I = np.random.randint(0,len(Z),20)
 Z += np.bincount(I, minlength=len(Z))
+print(Z)
+
+# Another solution
+# Author: Bartosz Telenczuk
+np.add.at(Z, I, 1)
 print(Z)
 ```
 
