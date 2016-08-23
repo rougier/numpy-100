@@ -260,7 +260,7 @@ print(np.array([np.nan]).astype(int).astype(float))
 # Author: Charles R Harris
 
 Z = np.random.uniform(-10,+10,10)
-print (np.trunc(Z + np.copysign(0.5, Z)))
+print (np.copysign(np.ceil(np.abs(Z)), Z))
 ```
 
 #### 30. How to find common values between two arrays? (★☆☆)
