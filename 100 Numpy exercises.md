@@ -387,6 +387,7 @@ np.add.reduce(Z)
 ```python
 A = np.random.randint(0,2,5)
 B = np.random.randint(0,2,5)
+
 # Assuming identical shape of the arrays and a tolerance for the comparison of values
 equal = np.allclose(A,B)
 print(equal)
