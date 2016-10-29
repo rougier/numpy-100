@@ -282,10 +282,17 @@ print(np.intersect1d(Z1,Z2))
 ```python
 # Suicide mode on
 defaults = np.seterr(all="ignore")
-Z = np.ones(1)/0
+Z = np.ones(1) / 0
 
 # Back to sanity
 _ = np.seterr(**defaults)
+```
+
+An equivalent way, with a context manager:
+
+```python
+with np.errstate(divide='ignore'):
+    Z = np.ones(1) / 0
 ```
 
 #### 32. Is the following expressions true? (★☆☆)
