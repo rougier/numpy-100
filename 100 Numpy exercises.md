@@ -1119,9 +1119,13 @@ print(rows)
 # Author: Robert Kern
 
 Z = np.random.randint(0,5,(10,3))
-E = np.logical_and.reduce(Z[:,1:] == Z[:,:-1], axis=1)
-U = Z[~E]
 print(Z)
+# solution for arrays of all dtypes (including string arrays and record arrays)
+E = np.all(Z[:,1:] == Z[:,:-1], axis=1)
+U = Z[~E]
+print(U)
+# soluiton for numerical arrays only, will work for any number of columns in Z
+U = Z[Z.max(axis=1) != Z.min(axis=1),:]
 print(U)
 ```
 
