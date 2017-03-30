@@ -105,7 +105,7 @@ np.nan - np.nan
 
 
 
-#### 23. Create a custom dtype that describes a color as four unisgned bytes (RGBA) (★☆☆)
+#### 23. Create a custom dtype that describes a color as four unsigned bytes (RGBA) (★☆☆)
 
 
 
@@ -204,7 +204,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 
 
-#### 42. Consider two random array A anb B, check if they are equal (★★☆)
+#### 42. Consider two random array A and B, check if they are equal (★★☆)
 
 
 

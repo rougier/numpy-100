@@ -192,7 +192,7 @@ Z = (Z - Zmin)/(Zmax - Zmin)
 print(Z)
 ```
 
-#### 23. Create a custom dtype that describes a color as four unisgned bytes (RGBA) (★☆☆)
+#### 23. Create a custom dtype that describes a color as four unsigned bytes (RGBA) (★☆☆)
 
 
 ```python
@@ -392,7 +392,7 @@ Z = np.arange(10)
 np.add.reduce(Z)
 ```
 
-#### 42. Consider two random array A anb B, check if they are equal (★★☆)
+#### 42. Consider two random array A and B, check if they are equal (★★☆)
 
 
 ```python
