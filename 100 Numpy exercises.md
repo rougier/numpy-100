@@ -482,7 +482,7 @@ Z = np.zeros((16,16))
 print(Z)
 ```
 
-#### 50. How to find the closest value (to a given scalar) in an array? (★★☆)
+#### 50. How to find the closest value (to a given scalar) in a vector? (★★☆)
 
 
 ```python
