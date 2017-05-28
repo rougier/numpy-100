@@ -236,7 +236,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 
 
-#### 50. How to find the closest value (to a given scalar) in an array? (★★☆)
+#### 50. How to find the closest value (to a given scalar) in a vector? (★★☆)
 
 
 
