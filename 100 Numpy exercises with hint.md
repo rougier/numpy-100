@@ -12,7 +12,7 @@ free to open an issue at <https://github.com/rougier/numpy-100>
 
 #### 1. Import the numpy package under the name `np` (★☆☆) 
 
-(**hint**: import … as ..)
+(**hint**: import … as …)
 
 
 
