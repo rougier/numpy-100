@@ -266,7 +266,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 39. Create a vector of size 10 with values ranging from 0 to 1, both excluded (★★☆) 
 
-(**hint**: np.linespace)
+(**hint**: np.linspace)
 
 
 
