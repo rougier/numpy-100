@@ -369,7 +369,7 @@ print(Z)
 
 
 ```python
-Z = np.linspace(0,1,12,endpoint=True)[1:-1]
+Z = np.linspace(0,1,11,endpoint=False)[1:]
 print(Z)
 ```
 
