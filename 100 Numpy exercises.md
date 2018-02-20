@@ -527,8 +527,8 @@ print(D)
 
 
 ```python
-Z = np.arange(10, dtype=np.int32)
-Z = Z.astype(np.float32, copy=False)
+Z = np.arange(10, dtype=np.float32)
+Z = Z.astype(np.int32, copy=False)
 print(Z)
 ```
 
