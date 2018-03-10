@@ -18,7 +18,7 @@ free to open an issue at <https://github.com/rougier/numpy-100>
 
 #### 2. Print the numpy version and the configuration (★☆☆) 
 
-(**hint**: np.\_\_verison\_\_, np.show\_config)
+(**hint**: np.\_\_version\_\_, np.show\_config)
 
 
 
