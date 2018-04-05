@@ -4,7 +4,7 @@
 This is a collection of exercises that have been collected in the numpy mailing
 list, on stack overflow and in the numpy documentation. I've also created some
 to reach the 100 limit. The goal of this collection is to offer a quick
-reference for both old and new users but also to provide a set of exercices for
+reference for both old and new users but also to provide a set of exercises for
 those who teach.
 
 If you find an error or think you've a better way to solve some of them, feel
