@@ -171,7 +171,7 @@ print(Z)
 
 
 ```python
-print(np.unravel_index(100,(6,7,8)))
+print(np.unravel_index(99,(6,7,8)))
 ```
 
 #### 21. Create a checkerboard 8x8 matrix using the tile function (★☆☆)
@@ -538,7 +538,7 @@ print(Z)
 ```python
 from io import StringIO
 
-# Fake file 
+# Fake file
 s = StringIO("""1, 2, 3, 4, 5\n
                 6,  ,  , 7, 8\n
                  ,  , 9,10,11\n""")
@@ -1079,7 +1079,7 @@ print (cartesian(([1, 2, 3], [4, 5], [6, 7])))
 ```python
 Z = np.array([("Hello", 2.5, 3),
               ("World", 3.6, 2)])
-R = np.core.records.fromarrays(Z.T, 
+R = np.core.records.fromarrays(Z.T,
                                names='col1, col2, col3',
                                formats = 'S8, f8, i8')
 print(R)
