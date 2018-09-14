@@ -216,7 +216,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 
 
-#### 45. Create random vector of size 10 and replace the maximum value by 0 (★★☆)
+#### 45. Create a random vector of size 10 and replace the maximum value by 0 (★★☆)
 
 
 
