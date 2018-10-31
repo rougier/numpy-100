@@ -187,8 +187,7 @@ print(Z)
 
 ```python
 Z = np.random.random((5,5))
-Zmax, Zmin = Z.max(), Z.min()
-Z = (Z - Zmin)/(Zmax - Zmin)
+Z = (Z - np.mean (Z)) / (np.std (Z))
 print(Z)
 ```
 

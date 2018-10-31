@@ -145,7 +145,7 @@ np.nan - np.nan
 
 #### 22. Normalize a 5x5 random matrix (★☆☆) 
 
-(**hint**: (x - min) / (max - min))
+(**hint**: (x - mean) / std)
 
 
 
