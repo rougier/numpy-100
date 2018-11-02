@@ -1157,8 +1157,8 @@ _, idx = np.unique(T, return_index=True)
 uZ = Z[idx]
 print(uZ)
 
-# Another solution, for NumPy >= 1.13
 # Author: Andreas Kouzelis
+# For NumPy >= 1.13
 uZ = np.unique(Z, axis=0)
 print(uZ)
 ```
