@@ -606,7 +606,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 96. Given a two dimensional array, how to extract unique rows? (★★★) 
 
-(**hint**: np.ascontiguousarray)
+(**hint**: np.ascontiguousarray | np.unique)
 
 
 
