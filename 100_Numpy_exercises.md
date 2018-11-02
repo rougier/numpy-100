@@ -1158,7 +1158,7 @@ uZ = Z[idx]
 print(uZ)
 
 # Author: Andreas Kouzelis
-# For NumPy >= 1.13
+# NumPy >= 1.13
 uZ = np.unique(Z, axis=0)
 print(uZ)
 ```
