@@ -146,6 +146,7 @@ print(0 * np.nan)
 print(np.nan == np.nan)
 print(np.inf > np.nan)
 print(np.nan - np.nan)
+print(np.nan in set([np.nan]))
 print(0.3 == 3 * 0.1)
 ```
 
@@ -187,8 +188,7 @@ print(Z)
 
 ```python
 Z = np.random.random((5,5))
-Zmax, Zmin = Z.max(), Z.min()
-Z = (Z - Zmin)/(Zmax - Zmin)
+Z = (Z - np.mean (Z)) / (np.std (Z))
 print(Z)
 ```
 

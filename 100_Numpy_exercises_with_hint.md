@@ -116,6 +116,7 @@ free to open an issue at <https://github.com/rougier/numpy-100>
 np.nan == np.nan
 np.inf > np.nan
 np.nan - np.nan
+np.nan in set([np.nan])
 0.3 == 3 * 0.1
 ```
 
@@ -145,7 +146,7 @@ np.nan - np.nan
 
 #### 22. Normalize a 5x5 random matrix (★☆☆) 
 
-(**hint**: (x - min) / (max - min))
+(**hint**: (x - mean) / std)
 
 
 
