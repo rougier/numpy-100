@@ -1156,6 +1156,11 @@ T = np.ascontiguousarray(Z).view(np.dtype((np.void, Z.dtype.itemsize * Z.shape[1
 _, idx = np.unique(T, return_index=True)
 uZ = Z[idx]
 print(uZ)
+
+# Author: Andreas Kouzelis
+# NumPy >= 1.13
+uZ = np.unique(Z, axis=0)
+print(uZ)
 ```
 
 #### 97. Considering 2 vectors A & B, write the einsum equivalent of inner, outer, sum, and mul function (★★★)
