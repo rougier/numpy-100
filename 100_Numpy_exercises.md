@@ -146,6 +146,7 @@ print(0 * np.nan)
 print(np.nan == np.nan)
 print(np.inf > np.nan)
 print(np.nan - np.nan)
+print(np.nan in set([np.nan]))
 print(0.3 == 3 * 0.1)
 ```
 
@@ -187,8 +188,7 @@ print(Z)
 
 ```python
 Z = np.random.random((5,5))
-Zmax, Zmin = Z.max(), Z.min()
-Z = (Z - Zmin)/(Zmax - Zmin)
+Z = (Z - np.mean (Z)) / (np.std (Z))
 print(Z)
 ```
 
@@ -1155,6 +1155,11 @@ Z = np.random.randint(0,2,(6,3))
 T = np.ascontiguousarray(Z).view(np.dtype((np.void, Z.dtype.itemsize * Z.shape[1])))
 _, idx = np.unique(T, return_index=True)
 uZ = Z[idx]
+print(uZ)
+
+# Author: Andreas Kouzelis
+# NumPy >= 1.13
+uZ = np.unique(Z, axis=0)
 print(uZ)
 ```
 

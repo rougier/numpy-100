@@ -82,6 +82,7 @@ free to open an issue at <https://github.com/rougier/numpy-100>
 np.nan == np.nan
 np.inf > np.nan
 np.nan - np.nan
+np.nan in set([np.nan])
 0.3 == 3 * 0.1
 ```
 
@@ -216,7 +217,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 
 
-#### 45. Create random vector of size 10 and replace the maximum value by 0 (★★☆)
+#### 45. Create a random vector of size 10 and replace the maximum value by 0 (★★☆)
 
 
 
