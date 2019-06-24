@@ -1091,7 +1091,7 @@ print(R)
 ```python
 # Author: Ryan G.
 
-x = np.random.rand(5e7)
+x = np.random.rand(int(5e7))
 
 %timeit np.power(x,3)
 %timeit x*x*x
