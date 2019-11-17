@@ -1,8 +1,9 @@
 
 qha = {
-"q1" : "1. Import the numpy package under the name `np` (★☆☆)",
-"h1": "hint: import … as ",
-"a1": """
+    "q1": "1. Import the numpy package under the name `np` (★☆☆)",
+    "h1": "hint: import … as ",
+    "a1":
+"""
 import numpy as np
 """,
 
