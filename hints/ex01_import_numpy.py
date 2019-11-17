@@ -1,1 +1,0 @@
-print("hint: import … as …")
