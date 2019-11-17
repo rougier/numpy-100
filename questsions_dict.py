@@ -6,26 +6,21 @@ qha = {
 """
 import numpy as np
 """,
+    "q2": "2. Print the numpy version and the configuration (★☆☆)",
+    "h2": "hint: np.__version__, np.show_config)",
+    "a2":
+"""
+
+""",
+    "q3": "3. Create a null vector of size 10 (★☆☆)",
+    "h3": "hint: np.zeros",
+    "a3":
+"""
+
+""",
+
 
 }
-# ####
-#
-# (**hint**: import … as …)
-#
-#
-#
-# #### 2. Print the numpy version and the configuration (★☆☆)
-#
-# (**hint**: np.\_\_version\_\_, np.show\_config)
-#
-#
-#
-# #### 3. Create a null vector of size 10 (★☆☆)
-#
-# (**hint**: np.zeros)
-#
-#
-#
 # #### 4.  How to find the memory size of any array (★☆☆)
 #
 # (**hint**: size, itemsize)
