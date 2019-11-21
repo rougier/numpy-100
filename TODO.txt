@@ -1,0 +1,14 @@
+v get a single python file with all questions, hints and answers in a single dictionary.
+v implement 3 functions: question, hint and solution, printing the required question, hint and solution in an `initialise.py` file.
+
++ produce one jupyter with all the questions, the initialise.py in the first cell creating the full notebook: numpy_100_consecutive.ipynb
++ produce one jupyter notebook with the random game. initialise must also have a pick() function to get a random question: numpy_100_random.ipynb.
++ produce the method to create the md files (questions, questions with hints, questions with solutions, questions with hints and solution)
++ add to this method the a cli interface for quick manipulation.
++ produce and leave the files created with the cli.
++ cleanup. Erase all the other notebook but the two new 2 jupyter notebooks - numpy_100_consecutive.ipynb numpy_100_random.ipynb.
++ change the instructions in the readme to create the markdown files with hints with hints and answers and with only questions.
++ send PR.
+
+Utilities:
+https://stackoverflow.com/questions/13614783/programmatically-add-cells-to-an-ipython-notebook-for-report-generation
