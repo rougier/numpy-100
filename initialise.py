@@ -1,18 +1,18 @@
 import numpy as np
 
-from questsions_dict import qha
+import data_source as ds
 
 
 def question(n):
-    print(f'{n}. ' + qha[f'q{n}'])
+    print(f'{n}. ' + ds.QHA[f'q{n}'])
 
 
 def hint(n):
-    print(qha[f'h{n}'])
+    print(ds.QHA[f'h{n}'])
 
 
 def answer(n):
-    print(qha[f'a{n}'])
+    print(ds.QHA[f'a{n}'])
 
 
 def pick():

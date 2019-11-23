@@ -1,5 +1,28 @@
+HEADER = """
+# 100 numpy exercises
 
-qha = {
+This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow 
+and in the numpy documentation. The goal of this collection is to offer a quick reference for both old 
+and new users but also to provide a set of exercises for those who teach.
+
+
+If you find an error or think you've a better way to solve some of them, feel 
+free to open an issue at <https://github.com/rougier/numpy-100>
+"""
+
+SUB_HEADER = "File automatically generated. See the documentation to update questions/answers/hints" \
+             " programmatically."
+
+JUPYTER_INSTRUCTIONS = "Run the `initialize.py` module, then for each question you can query the " \
+                       "answer or an hint with `hint(n)` or `answer(n)` for `n` question number."
+
+
+JUPYTER_INSTRUCTIONS_RAND = "Run the `initialize.py` module, then call a random question with `pick()`" \
+                            "an hint towards its solution with `hint(n)` and the answer with `answer(n)`," \
+                            "where n is the number of the picked question."
+
+
+QHA = {
     "q1": "Import the numpy package under the name `np` (★☆☆)",
     "h1": "hint: import … as ",
     "a1":
@@ -116,16 +139,16 @@ Z = np.ones((5,5))
 Z = np.pad(Z, pad_width=1, mode='constant', constant_values=0)
 print(Z)
 """,
-    "q17": """
-What is the result of the following expression? (★☆☆)"
+    "q17": """\
+What is the result of the following expression? (★☆☆)
 ```python
 0 * np.nan
 np.nan == np.nan
 np.inf > np.nan
 np.nan - np.nan
 np.nan in set([np.nan])
-# 0.3 == 3 * 0.1
-# ```""",
+0.3 == 3 * 0.1
+```""",
     "h17": "hint: NaN = not a number, inf = infinity",
     "a17":
 """
@@ -204,7 +227,7 @@ Z[(3 < Z) & (Z <= 8)] *= -1
 print(Z)
 
 """,
-    "q26": """
+    "q26": """\
 What is the output of the following script? (★☆☆)
 ```python
 # Author: Jake VanderPlas
@@ -223,7 +246,7 @@ print(sum(range(5),-1))
 from numpy import *
 print(sum(range(5),-1))
 """,
-    "q27": """
+    "q27": """\
 Consider an integer vector Z, which of these expressions are legal? (★☆☆)
 ```python
 Z**Z
@@ -243,7 +266,7 @@ Z <- Z
 Z/1/1
 Z<Z>Z
 """,
-    "q28": """
+    "q28": """\
 What are the result of the following expressions?
 ```python
 np.array(0) / np.array(0)
@@ -291,7 +314,7 @@ _ = np.seterr(**defaults)
 nz = np.nonzero([1,2,0,0,4,0])
 print(nz)
 """,
-    "q32": """
+    "q32": """\
 Is the following expressions true? (★☆☆)
 ```python
 np.sqrt(-1) == np.emath.sqrt(-1)
@@ -511,7 +534,7 @@ Z = np.arange(10, dtype=np.float32)
 Z = Z.astype(np.int32, copy=False)
 print(Z)
 """,
-    "q54": """
+    "q54": """\
 How to read the following file? (★★☆)
 ```
 1, 2, 3, 4, 5
