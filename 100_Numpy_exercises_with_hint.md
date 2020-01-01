@@ -351,7 +351,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 53. How to convert a float (32 bits) array into an integer (32 bits) in place? 
 
-(**hint**: astype(copy=False))
+(**hint**: view and [:] = )
 
 
 
