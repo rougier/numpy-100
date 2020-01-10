@@ -506,15 +506,12 @@ D = scipy.spatial.distance.cdist(Z,Z)
 print(D)
 ```
 #### 53. How to convert a float (32 bits) array into an integer (32 bits) in place?
-`hint: view and [:] =`
+`hint: astype(copy=False)`
 
 ```python
-# Thanks Vikas (https://stackoverflow.com/a/10622758/5989906)
-# & unutbu (https://stackoverflow.com/a/4396247/5989906)
-Z = (np.random.rand(10)*100).astype(np.float32)
-Y = Z.view(np.int32)
-Y[:] = Z
-print(Y)
+Z = np.arange(10, dtype=np.float32)
+Z = Z.astype(np.int32, copy=False)
+print(Z)
 ```
 #### 54. How to read the following file? (★★☆)
 ```
