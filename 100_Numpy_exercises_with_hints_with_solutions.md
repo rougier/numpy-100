@@ -331,15 +331,14 @@ np.divide(A,2,out=A)
 np.negative(A,out=A)
 np.multiply(A,B,out=A)
 ```
-#### 36. Extract the integer part of a random array using 5 different methods (★★☆)
-`hint: %, np.floor, np.ceil, astype, np.trunc`
+#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
+`hint: %, np.floor, astype, np.trunc`
 
 ```python
 Z = np.random.uniform(0,10,10)
 
 print (Z - Z%1)
 print (np.floor(Z))
-print (np.ceil(Z)-1)
 print (Z.astype(int))
 print (np.trunc(Z))
 ```
@@ -463,7 +462,8 @@ for dtype in [np.float32, np.float64]:
 `hint: np.set_printoptions`
 
 ```python
-np.set_printoptions(threshold=np.nan)
+import sys
+np.set_printoptions(threshold=sys.maxsize)
 Z = np.zeros((16,16))
 print(Z)
 ```
