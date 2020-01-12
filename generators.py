@@ -38,7 +38,7 @@ QHA = ktx_to_dict(os.path.join('source', 'exercises100.ktx'))
 
 def create_jupyter_notebook(destination_filename='100_Numpy_exercises.ipynb'):
     """ Programmatically create jupyter notebook with the questions (and hints and solutions if required)
-    saved under data_source.py """
+    saved under source files """
 
     # Create cells sequence
     nb = nbf.v4.new_notebook()
@@ -68,7 +68,7 @@ def create_jupyter_notebook(destination_filename='100_Numpy_exercises.ipynb'):
 
 def create_jupyter_notebook_random_question(destination_filename='100_Numpy_random.ipynb'):
     """ Programmatically create jupyter notebook with the questions (and hints and solutions if required)
-    saved under data_source.py """
+    saved under source files """
 
     # Create cells sequence
     nb = nbf.v4.new_notebook()
