@@ -1,18 +1,18 @@
 import numpy as np
 
-import data_source as ds
+import generators as ge
 
 
 def question(n):
-    print(f'{n}. ' + ds.QHA[f'q{n}'])
+    print(f'{n}. ' + ge.QHA[f'q{n}'])
 
 
 def hint(n):
-    print(ds.QHA[f'h{n}'])
+    print(ge.QHA[f'h{n}'])
 
 
 def answer(n):
-    print(ds.QHA[f'a{n}'])
+    print(ge.QHA[f'a{n}'])
 
 
 def pick():
