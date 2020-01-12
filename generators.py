@@ -2,10 +2,41 @@ import os
 import nbformat as nbf
 import mdutils
 
-import data_source as ds
+
+def ktx_to_dict(input_file, keystarter='<'):
+    """ parsing keyed text to a python dictionary. """
+    answer = dict()
+
+    with open(input_file, 'r+') as f:
+        lines = f.readlines()
+
+    k, val = '', ''
+    for line in lines:
+        if line.startswith(keystarter):
+            k = line.replace(keystarter, '').strip()
+            val = ''
+        else:
+            val += line
+
+        if k:
+            answer.update({k: val.strip()})
+
+    return answer
 
 
-def create_jupyter_notebook(destination_filename='numpy_100.ipynb'):
+def dict_to_ktx(input_dict, output_file, keystarter='<'):
+    """ Store a python dictionary to a keyed text"""
+    with open(output_file, 'w+') as f:
+        for k, val in input_dict.items():
+            f.write(f'{keystarter} {k}\n')
+            f.write(f'{val}\n\n')
+
+
+HEADERS = ktx_to_dict(os.path.join('source', 'headers.ktx'))
+QHA = ktx_to_dict(os.path.join('source', 'exercises100.ktx'))
+
+
+def create_jupyter_notebook(destination_filename='100_Numpy_exercises.ipynb'):
     """ Programmatically create jupyter notebook with the questions (and hints and solutions if required)
     saved under data_source.py """
 
@@ -15,16 +46,16 @@ def create_jupyter_notebook(destination_filename='numpy_100.ipynb'):
     nb['cells'] = []
 
     # - Add header:
-    nb['cells'].append(nbf.v4.new_markdown_cell(ds.HEADER))
-    nb['cells'].append(nbf.v4.new_markdown_cell(ds.SUB_HEADER))
-    nb['cells'].append(nbf.v4.new_markdown_cell(ds.JUPYTER_INSTRUCTIONS))
+    nb['cells'].append(nbf.v4.new_markdown_cell(HEADERS["header"]))
+    nb['cells'].append(nbf.v4.new_markdown_cell(HEADERS["sub_header"]))
+    nb['cells'].append(nbf.v4.new_markdown_cell(HEADERS["jupyter_instruction"]))
 
     # - Add initialisation
     nb['cells'].append(nbf.v4.new_code_cell('%run initialise.py'))
 
     # - Add questions and empty spaces for answers
     for n in range(1, 101):
-        nb['cells'].append(nbf.v4.new_markdown_cell(f'#### {n}. ' + ds.QHA[f'q{n}']))
+        nb['cells'].append(nbf.v4.new_markdown_cell(f'#### {n}. ' + QHA[f'q{n}']))
         nb['cells'].append(nbf.v4.new_code_cell(""))
 
     # Delete file if one with the same name is found
@@ -35,7 +66,7 @@ def create_jupyter_notebook(destination_filename='numpy_100.ipynb'):
     nbf.write(nb, destination_filename)
 
 
-def create_jupyter_notebook_random_question(destination_filename='numpy_100_random.ipynb'):
+def create_jupyter_notebook_random_question(destination_filename='100_Numpy_random.ipynb'):
     """ Programmatically create jupyter notebook with the questions (and hints and solutions if required)
     saved under data_source.py """
 
@@ -45,9 +76,9 @@ def create_jupyter_notebook_random_question(destination_filename='numpy_100_rand
     nb['cells'] = []
 
     # - Add header:
-    nb['cells'].append(nbf.v4.new_markdown_cell(ds.HEADER))
-    nb['cells'].append(nbf.v4.new_markdown_cell(ds.SUB_HEADER))
-    nb['cells'].append(nbf.v4.new_markdown_cell(ds.JUPYTER_INSTRUCTIONS_RAND))
+    nb['cells'].append(nbf.v4.new_markdown_cell(HEADERS["header"]))
+    nb['cells'].append(nbf.v4.new_markdown_cell(HEADERS["sub_header"]))
+    nb['cells'].append(nbf.v4.new_markdown_cell(HEADERS["jupyter_instruction_rand"]))
 
     # - Add initialisation
     nb['cells'].append(nbf.v4.new_code_cell('%run initialise.py'))
@@ -61,7 +92,7 @@ def create_jupyter_notebook_random_question(destination_filename='numpy_100_rand
     nbf.write(nb, destination_filename)
 
 
-def create_markdown(destination_filename='numpy_100', with_hints=False, with_solutions=False):
+def create_markdown(destination_filename='100_Numpy_exercises', with_hints=False, with_solutions=False):
     # Create file name
     if with_hints:
         destination_filename += '_with_hints'
@@ -72,16 +103,16 @@ def create_markdown(destination_filename='numpy_100', with_hints=False, with_sol
     mdfile = mdutils.MdUtils(file_name=destination_filename)
 
     # Add headers
-    mdfile.write(ds.HEADER)
-    mdfile.write(ds.SUB_HEADER)
+    mdfile.write(HEADERS["header"])
+    mdfile.write(HEADERS["sub_header"])
 
     # Add questions (and hint or answers if required)
     for n in range(1, 101):
-        mdfile.new_header(title=f"{n}. {ds.QHA[f'q{n}']}", level=4)
+        mdfile.new_header(title=f"{n}. {QHA[f'q{n}']}", level=4)
         if with_hints:
-            mdfile.write(f"`{ds.QHA[f'h{n}']}`")
+            mdfile.write(f"`{QHA[f'h{n}']}`")
         if with_solutions:
-            mdfile.insert_code(ds.QHA[f'a{n}'], language='python')
+            mdfile.insert_code(QHA[f'a{n}'], language='python')
 
     # Delete file if one with the same name is found
     if os.path.exists(destination_filename):
