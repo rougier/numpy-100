@@ -286,11 +286,8 @@ Z = np.ones(1) / 0
 
 # Back to sanity
 _ = np.seterr(**defaults)
-```
 
-An equivalent way, with a context manager:
-
-```python
+# An equivalent way, with a context manager:
 with np.errstate(divide='ignore'):
     Z = np.ones(1) / 0
 ```
