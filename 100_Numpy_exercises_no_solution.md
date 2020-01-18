@@ -181,7 +181,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 
 
-#### 36. Extract the integer part of a random array using 5 different methods (★★☆)
+#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
 
 
 
