@@ -434,7 +434,7 @@ print(T)
 
 ```python
 Z = np.random.random(10)
-Z[Z.argmax()] = 0
+Z[Z == Z.max()] = 0
 print(Z)
 ```
 
