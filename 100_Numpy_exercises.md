@@ -527,9 +527,12 @@ print(D)
 
 
 ```python
-Z = np.arange(10, dtype=np.float32)
-Z = Z.astype(np.int32, copy=False)
-print(Z)
+# Thanks Vikas (https://stackoverflow.com/a/10622758/5989906) 
+# & unutbu (https://stackoverflow.com/a/4396247/5989906)
+Z = (np.random.rand(10)*100).astype(np.float32)
+Y = Z.view(np.int32)
+Y[:] = Z
+print(Y)
 ```
 
 #### 54. How to read the following file? (★★☆)
