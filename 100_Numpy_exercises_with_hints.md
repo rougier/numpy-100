@@ -146,7 +146,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 #### 52. Consider a random vector with shape (100,2) representing coordinates, find point by point distances (★★☆)
 `hint: np.atleast_2d, T, np.sqrt`
 #### 53. How to convert a float (32 bits) array into an integer (32 bits) in place?
-`hint: astype(copy=False)`
+`hint: view and [:] =`
 #### 54. How to read the following file? (★★☆)
 ```
 1, 2, 3, 4, 5
