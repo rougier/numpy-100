@@ -103,8 +103,8 @@ def create_markdown(destination_filename='100_Numpy_exercises', with_hints=False
     mdfile = mdutils.MdUtils(file_name=destination_filename)
 
     # Add headers
-    mdfile.write(HEADERS["header"])
-    mdfile.write(HEADERS["sub_header"])
+    mdfile.write(HEADERS["header"] + '\n')
+    mdfile.write(HEADERS["sub_header"] + '\n')
 
     # Add questions (and hint or answers if required)
     for n in range(1, 101):
