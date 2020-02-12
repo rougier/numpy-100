@@ -69,7 +69,7 @@ np.nan in set([np.nan])
 #### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
 `hint:`
 #### 25. Given a 1D array, negate all elements which are between 3 and 8, in place. (★☆☆)
-`hint: >, <=`
+`hint: >, <`
 #### 26. What is the output of the following script? (★☆☆)
 ```python
 # Author: Jake VanderPlas
