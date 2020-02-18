@@ -211,7 +211,7 @@ print(Z)
 # Author: Evgeni Burovski
 
 Z = np.arange(11)
-Z[(3 < Z) & (Z <= 8)] *= -1
+Z[(3 < Z) & (Z < 8)] *= -1
 print(Z)
 ```
 #### 26. What is the output of the following script? (★☆☆)
