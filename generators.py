@@ -7,7 +7,7 @@ def ktx_to_dict(input_file, keystarter='<'):
     """ parsing keyed text to a python dictionary. """
     answer = dict()
 
-    with open(input_file, 'r+') as f:
+    with open(input_file, 'r+', encoding='utf-8') as f:
         lines = f.readlines()
 
     k, val = '', ''
