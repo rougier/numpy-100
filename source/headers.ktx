@@ -1,0 +1,25 @@
+< header
+# 100 numpy exercises
+
+This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow
+and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
+and new users but also to provide a set of exercises for those who teach.
+
+
+If you find an error or think you've a better way to solve some of them, feel
+free to open an issue at <https://github.com/rougier/numpy-100>.
+
+
+< sub_header
+File automatically generated. See the documentation to update questions/answers/hints programmatically.
+
+
+< jupyter_instruction
+Run the `initialize.py` module, then for each question you can query the
+answer or an hint with `hint(n)` or `answer(n)` for `n` question number.
+
+
+< jupyter_instruction_rand
+Run the `initialize.py` module, then call a random question with `pick()` an hint towards its solution with
+`hint(n)` and the answer with `answer(n)`, where n is the number of the picked question.
+

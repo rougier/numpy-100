@@ -1,2 +1,5 @@
-numpy
-pandas
+numpy==1.17.4
+pandas==0.25.3
+jupyter==1.0.0
+jupyterthemes==0.20.0
+mdutils==1.0.0
