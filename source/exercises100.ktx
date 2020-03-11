@@ -85,8 +85,8 @@ Create a 3x3 matrix with values ranging from 0 to 8 (★☆☆)
 hint: reshape
 
 < a9
-nz = np.nonzero([1,2,0,0,4,0])
-print(nz)
+Z = np.arange(9).reshape((3, 3))
+print(Z)
 
 < q10
 Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆)
