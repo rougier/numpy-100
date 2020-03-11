@@ -11,7 +11,7 @@ import numpy as np
 Print the numpy version and the configuration (★☆☆)
 
 < h2
-hint: np.__version__, np.show_config)
+hint: np.__version__, np.show_config
 
 < a2
 print(np.__version__)
