@@ -191,7 +191,7 @@ Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★☆☆)
 hint: np.diag
 
 < a18
-Z = np.diag(1+np.arange(4),k=-1)
+Z = np.diag(np.arange(1,5),k=-1)
 print(Z)
 
 < q19
