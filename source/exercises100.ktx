@@ -527,12 +527,12 @@ Z[0] = 1
 Consider a random 10x2 matrix representing cartesian coordinates, convert them to polar coordinates (★★☆)
 
 < h44
-hint: np.sqrt, np.arctan2
+hint: np.hypot, np.arctan2
 
 < a44
 Z = np.random.random((10,2))
 X,Y = Z[:,0], Z[:,1]
-R = np.sqrt(X**2+Y**2)
+R = np.hypot(Y,X)
 T = np.arctan2(Y,X)
 print(R)
 print(T)
