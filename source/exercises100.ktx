@@ -371,8 +371,9 @@ Z = np.ones(1) / 0
 _ = np.seterr(**defaults)
 
 # Equivalently with a context manager
-nz = np.nonzero([1,2,0,0,4,0])
-print(nz)
+with np.errstate(all='ignore'):
+    Z = np.arange(3) / 0
+print(Z)
 
 < q32
 Is the following expressions true? (★☆☆)
