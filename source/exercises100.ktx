@@ -635,7 +635,7 @@ hint: np.atleast_2d, T, np.sqrt
 < a52
 Z = np.random.random((10,2))
 X,Y = np.atleast_2d(Z[:,0], Z[:,1])
-D = np.sqrt( (X-X.T)**2 + (Y-Y.T)**2)
+D = np.hypot(X-X.T, Y-Y.T)
 print(D)
 
 # Much faster with scipy
