@@ -15,7 +15,7 @@ File automatically generated. See the documentation to update questions/answers/
 #### 1. Import the numpy package under the name `np` (★☆☆)
 `hint: import … as`
 #### 2. Print the numpy version and the configuration (★☆☆)
-`hint: np.__version__, np.show_config)`
+`hint: np.__version__, np.show_config`
 #### 3. Create a null vector of size 10 (★☆☆)
 `hint: np.zeros`
 #### 4. How to find the memory size of any array (★☆☆)
@@ -113,8 +113,8 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: np.arange(dtype=datetime64['D'])`
 #### 35. How to compute ((A+B)*(-A/2)) in place (without copy)? (★★☆)
 `hint: np.add(out=), np.negative(out=), np.multiply(out=), np.divide(out=)`
-#### 36. Extract the integer part of a random array using 5 different methods (★★☆)
-`hint: %, np.floor, np.ceil, astype, np.trunc`
+#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
+`hint: %, np.floor, astype, np.trunc`
 #### 37. Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)
 `hint: np.arange`
 #### 38. Consider a generator function that generates 10 integers and use it to build an array (★☆☆)
@@ -130,7 +130,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 #### 43. Make an array immutable (read-only) (★★☆)
 `hint: flags.writeable`
 #### 44. Consider a random 10x2 matrix representing cartesian coordinates, convert them to polar coordinates (★★☆)
-`hint: np.sqrt, np.arctan2`
+`hint: np.hypot, np.arctan2`
 #### 45. Create random vector of size 10 and replace the maximum value by 0 (★★☆)
 `hint: argmax`
 #### 46. Create a structured array with `x` and `y` coordinates covering the [0,1]x[0,1] area (★★☆)
