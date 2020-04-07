@@ -19,7 +19,7 @@ File automatically generated. See the documentation to update questions/answers/
 import numpy as np
 ```
 #### 2. Print the numpy version and the configuration (★☆☆)
-`hint: np.__version__, np.show_config)`
+`hint: np.__version__, np.show_config`
 
 ```python
 print(np.__version__)
@@ -72,8 +72,8 @@ print(Z)
 `hint: reshape`
 
 ```python
-nz = np.nonzero([1,2,0,0,4,0])
-print(nz)
+Z = np.arange(9).reshape((3, 3))
+print(Z)
 ```
 #### 10. Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆)
 `hint: np.nonzero`
@@ -151,7 +151,7 @@ print(0.3 == 3 * 0.1)
 `hint: np.diag`
 
 ```python
-Z = np.diag(1+np.arange(4),k=-1)
+Z = np.diag(np.arange(1,5),k=-1)
 print(Z)
 ```
 #### 19. Create a 8x8 matrix and fill it with a checkerboard pattern (★☆☆)
@@ -292,8 +292,9 @@ Z = np.ones(1) / 0
 _ = np.seterr(**defaults)
 
 # Equivalently with a context manager
-nz = np.nonzero([1,2,0,0,4,0])
-print(nz)
+with np.errstate(all='ignore'):
+    Z = np.arange(3) / 0
+print(Z)
 ```
 #### 32. Is the following expressions true? (★☆☆)
 ```python
@@ -323,23 +324,22 @@ print(Z)
 `hint: np.add(out=), np.negative(out=), np.multiply(out=), np.divide(out=)`
 
 ```python
-A = np.ones(3)*1
-B = np.ones(3)*2
-C = np.ones(3)*3
+A = np.ones(3)
+B = np.full(3, 2)
+
 np.add(A,B,out=B)
 np.divide(A,2,out=A)
 np.negative(A,out=A)
 np.multiply(A,B,out=A)
 ```
-#### 36. Extract the integer part of a random array using 5 different methods (★★☆)
-`hint: %, np.floor, np.ceil, astype, np.trunc`
+#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
+`hint: %, np.floor, astype, np.trunc`
 
 ```python
 Z = np.random.uniform(0,10,10)
 
 print (Z - Z%1)
 print (np.floor(Z))
-print (np.ceil(Z)-1)
 print (Z.astype(int))
 print (np.trunc(Z))
 ```
@@ -409,12 +409,12 @@ Z.flags.writeable = False
 Z[0] = 1
 ```
 #### 44. Consider a random 10x2 matrix representing cartesian coordinates, convert them to polar coordinates (★★☆)
-`hint: np.sqrt, np.arctan2`
+`hint: np.hypot, np.arctan2`
 
 ```python
 Z = np.random.random((10,2))
 X,Y = Z[:,0], Z[:,1]
-R = np.sqrt(X**2+Y**2)
+R = np.hypot(Y,X)
 T = np.arctan2(Y,X)
 print(R)
 print(T)
@@ -493,7 +493,7 @@ print(Z)
 ```python
 Z = np.random.random((10,2))
 X,Y = np.atleast_2d(Z[:,0], Z[:,1])
-D = np.sqrt( (X-X.T)**2 + (Y-Y.T)**2)
+D = np.hypot(X-X.T, Y-Y.T)
 print(D)
 
 # Much faster with scipy
@@ -552,7 +552,7 @@ for index in np.ndindex(Z.shape):
 
 ```python
 X, Y = np.meshgrid(np.linspace(-1,1,10), np.linspace(-1,1,10))
-D = np.sqrt(X*X+Y*Y)
+D = np.hypot(X, Y)
 sigma, mu = 1.0, 0.0
 G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
 print(G)
@@ -673,10 +673,10 @@ print(F)
 # Author: Nadav Horesh
 
 w,h = 16,16
-I = np.random.randint(0,2,(h,w,3)).astype(np.ubyte)
+I = np.random.randint(0,2,(h,w,3))
 F = I[...,0]*256*256 + I[...,1]*256 +I[...,2]
 n = len(np.unique(F))
-print(np.unique(I))
+print(n)
 ```
 #### 67. Considering a four dimensions array, how to get sum over the last two axis at once? (★★★)
 `hint: sum(axis=(-2,-1))`
@@ -826,9 +826,9 @@ np.negative(Z, out=Z)
 def distance(P0, P1, p):
     T = P1 - P0
     L = (T**2).sum(axis=1)
-    U = -((P0[:,0]-p[...,0])*T[:,0] + (P0[:,1]-p[...,1])*T[:,1]) / L
+    U = ((P0 - p)*T).sum(axis=1) / L
     U = U.reshape(len(U),1)
-    D = P0 + U*T - p
+    D = P0 - U*T - p
     return np.sqrt((D**2).sum(axis=1))
 
 P0 = np.random.uniform(-10,10,(10,2))
