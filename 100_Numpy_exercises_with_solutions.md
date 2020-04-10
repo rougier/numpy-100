@@ -211,7 +211,7 @@ print(Z)
 # Author: Evgeni Burovski
 
 Z = np.arange(11)
-Z[(3 < Z) & (Z < 8)] *= -1
+Z[(3 < Z) & (Z <= 8)] *= -1
 print(Z)
 ```
 #### 26. What is the output of the following script? (★☆☆)
@@ -331,7 +331,7 @@ np.divide(A,2,out=A)
 np.negative(A,out=A)
 np.multiply(A,B,out=A)
 ```
-#### 36. Extract the integer part of a random array using 5 different methods (★★☆)
+#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
 
 
 ```python
@@ -339,7 +339,6 @@ Z = np.random.uniform(0,10,10)
 
 print (Z - Z%1)
 print (np.floor(Z))
-print (np.ceil(Z)-1)
 print (Z.astype(int))
 print (np.trunc(Z))
 ```
@@ -463,7 +462,8 @@ for dtype in [np.float32, np.float64]:
 
 
 ```python
-np.set_printoptions(threshold=np.nan)
+import sys
+np.set_printoptions(threshold=sys.maxsize)
 Z = np.zeros((16,16))
 print(Z)
 ```
