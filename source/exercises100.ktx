@@ -595,9 +595,12 @@ How to print all the values of an array? (★★☆)
 hint: np.set_printoptions
 
 < a49
-np.set_printoptions(threshold=np.nan)
-Z = np.zeros((16,16))
-print(Z)
+import sys
+
+a = np.arange(1001)
+print(a)
+with np.printoptions(threshold=sys.maxsize):
+    print(a)
 
 < q50
 How to find the closest value (to a given scalar) in a vector? (★★☆)
