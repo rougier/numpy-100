@@ -340,10 +340,8 @@ How to round away from zero a float array ? (★☆☆)
 hint: np.uniform, np.copysign, np.ceil, np.abs
 
 < a29
-# Author: Charles R Harris
-
-Z = np.random.uniform(-10,+10,10)
-print (np.copysign(np.ceil(np.abs(Z)), Z))
+Z = np.random.uniform(-10, +10, 10)
+print(np.trunc(Z + np.sign(Z))
 
 < q30
 How to find common values between two arrays? (★☆☆)
