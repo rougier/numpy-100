@@ -201,7 +201,9 @@ Create a 8x8 matrix and fill it with a checkerboard pattern (★☆☆)
 hint: array[::2]
 
 < a19
-Z = np.array([[(i + j) % 2 for j in range(8)] for i in range(8)])
+Z = np.zeros((8,8),dtype=int)
+Z[1::2,::2] = 1
+Z[::2,1::2] = 1
 print(Z)
 
 < q20
