@@ -393,9 +393,9 @@ How to get the dates of yesterday, today and tomorrow? (★☆☆)
 hint: np.datetime64, np.timedelta64
 
 < a33
-yesterday = np.datetime64('today', 'D') - np.timedelta64(1, 'D')
-today     = np.datetime64('today', 'D')
-tomorrow  = np.datetime64('today', 'D') + np.timedelta64(1, 'D')
+yesterday = np.datetime64('today') - np.timedelta64(1)
+today     = np.datetime64('today')
+tomorrow  = np.datetime64('today') + np.timedelta64(1)
 
 < q34
 How to get all the dates corresponding to the month of July 2016? (★★☆)
