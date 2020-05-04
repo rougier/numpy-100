@@ -431,10 +431,11 @@ hint: %, np.floor, astype, np.trunc
 < a36
 Z = np.random.uniform(0,10,10)
 
-print (Z - Z%1)
-print (np.floor(Z))
-print (Z.astype(int))
-print (np.trunc(Z))
+print(Z - Z%1)
+print(Z // 1)
+print(np.floor(Z))
+print(Z.astype(int))
+print(np.trunc(Z))
 
 < q37
 Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)
