@@ -113,7 +113,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 35. How to compute ((A+B)*(-A/2)) in place (without copy)? (★★☆)
 
-#### 36. Extract the integer part of a random array using 5 different methods (★★☆)
+#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
 
 #### 37. Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)
 

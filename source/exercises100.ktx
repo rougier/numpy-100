@@ -596,7 +596,8 @@ How to print all the values of an array? (★★☆)
 hint: np.set_printoptions
 
 < a49
-np.set_printoptions(threshold=np.nan)
+import sys
+np.set_printoptions(threshold=sys.maxsize)
 Z = np.zeros((16,16))
 print(Z)
 
