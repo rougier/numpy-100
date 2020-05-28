@@ -337,13 +337,16 @@ print(np.array([np.nan]).astype(int).astype(float))
 How to round away from zero a float array ? (★☆☆)
 
 < h29
-hint: np.uniform, np.copysign, np.ceil, np.abs
+hint: np.uniform, np.copysign, np.ceil, np.abs, np.where
 
 < a29
 # Author: Charles R Harris
 
 Z = np.random.uniform(-10,+10,10)
-print (np.copysign(np.ceil(np.abs(Z)), Z))
+print(np.copysign(np.ceil(np.abs(Z)), Z))
+
+# More readable but less efficient
+print(np.where(Z>0, np.ceil(Z), np.floor(Z)))
 
 < q30
 How to find common values between two arrays? (★☆☆)
@@ -910,7 +913,7 @@ hint: np.diag
 A = np.random.uniform(0,1,(5,5))
 B = np.random.uniform(0,1,(5,5))
 
-# Slow version  
+# Slow version
 np.diag(np.dot(A, B))
 
 # Fast version
@@ -1457,4 +1460,3 @@ idx = np.random.randint(0, X.size, (N, X.size))
 means = X[idx].mean(axis=1)
 confint = np.percentile(means, [2.5, 97.5])
 print(confint)
-
