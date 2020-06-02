@@ -72,8 +72,8 @@ print(Z)
 `hint: reshape`
 
 ```python
-nz = np.nonzero([1,2,0,0,4,0])
-print(nz)
+Z = np.arange(9).reshape(3, 3)
+print(Z)
 ```
 #### 10. Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆)
 `hint: np.nonzero`
@@ -264,13 +264,16 @@ print(np.array(0) // np.array(0))
 print(np.array([np.nan]).astype(int).astype(float))
 ```
 #### 29. How to round away from zero a float array ? (★☆☆)
-`hint: np.uniform, np.copysign, np.ceil, np.abs`
+`hint: np.uniform, np.copysign, np.ceil, np.abs, np.where`
 
 ```python
 # Author: Charles R Harris
 
 Z = np.random.uniform(-10,+10,10)
-print (np.copysign(np.ceil(np.abs(Z)), Z))
+print(np.copysign(np.ceil(np.abs(Z)), Z))
+
+# More readable but less efficient
+print(np.where(Z>0, np.ceil(Z), np.floor(Z)))
 ```
 #### 30. How to find common values between two arrays? (★☆☆)
 `hint: np.intersect1d`
@@ -292,8 +295,8 @@ Z = np.ones(1) / 0
 _ = np.seterr(**defaults)
 
 # Equivalently with a context manager
-nz = np.nonzero([1,2,0,0,4,0])
-print(nz)
+with np.errstate(all="ignore"):
+    np.arange(3) / 0
 ```
 #### 32. Is the following expressions true? (★☆☆)
 ```python
@@ -308,9 +311,9 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: np.datetime64, np.timedelta64`
 
 ```python
-yesterday = np.datetime64('today', 'D') - np.timedelta64(1, 'D')
-today     = np.datetime64('today', 'D')
-tomorrow  = np.datetime64('today', 'D') + np.timedelta64(1, 'D')
+yesterday = np.datetime64('today') - np.timedelta64(1)
+today     = np.datetime64('today')
+tomorrow  = np.datetime64('today') + np.timedelta64(1)
 ```
 #### 34. How to get all the dates corresponding to the month of July 2016? (★★☆)
 `hint: np.arange(dtype=datetime64['D'])`
@@ -331,17 +334,17 @@ np.divide(A,2,out=A)
 np.negative(A,out=A)
 np.multiply(A,B,out=A)
 ```
-#### 36. Extract the integer part of a random array using 5 different methods (★★☆)
-`hint: %, np.floor, np.ceil, astype, np.trunc`
+#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
+`hint: %, np.floor, astype, np.trunc`
 
 ```python
 Z = np.random.uniform(0,10,10)
 
-print (Z - Z%1)
-print (np.floor(Z))
-print (np.ceil(Z)-1)
-print (Z.astype(int))
-print (np.trunc(Z))
+print(Z - Z%1)
+print(Z // 1)
+print(np.floor(Z))
+print(Z.astype(int))
+print(np.trunc(Z))
 ```
 #### 37. Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)
 `hint: np.arange`
@@ -717,7 +720,7 @@ print(pd.Series(D).groupby(S).mean())
 A = np.random.uniform(0,1,(5,5))
 B = np.random.uniform(0,1,(5,5))
 
-# Slow version  
+# Slow version
 np.diag(np.dot(A, B))
 
 # Fast version
