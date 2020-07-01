@@ -471,7 +471,7 @@ for dtype in [np.float32, np.float64]:
 `hint: np.set_printoptions`
 
 ```python
-np.set_printoptions(threshold=np.nan)
+np.set_printoptions(threshold=float("inf"))
 Z = np.zeros((16,16))
 print(Z)
 ```
