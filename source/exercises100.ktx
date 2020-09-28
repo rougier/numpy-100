@@ -1124,7 +1124,7 @@ hint: stride_tricks.as_strided
 # Author: Stefan van der Walt
 
 Z = np.arange(1,15,dtype=np.uint32)
-R = stride_tricks.as_strided(Z,(11,4),(4,4))
+R = np.tile(Z,15).reshape([14, 15])[:11,:4]
 print(R)
 
 < q82
