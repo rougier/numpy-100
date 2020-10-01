@@ -248,10 +248,10 @@ Create a custom dtype that describes a color as four unsigned bytes (RGBA) (★�
 hint: np.dtype
 
 < a23
-color = np.dtype([("r", np.ubyte, 1),
-                  ("g", np.ubyte, 1),
-                  ("b", np.ubyte, 1),
-                  ("a", np.ubyte, 1)])
+color = np.dtype([("r", np.ubyte),
+                  ("g", np.ubyte),
+                  ("b", np.ubyte),
+                  ("a", np.ubyte)])
 
 < q24
 Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
