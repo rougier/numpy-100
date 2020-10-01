@@ -424,7 +424,6 @@ hint: np.add(out=), np.negative(out=), np.multiply(out=), np.divide(out=)
 < a35
 A = np.ones(3)*1
 B = np.ones(3)*2
-C = np.ones(3)*3
 np.add(A,B,out=B)
 np.divide(A,2,out=A)
 np.negative(A,out=A)
