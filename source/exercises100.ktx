@@ -604,7 +604,7 @@ hint: np.set_printoptions
 
 < a49
 np.set_printoptions(threshold=float("inf"))
-Z = np.zeros((16,16))
+Z = np.zeros((40,40))
 print(Z)
 
 < q50
