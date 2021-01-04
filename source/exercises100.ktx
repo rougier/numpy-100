@@ -983,7 +983,7 @@ G = np.unique(G)
 print(G)
 
 < q74
-Given an array C that is a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
+Given a sorted array C that corresponds to a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
 
 < h74
 hint: np.repeat
