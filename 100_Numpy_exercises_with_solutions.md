@@ -778,7 +778,7 @@ G = F.view( dtype=[('p0',F.dtype),('p1',F.dtype)] )
 G = np.unique(G)
 print(G)
 ```
-#### 74. Given an array C that is a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
+#### 74. Given a sorted array C that corresponds to a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
 
 
 ```python
