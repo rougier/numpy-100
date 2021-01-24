@@ -193,10 +193,10 @@ print(Z)
 `hint: np.dtype`
 
 ```python
-color = np.dtype([("r", np.ubyte, 1),
-                  ("g", np.ubyte, 1),
-                  ("b", np.ubyte, 1),
-                  ("a", np.ubyte, 1)])
+color = np.dtype([("r", np.ubyte),
+                  ("g", np.ubyte),
+                  ("b", np.ubyte),
+                  ("a", np.ubyte)])
 ```
 #### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
 `hint:`
@@ -333,7 +333,6 @@ print(Z)
 ```python
 A = np.ones(3)*1
 B = np.ones(3)*2
-C = np.ones(3)*3
 np.add(A,B,out=B)
 np.divide(A,2,out=A)
 np.negative(A,out=A)
@@ -472,7 +471,7 @@ for dtype in [np.float32, np.float64]:
 
 ```python
 np.set_printoptions(threshold=float("inf"))
-Z = np.zeros((16,16))
+Z = np.zeros((40,40))
 print(Z)
 ```
 #### 50. How to find the closest value (to a given scalar) in a vector? (★★☆)
@@ -612,14 +611,15 @@ print(Z[Z[:,1].argsort()])
 Z = np.random.randint(0,3,(3,10))
 print((~Z.any(axis=0)).any())
 ```
-#### 61. Find the nearest value from a given value in an array (★★☆)
-`hint: np.abs, argmin, flat`
+#### 61. Find the 3 nearest values in order from a given value in an array (★★☆)
+`hint: np.abs, argpartition, flat, argsort`
 
 ```python
-Z = np.random.uniform(0,1,10)
+Z = np.random.uniform(0, 1, 10)
 z = 0.5
-m = Z.flat[np.abs(Z - z).argmin()]
-print(m)
+m = Z.flat[np.abs(Z - z).ravel().argpartition(3)[:3]]
+ordered_m = m[np.argsort(np.abs(m - z))]
+print(ordered_m)
 ```
 #### 62. Considering two arrays with shape (1,3) and (3,1), how to compute their sum using an iterator? (★★☆)
 `hint: np.nditer`
@@ -778,7 +778,7 @@ G = F.view( dtype=[('p0',F.dtype),('p1',F.dtype)] )
 G = np.unique(G)
 print(G)
 ```
-#### 74. Given an array C that is a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
+#### 74. Given a sorted array C that corresponds to a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
 `hint: np.repeat`
 
 ```python

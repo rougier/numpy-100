@@ -778,16 +778,17 @@ Z = np.random.randint(0,3,(3,10))
 print((~Z.any(axis=0)).any())
 
 < q61
-Find the nearest value from a given value in an array (★★☆)
+Find the 3 nearest values in order from a given value in an array (★★☆)
 
 < h61
-hint: np.abs, argmin, flat
+hint: np.abs, argpartition, flat, argsort
 
 < a61
-Z = np.random.uniform(0,1,10)
+Z = np.random.uniform(0, 1, 10)
 z = 0.5
-m = Z.flat[np.abs(Z - z).argmin()]
-print(m)
+m = Z.flat[np.abs(Z - z).ravel().argpartition(3)[:3]]
+ordered_m = m[np.argsort(np.abs(m - z))]
+print(ordered_m)
 
 < q62
 Considering two arrays with shape (1,3) and (3,1), how to compute their sum using an iterator? (★★☆)
