@@ -682,6 +682,7 @@ print(F)
 
 w,h = 16,16
 I = np.random.randint(0,2,(h,w,3)).astype(np.ubyte)
+# The parenthesis around 256*256 ensure the dtpye promoted to uint32 properly.Otherwise the first term will overflow.
 F = I[...,0]*(256*256) + I[...,1]*256 +I[...,2]
 n = len(np.unique(F))
 print(np.unique(I))
