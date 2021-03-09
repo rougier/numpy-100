@@ -688,7 +688,7 @@ n = len(np.unique(F))
 print(np.unique(I))
 
 # Another solution
-# Author: Fisher Wang
+# Author: Fisher Wangg
 
 w, h = 16, 16
 img = np.random.randint(0, 256, (w, h, 3)).astype(np.ubyte)
