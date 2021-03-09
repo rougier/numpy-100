@@ -865,9 +865,19 @@ hint: np.unique
 
 w,h = 16,16
 I = np.random.randint(0,2,(h,w,3)).astype(np.ubyte)
-F = I[...,0]*256*256 + I[...,1]*256 +I[...,2]
+# The parenthesis around 256*256 ensure the dtpye promoted to uint32 properly.Otherwise the first term will overflow.
+F = I[...,0]*(256*256) + I[...,1]*256 +I[...,2]
 n = len(np.unique(F))
 print(np.unique(I))
+
+# Another solution
+# Author: Fisher Wang
+
+w, h = 16, 16
+img = np.random.randint(0, 256, (w, h, 3)).astype(np.ubyte)
+colors = np.unique(img.reshape(-1, 3), axis=0)
+n = len(colors)
+print(n)
 
 < q67
 Considering a four dimensions array, how to get sum over the last two axis at once? (★★★)
