@@ -855,19 +855,19 @@ F = np.bincount(I,X)
 print(F)
 
 < q66
-Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique colors (★★★)
+Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique colors (★★☆)
 
 < h66
 hint: np.unique
 
 < a66
-# Author: Nadav Horesh
+# Author: Fisher Wang
 
-w,h = 16,16
-I = np.random.randint(0,2,(h,w,3)).astype(np.ubyte)
-F = I[...,0]*256*256 + I[...,1]*256 +I[...,2]
-n = len(np.unique(F))
-print(np.unique(I))
+w, h = 256, 256
+I = np.random.randint(0, 4, (w, h, 3)).astype(np.ubyte)
+colors = np.unique(I.reshape(-1, 3), axis=0)
+n = len(colors)
+print(n)
 
 < q67
 Considering a four dimensions array, how to get sum over the last two axis at once? (★★★)
