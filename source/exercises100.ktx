@@ -864,9 +864,23 @@ hint: np.unique
 # Author: Fisher Wang
 
 w, h = 256, 256
-I = np.random.randint(0, 4, (w, h, 3)).astype(np.ubyte)
+I = np.random.randint(0, 4, (h, w, 3)).astype(np.ubyte)
 colors = np.unique(I.reshape(-1, 3), axis=0)
 n = len(colors)
+print(n)
+
+# Faster version
+# Author: Mark Setchell
+# https://stackoverflow.com/a/59671950/2836621
+
+w, h = 256, 256
+I = np.random.randint(0,4,(h,w,3), dtype=np.uint8)
+
+# View each pixel as a single 24-bit integer, rather than three 8-bit bytes
+I24 = np.dot(I.astype(np.uint32),[1,256,65536])
+
+# Count unique colours
+n = len(np.unique(I24))
 print(n)
 
 < q67
