@@ -168,7 +168,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 60. How to tell if a given 2D array has null columns? (★★☆)
 
-#### 61. Find the nearest value from a given value in an array (★★☆)
+#### 61. Find the 3 nearest values in order from a given value in an array (★★☆)
 
 #### 62. Considering two arrays with shape (1,3) and (3,1), how to compute their sum using an iterator? (★★☆)
 
