@@ -451,8 +451,7 @@ Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)
 hint: np.arange
 
 < a37
-Z = np.zeros((5,5))
-Z += np.arange(5)
+Z = np.tile(np.arange(0, 5), (5,1))
 print(Z)
 
 < q38
