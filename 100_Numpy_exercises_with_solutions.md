@@ -354,6 +354,11 @@ print(np.trunc(Z))
 
 
 ```python
+Z = np.zeros((5,5))
+Z += np.arange(5)
+print(Z)
+
+# without broadcasting
 Z = np.tile(np.arange(0, 5), (5,1))
 print(Z)
 ```
