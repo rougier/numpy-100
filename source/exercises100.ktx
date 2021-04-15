@@ -455,6 +455,10 @@ Z = np.zeros((5,5))
 Z += np.arange(5)
 print(Z)
 
+# without broadcasting
+Z = np.tile(np.arange(0, 5), (5,1))
+print(Z)
+
 < q38
 Consider a generator function that generates 10 integers and use it to build an array (★☆☆)
 

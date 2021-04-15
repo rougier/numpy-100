@@ -193,10 +193,10 @@ print(Z)
 `hint: np.dtype`
 
 ```python
-color = np.dtype([("r", np.ubyte, 1),
-                  ("g", np.ubyte, 1),
-                  ("b", np.ubyte, 1),
-                  ("a", np.ubyte, 1)])
+color = np.dtype([("r", np.ubyte),
+                  ("g", np.ubyte),
+                  ("b", np.ubyte),
+                  ("a", np.ubyte)])
 ```
 #### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
 `hint:`
@@ -333,7 +333,6 @@ print(Z)
 ```python
 A = np.ones(3)*1
 B = np.ones(3)*2
-C = np.ones(3)*3
 np.add(A,B,out=B)
 np.divide(A,2,out=A)
 np.negative(A,out=A)
@@ -357,6 +356,10 @@ print(np.trunc(Z))
 ```python
 Z = np.zeros((5,5))
 Z += np.arange(5)
+print(Z)
+
+# without broadcasting
+Z = np.tile(np.arange(0, 5), (5,1))
 print(Z)
 ```
 #### 38. Consider a generator function that generates 10 integers and use it to build an array (★☆☆)
@@ -472,7 +475,7 @@ for dtype in [np.float32, np.float64]:
 
 ```python
 np.set_printoptions(threshold=float("inf"))
-Z = np.zeros((16,16))
+Z = np.zeros((40,40))
 print(Z)
 ```
 #### 50. How to find the closest value (to a given scalar) in a vector? (★★☆)
@@ -681,9 +684,23 @@ print(F)
 # Author: Fisher Wang
 
 w, h = 256, 256
-I = np.random.randint(0, 4, (w, h, 3)).astype(np.ubyte)
+I = np.random.randint(0, 4, (h, w, 3)).astype(np.ubyte)
 colors = np.unique(I.reshape(-1, 3), axis=0)
 n = len(colors)
+print(n)
+
+# Faster version
+# Author: Mark Setchell
+# https://stackoverflow.com/a/59671950/2836621
+
+w, h = 256, 256
+I = np.random.randint(0,4,(h,w,3), dtype=np.uint8)
+
+# View each pixel as a single 24-bit integer, rather than three 8-bit bytes
+I24 = np.dot(I.astype(np.uint32),[1,256,65536])
+
+# Count unique colours
+n = len(np.unique(I24))
 print(n)
 ```
 #### 67. Considering a four dimensions array, how to get sum over the last two axis at once? (★★★)
@@ -778,7 +795,7 @@ G = F.view( dtype=[('p0',F.dtype),('p1',F.dtype)] )
 G = np.unique(G)
 print(G)
 ```
-#### 74. Given an array C that is a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
+#### 74. Given a sorted array C that corresponds to a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
 `hint: np.repeat`
 
 ```python
