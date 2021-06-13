@@ -995,6 +995,15 @@ k = 4
 S = np.add.reduceat(np.add.reduceat(Z, np.arange(0, Z.shape[0], k), axis=0),
                                        np.arange(0, Z.shape[1], k), axis=1)
 print(S)
+
+# alternative solution:
+# Author: Sebastian Wallkötter (@FirefoxMetzger)
+
+Z = np.ones((16,16))
+k = 4
+
+windows = np.lib.stride_tricks.sliding_window_view(Z, (k, k))
+S = windows[::k, ::k, ...].sum(axis=(-2, -1))
 ```
 #### 88. How to implement the Game of Life using numpy arrays? (★★★)
 `No hints provided...`
