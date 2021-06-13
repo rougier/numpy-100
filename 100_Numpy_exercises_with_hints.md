@@ -58,7 +58,7 @@ np.nan in set([np.nan])
 `hint: np.diag`
 #### 19. Create a 8x8 matrix and fill it with a checkerboard pattern (★☆☆)
 `hint: array[::2]`
-#### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element?
+#### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element? (★☆☆)
 `hint: np.unravel_index`
 #### 21. Create a checkerboard 8x8 matrix using the tile function (★☆☆)
 `hint: np.tile`
@@ -89,7 +89,7 @@ Z/1/1
 Z<Z>Z
 ```
 `No hints provided...`
-#### 28. What are the result of the following expressions?
+#### 28. What are the result of the following expressions? (★☆☆)
 ```python
 np.array(0) / np.array(0)
 np.array(0) // np.array(0)
@@ -135,7 +135,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: argmax`
 #### 46. Create a structured array with `x` and `y` coordinates covering the [0,1]x[0,1] area (★★☆)
 `hint: np.meshgrid`
-#### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj))
+#### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj)) (★★☆)
 `hint: np.subtract.outer`
 #### 48. Print the minimum and maximum representable value for each numpy scalar type (★★☆)
 `hint: np.iinfo, np.finfo, eps`

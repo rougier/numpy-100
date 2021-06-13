@@ -168,7 +168,7 @@ Z[1::2,::2] = 1
 Z[::2,1::2] = 1
 print(Z)
 ```
-#### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element?
+#### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element? (★☆☆)
 `hint: np.unravel_index`
 
 ```python
@@ -255,7 +255,7 @@ Z <- Z
 Z/1/1
 Z<Z>Z
 ```
-#### 28. What are the result of the following expressions?
+#### 28. What are the result of the following expressions? (★☆☆)
 ```python
 np.array(0) / np.array(0)
 np.array(0) // np.array(0)
@@ -447,7 +447,7 @@ Z['x'], Z['y'] = np.meshgrid(np.linspace(0,1,5),
                              np.linspace(0,1,5))
 print(Z)
 ```
-#### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj))
+#### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj)) (★★☆)
 `hint: np.subtract.outer`
 
 ```python
@@ -827,7 +827,7 @@ from numpy.lib import stride_tricks
 
 def rolling(a, window):
     shape = (a.size - window + 1, window)
-    strides = (a.itemsize, a.itemsize)
+    strides = (a.strides[0], a.strides[0])
     return stride_tricks.as_strided(a, shape=shape, strides=strides)
 Z = rolling(np.arange(10), 3)
 print(Z)
