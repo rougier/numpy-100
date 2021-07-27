@@ -1148,7 +1148,7 @@ print(R)
 Compute a matrix rank (★★★)
 
 < h82
-hint: np.linalg.svd
+hint: np.linalg.svd, np.linalg.matrix_rank
 
 < a82
 # Author: Stefan van der Walt
@@ -1156,6 +1156,12 @@ hint: np.linalg.svd
 Z = np.random.uniform(0,1,(10,10))
 U, S, V = np.linalg.svd(Z) # Singular Value Decomposition
 rank = np.sum(S > 1e-10)
+print(rank)
+
+# alternative solution:
+# Author: Jeff Luo (@Jeff1999)
+
+rank = np.linalg.matrix_rank(Z)
 print(rank)
 
 < q83
