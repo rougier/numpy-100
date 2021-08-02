@@ -1168,17 +1168,23 @@ print(rank)
 How to find the most frequent value in an array?
 
 < h83
-hint: np.bincount, argmax
+hint: np.bincount, argmax, np.unique
 
 < a83
 Z = np.random.randint(0,10,50)
 print(np.bincount(Z).argmax())
 
+# alternative solution:
+# Author: Jeff Luo (@Jeff1999)
+
+num, cnt = np.unique(Z, return_counts=True)
+print(num[cnt.argmax()])
+
 < q84
 Extract all the contiguous 3x3 blocks from a random 10x10 matrix (★★★)
 
 < h84
-hint: stride_tricks.as_strided
+hint: stride_tricks.as_strided, stride_tricks.sliding_window_view
 
 < a84
 # Author: Chris Barker
@@ -1188,6 +1194,11 @@ n = 3
 i = 1 + (Z.shape[0]-3)
 j = 1 + (Z.shape[1]-3)
 C = stride_tricks.as_strided(Z, shape=(i, j, n, n), strides=Z.strides + Z.strides)
+print(C)
+
+# alternative solution
+# Author: Jeff Luo (@Jeff1999)
+C = sliding_window_view(Z, window_shape=(n, n))
 print(C)
 
 < q85
