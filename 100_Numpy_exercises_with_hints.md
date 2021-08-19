@@ -19,7 +19,7 @@ File automatically generated. See the documentation to update questions/answers/
 #### 3. Create a null vector of size 10 (★☆☆)
 `hint: np.zeros`
 #### 4. How to find the memory size of any array (★☆☆)
-`hint: size, itemsize`
+`hint: size, itemsize, nbytes`
 #### 5. How to get the documentation of the numpy add function from the command line? (★☆☆)
 `hint: np.info`
 #### 6. Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
