@@ -4,3 +4,4 @@ venv
 .idea
 .vscode
 Untitled.ipynb
+env/
