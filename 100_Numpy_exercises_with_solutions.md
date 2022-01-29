@@ -178,7 +178,7 @@ print(np.unravel_index(99,(6,7,8)))
 
 
 ```python
-Z = np.tile( np.array([[0,1],[1,0]]), (4,4))
+Z = np.tile(np.eye(2), (4,4))
 print(Z)
 ```
 #### 22. Normalize a 5x5 random matrix (★☆☆)
