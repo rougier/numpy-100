@@ -3,12 +3,15 @@
 
 # 100 numpy exercises
 
-This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow
+This is a collection of exercises that have been collected in the numpy mailing list, on stack 
+overflow
 and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
-and new users but also to provide a set of exercises for those who teach.
+and new 
+users but also to provide a set of exercises for those who teach.
 
 
-If you find an error or think you've a better way to solve some of them, feel
+If you find an error or think you've a better way to
+ solve some of them, feel
 free to open an issue at <https://github.com/rougier/numpy-100>.
 File automatically generated. See the documentation to update questions/answers/hints programmatically.
 
@@ -178,7 +181,7 @@ print(np.unravel_index(99,(6,7,8)))
 
 
 ```python
-Z = np.tile(np.eye(2), (4,4))
+Z = np.tile( np.array([[0,1],[1,0]]), (4,4))
 print(Z)
 ```
 #### 22. Normalize a 5x5 random matrix (★☆☆)
@@ -817,6 +820,14 @@ def moving_average(a, n=3) :
     return ret[n - 1:] / n
 Z = np.arange(20)
 print(moving_average(Z, n=3))
+
+# Author: Jeff Luo (@Jeff1999)
+# make sure your NumPy >= 1.20.0
+
+from numpy.lib.stride_tricks import sliding_window_view
+
+Z = np.arange(20)
+print(sliding_window_view(Z, window_shape=3).mean(axis=-1))
 ```
 #### 76. Consider a one-dimensional array Z, build a two-dimensional array whose first row is (Z[0],Z[1],Z[2]) and each subsequent row is  shifted by 1 (last row should be (Z[-3],Z[-2],Z[-1]) (★★★)
 
@@ -831,6 +842,11 @@ def rolling(a, window):
     return stride_tricks.as_strided(a, shape=shape, strides=strides)
 Z = rolling(np.arange(10), 3)
 print(Z)
+
+# Author: Jeff Luo (@Jeff1999)
+
+Z = np.arange(10)
+print(sliding_window_view(Z, window_shape=3))
 ```
 #### 77. How to negate a boolean, or to change the sign of a float inplace? (★★★)
 
@@ -914,6 +930,11 @@ print(R)
 Z = np.arange(1,15,dtype=np.uint32)
 R = stride_tricks.as_strided(Z,(11,4),(4,4))
 print(R)
+
+# Author: Jeff Luo (@Jeff1999)
+
+Z = np.arange(1, 15, dtype=np.uint32)
+print(sliding_window_view(Z, window_shape=4))
 ```
 #### 82. Compute a matrix rank (★★★)
 
@@ -924,6 +945,12 @@ print(R)
 Z = np.random.uniform(0,1,(10,10))
 U, S, V = np.linalg.svd(Z) # Singular Value Decomposition
 rank = np.sum(S > 1e-10)
+print(rank)
+
+# alternative solution:
+# Author: Jeff Luo (@Jeff1999)
+
+rank = np.linalg.matrix_rank(Z)
 print(rank)
 ```
 #### 83. How to find the most frequent value in an array?
@@ -945,6 +972,11 @@ i = 1 + (Z.shape[0]-3)
 j = 1 + (Z.shape[1]-3)
 C = stride_tricks.as_strided(Z, shape=(i, j, n, n), strides=Z.strides + Z.strides)
 print(C)
+
+# Author: Jeff Luo (@Jeff1999)
+
+Z = np.random.randint(0,5,(10,10))
+print(sliding_window_view(Z, window_shape=(3, 3)))
 ```
 #### 85. Create a 2D array subclass such that Z[i,j] == Z[j,i] (★★★)
 
@@ -1004,6 +1036,12 @@ k = 4
 
 windows = np.lib.stride_tricks.sliding_window_view(Z, (k, k))
 S = windows[::k, ::k, ...].sum(axis=(-2, -1))
+
+# Author: Jeff Luo (@Jeff1999)
+
+Z = np.ones((16, 16))
+k = 4
+print(sliding_window_view(Z, window_shape=(k, k))[::k, ::k].sum(axis=(-2, -1)))
 ```
 #### 88. How to implement the Game of Life using numpy arrays? (★★★)
 

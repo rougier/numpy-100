@@ -3,12 +3,15 @@
 
 # 100 numpy exercises
 
-This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow
+This is a collection of exercises that have been collected in the numpy mailing list, on stack 
+overflow
 and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
-and new users but also to provide a set of exercises for those who teach.
+and new 
+users but also to provide a set of exercises for those who teach.
 
 
-If you find an error or think you've a better way to solve some of them, feel
+If you find an error or think you've a better way to
+ solve some of them, feel
 free to open an issue at <https://github.com/rougier/numpy-100>.
 File automatically generated. See the documentation to update questions/answers/hints programmatically.
 
@@ -197,9 +200,9 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 #### 74. Given a sorted array C that corresponds to a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
 `hint: np.repeat`
 #### 75. How to compute averages using a sliding window over an array? (★★★)
-`hint: np.cumsum`
+`hint: np.cumsum, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
 #### 76. Consider a one-dimensional array Z, build a two-dimensional array whose first row is (Z[0],Z[1],Z[2]) and each subsequent row is  shifted by 1 (last row should be (Z[-3],Z[-2],Z[-1]) (★★★)
-`hint: from numpy.lib import stride_tricks`
+`hint: from numpy.lib import stride_tricks, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
 #### 77. How to negate a boolean, or to change the sign of a float inplace? (★★★)
 `hint: np.logical_not, np.negative`
 #### 78. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to compute distance from p to each line i (P0[i],P1[i])? (★★★)
@@ -209,19 +212,19 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 #### 80. Consider an arbitrary array, write a function that extract a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
 `hint: minimum maximum`
 #### 81. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]? (★★★)
-`hint: stride_tricks.as_strided`
+`hint: stride_tricks.as_strided, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
 #### 82. Compute a matrix rank (★★★)
-`hint: np.linalg.svd`
+`hint: np.linalg.svd, np.linalg.matrix_rank`
 #### 83. How to find the most frequent value in an array?
 `hint: np.bincount, argmax`
 #### 84. Extract all the contiguous 3x3 blocks from a random 10x10 matrix (★★★)
-`hint: stride_tricks.as_strided`
+`hint: stride_tricks.as_strided, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
 #### 85. Create a 2D array subclass such that Z[i,j] == Z[j,i] (★★★)
 `hint: class method`
 #### 86. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
 `hint: np.tensordot`
 #### 87. Consider a 16x16 array, how to get the block-sum (block size is 4x4)? (★★★)
-`hint: np.add.reduceat`
+`hint: np.add.reduceat, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
 #### 88. How to implement the Game of Life using numpy arrays? (★★★)
 `No hints provided...`
 #### 89. How to get the n largest values of an array (★★★)
