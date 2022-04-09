@@ -19,5 +19,4 @@ This work is licensed under the MIT license.
 
 ### Variants in Other Languages
 
-#### Julia 
- - [100 Julia Exercises](https://github.com/RoyiAvital/Julia100Exercises).
+ - **Julia**: [100 Julia Exercises](https://github.com/RoyiAvital/Julia100Exercises).
