@@ -15,8 +15,5 @@ The keyed text format (`ktx`) is a minimal human readable key-values to store te
 
 This work is licensed under the MIT license.  
 [![DOI](https://zenodo.org/badge/10173/rougier/numpy-100.svg)](https://zenodo.org/badge/latestdoi/10173/rougier/numpy-100)
+#Learning
 
-
-### Variants in Other Languages
-
- - **Julia**: [100 Julia Exercises](https://github.com/RoyiAvital/Julia100Exercises).
