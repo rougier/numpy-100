@@ -108,7 +108,7 @@ def create_markdown(destination_filename='100_Numpy_exercises', with_hints=False
 
     # Add questions (and hint or answers if required)
     for n in range(1, 101):
-        mdfile.new_header(title=f"{n}. {QHA[f'q{n}']}", level=4)
+        mdfile.new_header(title=f"{n}. {QHA[f'q{n}']}", level=4, add_table_of_contents="n")
         if with_hints:
             mdfile.write(f"`{QHA[f'h{n}']}`")
         if with_solutions:

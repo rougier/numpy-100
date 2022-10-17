@@ -170,6 +170,12 @@ Z = np.zeros((8,8),dtype=int)
 Z[1::2,::2] = 1
 Z[::2,1::2] = 1
 print(Z)
+
+# Alternative solution: Using reshaping
+arr = np.ones(64,dtype=int)
+arr[::2]=0
+arr = arr.reshape((8,8))
+print(arr)
 ```
 #### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element? (★☆☆)
 
@@ -615,8 +621,17 @@ print(Z[Z[:,1].argsort()])
 ```python
 # Author: Warren Weckesser
 
+# null : 0 
 Z = np.random.randint(0,3,(3,10))
 print((~Z.any(axis=0)).any())
+
+# null : np.nan
+Z=np.array([
+    [0,1,np.nan],
+    [1,2,np.nan],
+    [4,5,np.nan]
+])
+print(np.isnan(Z).all(axis=0))
 ```
 #### 61. Find the nearest value from a given value in an array (★★☆)
 
@@ -648,7 +663,7 @@ class NamedArray(np.ndarray):
         return obj
     def __array_finalize__(self, obj):
         if obj is None: return
-        self.info = getattr(obj, 'name', "no name")
+        self.name = getattr(obj, 'name', "no name")
 
 Z = NamedArray(np.arange(10), "range_10")
 print (Z.name)
