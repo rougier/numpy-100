@@ -473,7 +473,7 @@ Z = np.fromiter(generate(),dtype=float,count=-1)
 print(Z)
 
 < q39
-Create a vector of size 10 with values ranging from 0 to 1, both excluded (★★☆)
+Create a vector of size 10 with evenly spaced values ranging from 0 to 1, both excluded (★★☆)
 
 < h39
 hint: np.linspace
