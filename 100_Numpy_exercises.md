@@ -3,15 +3,12 @@
 
 # 100 numpy exercises
 
-This is a collection of exercises that have been collected in the numpy mailing list, on stack 
-overflow
+This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow
 and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
-and new 
-users but also to provide a set of exercises for those who teach.
+and new users but also to provide a set of exercises for those who teach.
 
 
-If you find an error or think you've a better way to
- solve some of them, feel
+If you find an error or think you've a better way to solve some of them, feel
 free to open an issue at <https://github.com/rougier/numpy-100>.
 File automatically generated. See the documentation to update questions/answers/hints programmatically.
 
@@ -221,7 +218,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 85. Create a 2D array subclass such that Z[i,j] == Z[j,i] (★★★)
 
-#### 86. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
+#### 86. Consider a set of p matrices with shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
 
 #### 87. Consider a 16x16 array, how to get the block-sum (block size is 4x4)? (★★★)
 

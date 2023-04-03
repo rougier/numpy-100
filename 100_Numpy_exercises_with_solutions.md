@@ -3,15 +3,12 @@
 
 # 100 numpy exercises
 
-This is a collection of exercises that have been collected in the numpy mailing list, on stack 
-overflow
+This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow
 and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
-and new 
-users but also to provide a set of exercises for those who teach.
+and new users but also to provide a set of exercises for those who teach.
 
 
-If you find an error or think you've a better way to
- solve some of them, feel
+If you find an error or think you've a better way to solve some of them, feel
 free to open an issue at <https://github.com/rougier/numpy-100>.
 File automatically generated. See the documentation to update questions/answers/hints programmatically.
 
@@ -170,12 +167,6 @@ Z = np.zeros((8,8),dtype=int)
 Z[1::2,::2] = 1
 Z[::2,1::2] = 1
 print(Z)
-
-# Alternative solution: Using reshaping
-arr = np.ones(64,dtype=int)
-arr[::2]=0
-arr = arr.reshape((8,8))
-print(arr)
 ```
 #### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element? (★☆☆)
 
@@ -1013,7 +1004,7 @@ S = symetric(np.random.randint(0,10,(5,5)))
 S[2,3] = 42
 print(S)
 ```
-#### 86. Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
+#### 86. Consider a set of p matrices with shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
 
 
 ```python
