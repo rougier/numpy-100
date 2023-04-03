@@ -1246,7 +1246,7 @@ S[2,3] = 42
 print(S)
 
 < q86
-Consider a set of p matrices wich shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
+Consider a set of p matrices with shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
 
 < h86
 hint: np.tensordot
