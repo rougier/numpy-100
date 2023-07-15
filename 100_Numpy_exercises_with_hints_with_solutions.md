@@ -37,7 +37,7 @@ print(Z)
 
 ```python
 Z = np.zeros((10,10))
-print("%d bytes" % (Z.size * Z.itemsize))
+print("%d bytes" % (Z.nbytes))
 ```
 #### 5. How to get the documentation of the numpy add function from the command line? (★☆☆)
 `hint: np.info`
