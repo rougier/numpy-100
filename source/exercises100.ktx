@@ -38,10 +38,11 @@ Z = np.zeros((10,10))
 print("%d bytes" % (Z.size * Z.itemsize))
 
 < q5
-How to get the documentation of the numpy add function from the command line? (★☆☆)
+How to get the documentation of the numpy add function from the command line? (★☆☆) 
 
 < h5
 hint: np.info
+hint: In Google colab, and Cocalc, you will need to use !python instead of %run `python...`
 
 < a5
 %run `python -c "import numpy; numpy.info(numpy.add)"`
