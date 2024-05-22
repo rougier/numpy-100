@@ -376,7 +376,7 @@ print(Z)
 `hint: np.linspace`
 
 ```python
-Z = np.linspace(0,1,11,endpoint=False)[1:]
+Z = np.linspace(0,1,10,endpoint=True)[1:-1]
 print(Z)
 ```
 #### 40. Create a random vector of size 10 and sort it (★★☆)

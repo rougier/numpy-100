@@ -479,7 +479,7 @@ Create a vector of size 10 with values ranging from 0 to 1, both excluded (â˜…â˜
 hint: np.linspace
 
 < a39
-Z = np.linspace(0,1,11,endpoint=False)[1:]
+Z = np.linspace(0,1,10,endpoint=True)[1:-1]
 print(Z)
 
 < q40
