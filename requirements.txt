@@ -1,5 +1,6 @@
-numpy==1.17.4
-pandas==0.25.3
-jupyter==1.0.0
+numpy==2.2.0
+pandas==2.2.3
+mdutils==1.6.0
+jupyter==1.1.1
 jupyterthemes==0.20.0
-mdutils==1.0.0
+ipykernel==6.29.5
