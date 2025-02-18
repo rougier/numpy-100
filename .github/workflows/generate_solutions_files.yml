@@ -1,0 +1,46 @@
+name: Generate Solutions Files
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - source/exercises100.ktx
+
+jobs:
+  generate_files:
+    runs-on: ubuntu-22.04 # Python 3.7 is not supported on latest Ubuntu
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.7'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip3 install -r requirements.txt
+
+      - name: Generate solutions files
+        run: python3 generators.py
+
+      - name: Set environment variables
+        run: echo "SHA_SHORT=$(git rev-parse --short $GITHUB_SHA)" >> $GITHUB_ENV
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "solutions update from ${{ env.SHA_SHORT }}"
+          file_pattern: >
+            100_Numpy_exercises.ipynb
+            100_Numpy_random.ipynb
+            100_Numpy_exercises.md
+            100_Numpy_exercises_with_hints.md
+            100_Numpy_exercises_with_hints_with_solutions.md
+            100_Numpy_exercises_with_solutions.md
