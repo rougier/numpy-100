@@ -506,7 +506,7 @@ Z = np.arange(10)
 np.add.reduce(Z)
 
 < q42
-Consider two random array A and B, check if they are equal (★★☆)
+Consider two random arrays A and B, check if they are equal (★★☆)
 
 < h42
 hint: np.allclose, np.array_equal
@@ -586,7 +586,7 @@ C = 1.0 / np.subtract.outer(X, Y)
 print(np.linalg.det(C))
 
 < q48
-Print the minimum and maximum representable value for each numpy scalar type (★★☆)
+Print the minimum and maximum representable values for each numpy scalar type (★★☆)
 
 < h48
 hint: np.iinfo, np.finfo, eps
@@ -659,7 +659,7 @@ D = scipy.spatial.distance.cdist(Z,Z)
 print(D)
 
 < q53
-How to convert a float (32 bits) array into an integer (32 bits) in place?
+How to convert a float (32 bits) array into an integer (32 bits) array in place?
 
 < h53
 hint: view and [:] =
@@ -969,7 +969,7 @@ Z0[::nz+1] = Z
 print(Z0)
 
 < q71
-Consider an array of dimension (5,5,3), how to mulitply it by an array with dimensions (5,5)? (★★★)
+Consider an array of dimension (5,5,3), how to multiply it by an array with dimensions (5,5)? (★★★)
 
 < h71
 hint: array[:, :, None]
@@ -1145,7 +1145,7 @@ def distance_points_to_lines(p: np.ndarray, p_1: np.ndarray, p_2: np.ndarray) ->
 distance_points_to_lines(p, P0, P1)
 
 < q80
-Consider an arbitrary array, write a function that extract a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
+Consider an arbitrary array, write a function that extracts a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
 
 < h80
 hint: minimum maximum
@@ -1366,7 +1366,7 @@ print (Z[np.argsort(Z)[-n:]])
 print (Z[np.argpartition(-Z,n)[:n]])
 
 < q90
-Given an arbitrary number of vectors, build the cartesian product (every combinations of every item) (★★★)
+Given an arbitrary number of vectors, build the cartesian product (every combination of every item) (★★★)
 
 < h90
 hint: np.indices
