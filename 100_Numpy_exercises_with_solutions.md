@@ -396,7 +396,7 @@ print(Z)
 Z = np.arange(10)
 np.add.reduce(Z)
 ```
-#### 42. Consider two random array A and B, check if they are equal (★★☆)
+#### 42. Consider two random arrays A and B, check if they are equal (★★☆)
 
 
 ```python
@@ -458,7 +458,7 @@ Y = X + 0.5
 C = 1.0 / np.subtract.outer(X, Y)
 print(np.linalg.det(C))
 ```
-#### 48. Print the minimum and maximum representable value for each numpy scalar type (★★☆)
+#### 48. Print the minimum and maximum representable values for each numpy scalar type (★★☆)
 
 
 ```python
@@ -516,7 +516,7 @@ Z = np.random.random((10,2))
 D = scipy.spatial.distance.cdist(Z,Z)
 print(D)
 ```
-#### 53. How to convert a float (32 bits) array into an integer (32 bits) in place?
+#### 53. How to convert a float (32 bits) array into an integer (32 bits) array in place?
 
 
 ```python
@@ -772,7 +772,7 @@ Z0 = np.zeros(len(Z) + (len(Z)-1)*(nz))
 Z0[::nz+1] = Z
 print(Z0)
 ```
-#### 71. Consider an array of dimension (5,5,3), how to mulitply it by an array with dimensions (5,5)? (★★★)
+#### 71. Consider an array of dimension (5,5,3), how to multiply it by an array with dimensions (5,5)? (★★★)
 
 
 ```python
@@ -921,7 +921,7 @@ def distance_points_to_lines(p: np.ndarray, p_1: np.ndarray, p_2: np.ndarray) ->
 
 distance_points_to_lines(p, P0, P1)
 ```
-#### 80. Consider an arbitrary array, write a function that extract a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
+#### 80. Consider an arbitrary array, write a function that extracts a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
 
 
 ```python
@@ -1112,7 +1112,7 @@ print (Z[np.argsort(Z)[-n:]])
 # Fast
 print (Z[np.argpartition(-Z,n)[:n]])
 ```
-#### 90. Given an arbitrary number of vectors, build the cartesian product (every combinations of every item) (★★★)
+#### 90. Given an arbitrary number of vectors, build the cartesian product (every combination of every item) (★★★)
 
 
 ```python

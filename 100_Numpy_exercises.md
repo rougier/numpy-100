@@ -125,7 +125,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 41. How to sum a small array faster than np.sum? (★★☆)
 
-#### 42. Consider two random array A and B, check if they are equal (★★☆)
+#### 42. Consider two random arrays A and B, check if they are equal (★★☆)
 
 #### 43. Make an array immutable (read-only) (★★☆)
 
@@ -137,7 +137,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj)) (★★☆)
 
-#### 48. Print the minimum and maximum representable value for each numpy scalar type (★★☆)
+#### 48. Print the minimum and maximum representable values for each numpy scalar type (★★☆)
 
 #### 49. How to print all the values of an array? (★★☆)
 
@@ -147,7 +147,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 52. Consider a random vector with shape (100,2) representing coordinates, find point by point distances (★★☆)
 
-#### 53. How to convert a float (32 bits) array into an integer (32 bits) in place?
+#### 53. How to convert a float (32 bits) array into an integer (32 bits) array in place?
 
 #### 54. How to read the following file? (★★☆)
 ```
@@ -188,7 +188,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 70. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3 consecutive zeros interleaved between each value? (★★★)
 
-#### 71. Consider an array of dimension (5,5,3), how to mulitply it by an array with dimensions (5,5)? (★★★)
+#### 71. Consider an array of dimension (5,5,3), how to multiply it by an array with dimensions (5,5)? (★★★)
 
 #### 72. How to swap two rows of an array? (★★★)
 
@@ -206,7 +206,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 79. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P, how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i])? (★★★)
 
-#### 80. Consider an arbitrary array, write a function that extract a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
+#### 80. Consider an arbitrary array, write a function that extracts a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
 
 #### 81. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]? (★★★)
 
@@ -226,7 +226,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 #### 89. How to get the n largest values of an array (★★★)
 
-#### 90. Given an arbitrary number of vectors, build the cartesian product (every combinations of every item) (★★★)
+#### 90. Given an arbitrary number of vectors, build the cartesian product (every combination of every item) (★★★)
 
 #### 91. How to create a record array from a regular array? (★★★)
 

@@ -125,7 +125,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: sort`
 #### 41. How to sum a small array faster than np.sum? (★★☆)
 `hint: np.add.reduce`
-#### 42. Consider two random array A and B, check if they are equal (★★☆)
+#### 42. Consider two random arrays A and B, check if they are equal (★★☆)
 `hint: np.allclose, np.array_equal`
 #### 43. Make an array immutable (read-only) (★★☆)
 `hint: flags.writeable`
@@ -137,7 +137,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: np.meshgrid`
 #### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj)) (★★☆)
 `hint: np.subtract.outer`
-#### 48. Print the minimum and maximum representable value for each numpy scalar type (★★☆)
+#### 48. Print the minimum and maximum representable values for each numpy scalar type (★★☆)
 `hint: np.iinfo, np.finfo, eps`
 #### 49. How to print all the values of an array? (★★☆)
 `hint: np.set_printoptions`
@@ -147,7 +147,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: dtype`
 #### 52. Consider a random vector with shape (100,2) representing coordinates, find point by point distances (★★☆)
 `hint: np.atleast_2d, T, np.sqrt`
-#### 53. How to convert a float (32 bits) array into an integer (32 bits) in place?
+#### 53. How to convert a float (32 bits) array into an integer (32 bits) array in place?
 `hint: view and [:] =`
 #### 54. How to read the following file? (★★☆)
 ```
@@ -188,7 +188,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: np.diag`
 #### 70. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3 consecutive zeros interleaved between each value? (★★★)
 `hint: array[::4]`
-#### 71. Consider an array of dimension (5,5,3), how to mulitply it by an array with dimensions (5,5)? (★★★)
+#### 71. Consider an array of dimension (5,5,3), how to multiply it by an array with dimensions (5,5)? (★★★)
 `hint: array[:, :, None]`
 #### 72. How to swap two rows of an array? (★★★)
 `hint: array[[]] = array[[]]`
@@ -206,7 +206,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `No hints provided...`
 #### 79. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P, how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i])? (★★★)
 `No hints provided...`
-#### 80. Consider an arbitrary array, write a function that extract a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
+#### 80. Consider an arbitrary array, write a function that extracts a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
 `hint: minimum maximum`
 #### 81. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]? (★★★)
 `hint: stride_tricks.as_strided, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
@@ -226,7 +226,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `No hints provided...`
 #### 89. How to get the n largest values of an array (★★★)
 `hint: np.argsort | np.argpartition`
-#### 90. Given an arbitrary number of vectors, build the cartesian product (every combinations of every item) (★★★)
+#### 90. Given an arbitrary number of vectors, build the cartesian product (every combination of every item) (★★★)
 `hint: np.indices`
 #### 91. How to create a record array from a regular array? (★★★)
 `hint: np.core.records.fromarrays`
