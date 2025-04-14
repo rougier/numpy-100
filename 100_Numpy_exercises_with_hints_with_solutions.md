@@ -33,11 +33,11 @@ Z = np.zeros(10)
 print(Z)
 ```
 #### 4. How to find the memory size of any array (★☆☆)
-`hint: size, itemsize`
+`hint: size, itemsize, nbytes`
 
 ```python
 Z = np.zeros((10,10))
-print("%d bytes" % (Z.size * Z.itemsize))
+print("%d bytes (%d bytes, using "nbytes")" % ((Z.size * Z.itemsize), Z.nbytes))
 ```
 #### 5. How to get the documentation of the numpy add function from the command line? (★☆☆)
 `hint: np.info`
