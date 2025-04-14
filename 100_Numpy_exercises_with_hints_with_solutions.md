@@ -127,11 +127,6 @@ print(Z)
 Z = np.ones((5,5))
 Z = np.pad(Z, pad_width=1, mode='constant', constant_values=0)
 print(Z)
-
-# Using fancy indexing
-Z[:, [0, -1]] = 0
-Z[[0, -1], :] = 0
-print(Z)
 ```
 #### 17. What is the result of the following expression? (★☆☆)
 ```python
