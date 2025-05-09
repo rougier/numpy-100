@@ -96,6 +96,15 @@ print(Z)
 Z = np.random.random((3,3,3))
 print(Z)
 ```
+`hint: np.random.default_rng().random`
+```python
+# Author: KnightSnape
+
+rng = np.random.default_rng()
+Z = rng.random((3, 3, 3))
+print(Z)
+```
+
 #### 13. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆)
 `hint: min, max`
 
