@@ -1090,6 +1090,27 @@ Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to comp
 No hints provided...
 
 < a78
+P0 = np.random.uniform(-10,10,(10,2))
+P1 = np.random.uniform(-10,10,(10,2))
+p  = np.random.uniform(-10,10,( 1,2))
+
+def distance(P0,P1,p):
+    '''
+    Author: Hemanth Pasupuleti
+    Reference: https://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html
+    
+    ---- Faster as number of lines scale up exponentially ----
+    '''
+    v = P1- P0 #[(x2-x1) (y2-y1)]
+    v[:,[0,1]] = v[:,[1,0]] #[(y2-y1) (x2-x1)]
+    v[:,1]*=-1 #[(y2-y1) -(x2-x1)]
+    norm = np.linalg.norm(v,axis=1) #sqrt((x2-x1)**2 + (y2-y1)**2)    
+    r = P0 - p #[(x1-x0) (y1-y0)]
+    d = np.abs(np.einsum("ij,ij->i",r,v)) / norm #d = |(x1-x0)*(y2-y1)-(y1-y0)*(x1-x0)|/sqrt((x2-x1)**2 + (y2-y1)**2)
+    return d
+print(distance(P0, P1, p))
+
+##--------------- OR ---------------##
 def distance(P0, P1, p):
     T = P1 - P0
     L = (T**2).sum(axis=1)
@@ -1097,10 +1118,6 @@ def distance(P0, P1, p):
     U = U.reshape(len(U),1)
     D = P0 + U*T - p
     return np.sqrt((D**2).sum(axis=1))
-
-P0 = np.random.uniform(-10,10,(10,2))
-P1 = np.random.uniform(-10,10,(10,2))
-p  = np.random.uniform(-10,10,( 1,2))
 print(distance(P0, P1, p))
 
 < q79
