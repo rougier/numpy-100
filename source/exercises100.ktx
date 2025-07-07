@@ -1179,6 +1179,24 @@ R[r] = Z[z]
 print(Z)
 print(R)
 
+#-------------------------------------------
+# Author: Hemanth Pasupuleti
+# Multi-dimension solution to extract random subpart of a given shape from an arbitrary multi-dim array
+# The extracted subpart is then centered across multiple dimensions if needed
+
+arr = np.random.random((5,5,5)) #arbitrary array
+sh = np.array([2,3,2]) #shape of random subpart to extract
+fill = 0 #fill value
+
+dim_start = [np.random.randint(0,arr.shape[i] - sh[i]) for i in range(len(sh))] #find random start point of slices in each dimension
+dim_end = [dim_start[i]+sh[i] for i in range(len(sh))] #calculate the end slice point
+slices = tuple([slice(start,end) for start,end in zip(dim_start,dim_end)]) #create slices for each dimension
+
+subpart = arr[slices] #extract the random subpart
+padding_to_center = np.max(sh) - np.min(sh) #calculate the necessary padding
+centered_subpart = np.pad(subpart,pad_width=padding_to_center,mode="constant",constant_values=fill) #pad
+print(centered_subpart)
+
 < q81
 Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]? (★★★)
 
