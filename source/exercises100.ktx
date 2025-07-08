@@ -1329,24 +1329,51 @@ How to implement the Game of Life using numpy arrays? (★★★)
 No hints provided...
 
 < a88
-# Author: Nicolas Rougier
+#Author: Hemanth Pasupuleti (@Hemanth21k)
 
-def iterate(Z):
-    # Count neighbours
-    N = (Z[0:-2,0:-2] + Z[0:-2,1:-1] + Z[0:-2,2:] +
-         Z[1:-1,0:-2]                + Z[1:-1,2:] +
-         Z[2:  ,0:-2] + Z[2:  ,1:-1] + Z[2:  ,2:])
+from numpy.lib.stride_tricks import sliding_window_view
 
-    # Apply rules
-    birth = (N==3) & (Z[1:-1,1:-1]==0)
-    survive = ((N==2) | (N==3)) & (Z[1:-1,1:-1]==1)
-    Z[...] = 0
-    Z[1:-1,1:-1][birth | survive] = 1
-    return Z
+def calculate_next_state(Z):
+    padded = np.pad(Z,1,'constant',constant_values=0) #use sliding window trick to easily calculate
+    sw_views = sliding_window_view(padded,[3,3])
+    neighbour_count = sw_views.sum(axis=(2,3)) - Z #sum across all sliding windows and remove the duplicate to get neighbour count
+    
+    #Live (1) with fewer than 2 neighbours become dead (0) => keep live with >=2 neighbours
+    next_state = Z * (neighbour_count >= 2) #if live (1) and less than 2 neighbours (0) then 1*0 = 0 (dead)
+    
+    #Any live cell with 2 or 3 neighbours survives, any live cell with more than 3 neighbours dies => keep live with <=3 neighbours
+    #Current live cell already has >=2 neighbours from previous step.
+    next_state = next_state * (neighbour_count<=3) #if live (1) and neighbour count greater than 3 (0) then 1*0 = 0 (dead)
+    
+    #Any dead cell with exactly 3 live neighbours becomes a live cell => keep live (1) as live (1) but make dead (0) as live (1) 
+    #Which translates to keep 1 as 1, make 0 as 1 if condition satisfies => logical_or operation
+    
+    next_state = np.logical_or(next_state.astype(bool),neighbour_count==3).astype(int) #if live (1) then live (1), if dead (0) with 3 neighbours then live (1)
+    return next_state
 
-Z = np.random.randint(0,2,(50,50))
-for i in range(100): Z = iterate(Z)
-print(Z)
+    
+#let's test with hand calculated outputs
+initial_board = np.array([[0,1,0],[0,0,1],[1,1,1]])
+expected_outputs = np.array([[[0, 0, 0],[1, 0, 1],[0, 1, 1]],
+                            [[0, 0, 0],[0, 0, 1],[0, 1, 1]],
+                            [[0, 0, 0],[0, 1, 1],[0, 1, 1]]])
+
+board = initial_board.copy()
+print("Initial board state:\n",str(board)[1:-1])
+for i in range(3):
+    board = calculate_next_state(board)
+    print(f"Expected board state after {i+1} iteration(s):\n {str(expected_outputs[i])[1:-1]}")
+    print(f"Observed board state after {i+1} iteration(s):\n {str(board)[1:-1]}")
+
+print("--"*20)
+#Random test (any 2D shape works)
+initial_board = np.random.randint(0,2,(3,5))
+board = initial_board.copy()
+
+print("Initial board state:\n",str(board)[1:-1])
+for i in range(3):
+    board = calculate_next_state(board)
+    print(f"Observed board state after {i+1} iteration(s):\n {str(board)[1:-1]}")
 
 < q89
 How to get the n largest values of an array (★★★)
