@@ -96,15 +96,6 @@ print(Z)
 Z = np.random.random((3,3,3))
 print(Z)
 ```
-`hint: np.random.default_rng().random`
-```python
-# Author: KnightSnape
-
-rng = np.random.default_rng()
-Z = rng.random((3, 3, 3))
-print(Z)
-```
-
 #### 13. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆)
 `hint: min, max`
 
@@ -956,8 +947,8 @@ Z_start = (np.maximum(Z_start,0)).tolist()
 R_stop = np.maximum(R_start, (R_stop - np.maximum(Z_stop-Zs,0))).tolist()
 Z_stop = (np.minimum(Z_stop,Zs)).tolist()
 
-r = [slice(start,stop) for start,stop in zip(R_start,R_stop)]
-z = [slice(start,stop) for start,stop in zip(Z_start,Z_stop)]
+r = tuple([slice(start,stop) for start,stop in zip(R_start,R_stop)])
+z = tuple([slice(start,stop) for start,stop in zip(Z_start,Z_stop)])
 R[r] = Z[z]
 print(Z)
 print(R)
