@@ -1148,54 +1148,61 @@ distance_points_to_lines(p, P0, P1)
 Consider an arbitrary array, write a function that extracts a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
 
 < h80
-hint: minimum maximum
+hint: No hints provided...
 
 < a80
-# Author: Nicolas Rougier
-
-Z = np.random.randint(0,10,(10,10))
-shape = (5,5)
-fill  = 0
-position = (1,1)
-
-R = np.ones(shape, dtype=Z.dtype)*fill
-P  = np.array(list(position)).astype(int)
-Rs = np.array(list(R.shape)).astype(int)
-Zs = np.array(list(Z.shape)).astype(int)
-
-R_start = np.zeros((len(shape),)).astype(int)
-R_stop  = np.array(list(shape)).astype(int)
-Z_start = (P-Rs//2)
-Z_stop  = (P+Rs//2)+Rs%2
-
-R_start = (R_start - np.minimum(Z_start,0)).tolist()
-Z_start = (np.maximum(Z_start,0)).tolist()
-R_stop = np.maximum(R_start, (R_stop - np.maximum(Z_stop-Zs,0))).tolist()
-Z_stop = (np.minimum(Z_stop,Zs)).tolist()
-
-r = tuple([slice(start,stop) for start,stop in zip(R_start,R_stop)])
-z = tuple([slice(start,stop) for start,stop in zip(Z_start,Z_stop)])
-R[r] = Z[z]
-print(Z)
-print(R)
-
-#-------------------------------------------
 # Author: Hemanth Pasupuleti
 # Multi-dimension solution to extract random subpart of a given shape from an arbitrary multi-dim array
 # The extracted subpart is then centered across multiple dimensions if needed
 
-arr = np.random.random((5,5,5)) #arbitrary array
-sh = np.array([2,3,2]) #shape of random subpart to extract
+def extract_centered_subpart(arr,sh,fill):
+    dim_start = [np.random.randint(0,arr.shape[i] - sh[i]) for i in range(len(sh))] #find random start point of slices in each dimension
+    dim_end = [dim_start[i]+sh[i] for i in range(len(sh))] #calculate the end slice point
+    slices = tuple([slice(start,end) for start,end in zip(dim_start,dim_end)]) #create slices for each dimension
+    subpart = arr[slices] #extract the random subpart
+    padding_to_center = np.max(sh) - np.min(sh) #calculate the necessary padding
+    centered_subpart = np.pad(subpart,pad_width=padding_to_center,mode="constant",constant_values=fill) #pad
+    return subpart, centered_subpart
+
+print("Let's evaluate the solution with multiple cases:\n")
+array_2d = np.random.randint(0,10,(10,10))
+array_3d = np.random.randint(0,10,(3,5,5)) #Similar to (batch_size,N,M) 
 fill = 0 #fill value
 
-dim_start = [np.random.randint(0,arr.shape[i] - sh[i]) for i in range(len(sh))] #find random start point of slices in each dimension
-dim_end = [dim_start[i]+sh[i] for i in range(len(sh))] #calculate the end slice point
-slices = tuple([slice(start,end) for start,end in zip(dim_start,dim_end)]) #create slices for each dimension
+outputs_template = "Subpart shape:{}\nExtracted subpart:\n{}\nCentered subpart:\n{}"
+print(f"Fill value (to use when needed):{fill} \
+        \nRandom 2D array:\n{array_2d} \
+        \nRandom 3D array for multi dimensions case:\n{array_3d}")
 
-subpart = arr[slices] #extract the random subpart
-padding_to_center = np.max(sh) - np.min(sh) #calculate the necessary padding
-centered_subpart = np.pad(subpart,pad_width=padding_to_center,mode="constant",constant_values=fill) #pad
-print(centered_subpart)
+print("--"*20)
+print("Case 1: Subpart dimensions are equal => array is already centered")
+
+print("Case 1a: Extract subpart with equal dimensions from 2D array")
+case_1a_shape = np.array([5,5])
+subpart,centered_subpart = extract_centered_subpart(array_2d,case_1a_shape,fill)
+print(outputs_template.format(case_1a_shape,subpart,centered_subpart))
+
+print("Case 1b: Extract subpart with equal dimensions from 3D array (multi-dim)")
+case_1b_shape = np.array([2,2,2])
+subpart,centered_subpart = extract_centered_subpart(array_3d,case_1b_shape,fill)
+print(outputs_template.format(case_1b_shape,subpart,centered_subpart))
+
+print("--"*20)
+print("Case 2: Extract subpart with non-equal dimensions => Needs centering")
+print("NOTE: CENTERING CHANGES SUBPART DIMENSIONS")
+
+print("Case 2a: Extract subpart with non-equal dimensions from 2D array")
+case_2a_shape = np.array([3,4])
+subpart,centered_subpart = extract_centered_subpart(array_2d,case_2a_shape,fill)
+print(outputs_template.format(case_2a_shape,subpart,centered_subpart))
+
+print("Case 2b: Extract subpart with non-equal dimensions from 3D array (multi-dim)")
+case_2b_shape = np.array([1,2,1])
+subpart,centered_subpart = extract_centered_subpart(array_3d,case_2b_shape,fill)
+print(outputs_template.format(case_2b_shape,subpart,centered_subpart))
+
+
+
 
 < q81
 Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]? (★★★)
