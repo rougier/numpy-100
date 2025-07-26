@@ -1095,22 +1095,18 @@ P1 = np.random.uniform(-10,10,(10,2))
 p  = np.random.uniform(-10,10,( 1,2))
 
 def distance_faster(P0,P1,p):
-    '''
-    Author: Hemanth Pasupuleti
-    Reference: https://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html
-    
-    ---- Explainable solution - Slightly Faster as number of lines scale up exponentially ----
-    '''
-    v = P1- P0 # Shape: (n_lines,2), Compute: [(x2-x1) (y2-y1)]
-    v[:,[0,1]] = v[:,[1,0]] # Shape: (n_lines,2), Swap along axis to Compute: [(y2-y1) (x2-x1)]
-    v[:,1]*=-1 # Shape: (n_lines,2), Compute: [(y2-y1) -(x2-x1)] 
-    norm = np.linalg.norm(v,axis=1) # Shape: (n_lines,), Compute: sqrt((x2-x1)**2 + (y2-y1)**2)    
-    r = P0 - p # Shape: (n_lines,2), Compute: [(x1-x0) (y1-y0)]
-    
-    # np.einsum('ij,ij->i',r,v) is equivalent to np.multiply(r,v)).sum(axis=1) which is scalar product of two matrices across axis 1.
+    #Author: Hemanth Pasupuleti
+    #Reference: https://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html
 
-    d = np.abs(np.einsum("ij,ij->i",r,v)) / norm # Shape: (n_lines,), Compute: d = |(x1-x0)*(y2-y1)-(y1-y0)*(x1-x0)|/sqrt((x2-x1)**2 + (y2-y1)**2)
+    v = P1- P0 
+    v[:,[0,1]] = v[:,[1,0]]
+    v[:,1]*=-1 
+    norm = np.linalg.norm(v,axis=1)   
+    r = P0 - p
+    d = np.abs(np.einsum("ij,ij->i",r,v)) / norm 
+
     return d
+
 print(distance_faster(P0, P1, p))
 
 ##--------------- OR ---------------##
@@ -1121,6 +1117,7 @@ def distance_slower(P0, P1, p):
     U = U.reshape(len(U),1)
     D = P0 + U*T - p
     return np.sqrt((D**2).sum(axis=1))
+
 print(distance_slower(P0, P1, p))
 
 < q79
