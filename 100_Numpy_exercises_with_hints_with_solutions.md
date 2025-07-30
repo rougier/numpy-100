@@ -96,15 +96,6 @@ print(Z)
 Z = np.random.random((3,3,3))
 print(Z)
 ```
-`hint: np.random.default_rng().random`
-```python
-# Author: KnightSnape
-
-rng = np.random.default_rng()
-Z = rng.random((3, 3, 3))
-print(Z)
-```
-
 #### 13. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆)
 `hint: min, max`
 
@@ -879,7 +870,27 @@ np.negative(Z, out=Z)
 `No hints provided...`
 
 ```python
-def distance(P0, P1, p):
+P0 = np.random.uniform(-10,10,(10,2))
+P1 = np.random.uniform(-10,10,(10,2))
+p  = np.random.uniform(-10,10,( 1,2))
+
+def distance_faster(P0,P1,p):
+    #Author: Hemanth Pasupuleti
+    #Reference: https://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html
+
+    v = P1- P0 
+    v[:,[0,1]] = v[:,[1,0]]
+    v[:,1]*=-1 
+    norm = np.linalg.norm(v,axis=1)   
+    r = P0 - p
+    d = np.abs(np.einsum("ij,ij->i",r,v)) / norm 
+
+    return d
+
+print(distance_faster(P0, P1, p))
+
+##--------------- OR ---------------##
+def distance_slower(P0, P1, p):
     T = P1 - P0
     L = (T**2).sum(axis=1)
     U = -((P0[:,0]-p[...,0])*T[:,0] + (P0[:,1]-p[...,1])*T[:,1]) / L
@@ -887,10 +898,7 @@ def distance(P0, P1, p):
     D = P0 + U*T - p
     return np.sqrt((D**2).sum(axis=1))
 
-P0 = np.random.uniform(-10,10,(10,2))
-P1 = np.random.uniform(-10,10,(10,2))
-p  = np.random.uniform(-10,10,( 1,2))
-print(distance(P0, P1, p))
+print(distance_slower(P0, P1, p))
 ```
 #### 79. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P, how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i])? (★★★)
 `No hints provided...`
@@ -956,8 +964,8 @@ Z_start = (np.maximum(Z_start,0)).tolist()
 R_stop = np.maximum(R_start, (R_stop - np.maximum(Z_stop-Zs,0))).tolist()
 Z_stop = (np.minimum(Z_stop,Zs)).tolist()
 
-r = [slice(start,stop) for start,stop in zip(R_start,R_stop)]
-z = [slice(start,stop) for start,stop in zip(Z_start,Z_stop)]
+r = tuple([slice(start,stop) for start,stop in zip(R_start,R_stop)])
+z = tuple([slice(start,stop) for start,stop in zip(Z_start,Z_stop)])
 R[r] = Z[z]
 print(Z)
 print(R)
