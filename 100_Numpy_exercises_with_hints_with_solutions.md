@@ -1148,6 +1148,21 @@ def cartesian(arrays):
     return ix
 
 print (cartesian(([1, 2, 3], [4, 5], [6, 7])))
+
+# Solution with arbitrary types (by @Gattocrucco)
+
+def cartprod(vs):
+    vs = [np.asarray(v) for v in vs]
+    shape = [v.size for v in vs]
+    out = np.empty(shape, [(f'x{i}', v.dtype) for i, v in enumerate(vs)])
+    for i, v in enumerate(vs):
+        indices = [None] * out.ndim
+        indices[i] = slice(None)
+        indices = tuple(indices)
+        out[f'x{i}'] = v[indices]
+    return out.reshape(-1)
+
+print(cartprod(([1, 2, 3], [4., 5.], ['a', 'b'])))
 ```
 #### 91. How to create a record array from a regular array? (★★★)
 `hint: np.core.records.fromarrays`
