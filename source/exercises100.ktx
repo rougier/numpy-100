@@ -37,6 +37,9 @@ hint: size, itemsize
 Z = np.zeros((10,10))
 print("%d bytes" % (Z.size * Z.itemsize))
 
+# Simpler alternative
+print("%d bytes" % Z.nbytes)
+
 < q5
 How to get the documentation of the numpy add function from the command line? (★☆☆)
 
