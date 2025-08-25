@@ -1225,7 +1225,8 @@ hint: np.linalg.svd, np.linalg.matrix_rank
 
 Z = np.random.uniform(0,1,(10,10))
 U, S, V = np.linalg.svd(Z) # Singular Value Decomposition
-rank = np.sum(S > 1e-10)
+threshold = len(S) * S.max() * np.finfo(S.dtype).eps
+rank = np.sum(S > threshold)
 print(rank)
 
 # alternative solution:
