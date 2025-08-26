@@ -993,8 +993,7 @@ print(sliding_window_view(Z, window_shape=4))
 
 Z = np.random.uniform(0,1,(10,10))
 U, S, V = np.linalg.svd(Z) # Singular Value Decomposition
-threshold = len(S) * S.max() * np.finfo(S.dtype).eps
-rank = np.sum(S > threshold)
+rank = np.sum(S > 1e-10)
 print(rank)
 
 # alternative solution:
