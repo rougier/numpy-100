@@ -543,13 +543,15 @@ print(Y)
 import numpy as np
 from io import StringIO
 
-# Added filling_values to handle missing entries safely
 s = StringIO('''1, 2, 3, 4, 5
                 6,  ,  , 7, 8
                  ,  , 9,10,11''')
 Z = np.genfromtxt(s, delimiter=",", dtype=int, filling_values=0)
+                 ,  , 9,10,11''')
+Z = np.genfromtxt(s, delimiter=",", dtype=int, filling_values=0)
 print(Z)
 ```
+
 
 #### 55. What is the equivalent of enumerate for numpy arrays? (★★☆)
 
@@ -560,6 +562,7 @@ for index, value in np.ndenumerate(Z):
 for index in np.ndindex(Z.shape):
     print(index, Z[index])
 ```
+
 
 #### 56. Generate a generic 2D Gaussian-like array (★★☆)
 
