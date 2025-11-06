@@ -696,7 +696,7 @@ s = StringIO('''1, 2, 3, 4, 5
 
                  ,  , 9,10,11
 ''')
-Z = np.genfromtxt(s, delimiter=",", dtype=int, filling_values=0)
+Z = np.genfromtxt(s, delimiter=",", dtype = int, filling_values = 0)
 print(Z)
 
 < q55
