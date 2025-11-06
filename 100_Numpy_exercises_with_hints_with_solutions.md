@@ -548,7 +548,7 @@ s = StringIO('''1, 2, 3, 4, 5
 
                  ,  , 9,10,11
 ''')
-Z = np.genfromtxt(s, delimiter=",", dtype=np.int)
+Z = np.genfromtxt(s, delimiter=",", dtype = int, filling_values = 0)
 print(Z)
 ```
 #### 55. What is the equivalent of enumerate for numpy arrays? (★★☆)
