@@ -67,7 +67,7 @@ np.nan in set([np.nan])
 #### 23. Create a custom dtype that describes a color as four unsigned bytes (RGBA) (★☆☆)
 `hint: np.dtype`
 #### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
-`hint:`
+`hint:np.dot or @`
 #### 25. Given a 1D array, negate all elements which are between 3 and 8, in place. (★☆☆)
 `hint: >, <`
 #### 26. What is the output of the following script? (★☆☆)
