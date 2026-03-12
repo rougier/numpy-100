@@ -202,7 +202,7 @@ color = np.dtype([("r", np.ubyte),
                   ("a", np.ubyte)])
 ```
 #### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
-`hint:`
+`hint:np.dot or @`
 
 ```python
 Z = np.matmul(np.ones((5, 3)), np.ones((3, 2)))
