@@ -46,7 +46,7 @@ print("%d bytes" % Z.nbytes)
 `hint: np.info`
 
 ```python
-%run `python -c "import numpy; numpy.info(numpy.add)"`
+!python -c "import numpy; numpy.info(numpy.add)"
 ```
 #### 6. Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
 `hint: array[4]`
