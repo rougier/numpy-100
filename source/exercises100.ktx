@@ -633,11 +633,11 @@ Create a structured array representing a position (x,y) and a color (r,g,b) (★
 hint: dtype
 
 < a51
-Z = np.zeros(10, [ ('position', [ ('x', float, 1),
-                                  ('y', float, 1)]),
-                   ('color',    [ ('r', float, 1),
-                                  ('g', float, 1),
-                                  ('b', float, 1)])])
+Z = np.zeros(10, [ ('position', [ ('x', float),
+                                  ('y', float)]),
+                   ('color',    [ ('r', float),
+                                  ('g', float),
+                                  ('b', float)])])
 print(Z)
 
 < q52
