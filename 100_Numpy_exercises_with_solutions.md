@@ -494,11 +494,11 @@ print(Z[index])
 
 
 ```python
-Z = np.zeros(10, [ ('position', [ ('x', float, 1),
-                                  ('y', float, 1)]),
-                   ('color',    [ ('r', float, 1),
-                                  ('g', float, 1),
-                                  ('b', float, 1)])])
+Z = np.zeros(10, [ ('position', [ ('x', float),
+                                  ('y', float)]),
+                   ('color',    [ ('r', float),
+                                  ('g', float),
+                                  ('b', float)])])
 print(Z)
 ```
 #### 52. Consider a random vector with shape (100,2) representing coordinates, find point by point distances (★★☆)
