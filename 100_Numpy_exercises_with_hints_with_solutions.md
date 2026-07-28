@@ -184,8 +184,8 @@ print(np.unravel_index(99,(6,7,8)))
 Z = np.tile( np.array([[0,1],[1,0]]), (4,4))
 print(Z)
 ```
-#### 22. Normalize a 5x5 random matrix (★☆☆)
-`hint: (x -mean)/std`
+#### 22. Normalize a 5x5 random matrix using Z-score normalization (standardization) (★☆☆)
+`hint: Use Z-score normalization: (x - mean) / std`
 
 ```python
 Z = np.random.random((5,5))
