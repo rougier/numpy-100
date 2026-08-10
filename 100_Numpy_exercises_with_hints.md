@@ -15,7 +15,7 @@ File automatically generated. See the documentation to update questions/answers/
 #### 1. Import the numpy package under the name `np` (★☆☆)
 `hint: import … as`
 #### 2. Print the numpy version and the configuration (★☆☆)
-`hint: np.__version__, np.show_config)`
+`hint: np.__version__, np.show_config())`
 #### 3. Create a null vector of size 10 (★☆☆)
 `hint: np.zeros`
 #### 4. How to find the memory size of any array (★☆☆)
