@@ -1181,7 +1181,7 @@ x = np.random.rand(int(5e7))
 %timeit x*x*x
 %timeit np.einsum('i,i,i->i',x,x,x)
 ```
-#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain elements of each row of B regardless of the order of the elements in B? (★★★)
+#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain at least one element of each row of B regardless of the order of the elements in B?
 `hint: np.where`
 
 ```python

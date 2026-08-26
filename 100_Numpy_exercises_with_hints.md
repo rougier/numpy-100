@@ -232,7 +232,7 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 `hint: np.core.records.fromarrays`
 #### 92. Consider a large vector Z, compute Z to the power of 3 using 3 different methods (★★★)
 `hint: np.power, *, np.einsum`
-#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain elements of each row of B regardless of the order of the elements in B? (★★★)
+#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain at least one element of each row of B regardless of the order of the elements in B?
 `hint: np.where`
 #### 94. Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3]) (★★★)
 `No hints provided...`
