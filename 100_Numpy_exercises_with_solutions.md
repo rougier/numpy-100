@@ -253,9 +253,11 @@ Z<Z>Z
 ```python
 Z**Z
 2 << Z >> 2
+# `Z <- Z` Legal, but bug-prone: Python parses this as Z < (-Z) (is Z less than negative Z?)
 Z <- Z
 1j*Z
 Z/1/1
+# Illegal: Chained comparisons such as `Z < Z > Z` are invalid for arrays
 Z<Z>Z
 ```
 #### 28. What are the result of the following expressions? (★☆☆)
