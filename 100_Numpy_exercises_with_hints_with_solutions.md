@@ -505,7 +505,7 @@ print(Z)
 `hint: np.atleast_2d, T, np.sqrt`
 
 ```python
-Z = np.random.random((10,2))
+Z = np.random.random((100,2))
 X,Y = np.atleast_2d(Z[:,0], Z[:,1])
 D = np.sqrt( (X-X.T)**2 + (Y-Y.T)**2)
 print(D)
@@ -515,7 +515,7 @@ import scipy
 # Thanks Gavin Heverly-Coulson (#issue 1)
 import scipy.spatial
 
-Z = np.random.random((10,2))
+Z = np.random.random((100,2))
 D = scipy.spatial.distance.cdist(Z,Z)
 print(D)
 ```
@@ -921,7 +921,7 @@ print(distance_slower(P0, P1, p))
 P0 = np.random.uniform(-10, 10, (10,2))
 P1 = np.random.uniform(-10,10,(10,2))
 p = np.random.uniform(-10, 10, (10,2))
-print(np.array([distance(P0,P1,p_i) for p_i in p]))
+print(np.array([distance_slower(P0,P1,p_i) for p_i in p]))
 
 # Author: Yang Wu (Broadcasting)
 def distance_points_to_lines(p: np.ndarray, p_1: np.ndarray, p_2: np.ndarray) -> np.ndarray:
