@@ -319,9 +319,9 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 
 ```python
-yesterday = np.datetime64('today') - np.timedelta64(1)
+yesterday = np.datetime64('today') - np.timedelta64(1, 'D')
 today     = np.datetime64('today')
-tomorrow  = np.datetime64('today') + np.timedelta64(1)
+tomorrow  = np.datetime64('today') + np.timedelta64(1, 'D')
 ```
 #### 34. How to get all the dates corresponding to the month of July 2016? (★★☆)
 
